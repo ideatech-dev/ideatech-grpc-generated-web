@@ -1,9 +1,9 @@
 import * as grpcWeb from 'grpc-web';
 
-import * as survey_v1_survey_pb from '../../survey/v1/survey_pb';
 import * as survey_v1_survey_choice_pb from '../../survey/v1/survey_choice_pb';
-import * as survey_v1_survey_page_pb from '../../survey/v1/survey_page_pb';
 import * as survey_v1_survey_question_pb from '../../survey/v1/survey_question_pb';
+import * as survey_v1_survey_page_pb from '../../survey/v1/survey_page_pb';
+import * as survey_v1_survey_pb from '../../survey/v1/survey_pb';
 
 
 export class SurveyServiceClient {

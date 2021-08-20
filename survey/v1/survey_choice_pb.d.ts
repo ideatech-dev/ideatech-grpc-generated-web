@@ -44,9 +44,6 @@ export namespace SurveyChoice {
 }
 
 export class SurveyChoiceCreateUpdate extends jspb.Message { 
-    getSurveyQuestionId(): number;
-    setSurveyQuestionId(value: number): SurveyChoiceCreateUpdate;
-
     getChoice(): string;
     setChoice(value: string): SurveyChoiceCreateUpdate;
 
@@ -69,7 +66,6 @@ export class SurveyChoiceCreateUpdate extends jspb.Message {
 
 export namespace SurveyChoiceCreateUpdate {
     export type AsObject = {
-        surveyQuestionId: number,
         choice: string,
         orders: number,
         score: number,
@@ -146,6 +142,9 @@ export namespace ChoiceGetAllResponse {
 }
 
 export class ChoiceCreateRequest extends jspb.Message { 
+    getSurveyQuestionId(): number;
+    setSurveyQuestionId(value: number): ChoiceCreateRequest;
+
 
     hasChoice(): boolean;
     clearChoice(): void;
@@ -165,6 +164,7 @@ export class ChoiceCreateRequest extends jspb.Message {
 
 export namespace ChoiceCreateRequest {
     export type AsObject = {
+        surveyQuestionId: number,
         choice?: SurveyChoiceCreateUpdate.AsObject,
     }
 }

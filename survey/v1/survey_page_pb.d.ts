@@ -5,6 +5,7 @@
 /* eslint-disable */
 
 import * as jspb from "google-protobuf";
+import * as survey_v1_survey_question_pb from "../../survey/v1/survey_question_pb";
 
 export class SurveyPage extends jspb.Message { 
     getId(): number;
@@ -15,6 +16,11 @@ export class SurveyPage extends jspb.Message {
 
     getOrders(): number;
     setOrders(value: number): SurveyPage;
+
+    clearQuestionsList(): void;
+    getQuestionsList(): Array<survey_v1_survey_question_pb.SurveyQuestion>;
+    setQuestionsList(value: Array<survey_v1_survey_question_pb.SurveyQuestion>): SurveyPage;
+    addQuestions(value?: survey_v1_survey_question_pb.SurveyQuestion, index?: number): survey_v1_survey_question_pb.SurveyQuestion;
 
 
     serializeBinary(): Uint8Array;
@@ -32,16 +38,11 @@ export namespace SurveyPage {
         id: number,
         surveyId: number,
         orders: number,
+        questionsList: Array<survey_v1_survey_question_pb.SurveyQuestion.AsObject>,
     }
 }
 
 export class SurveyPageCreateUpdate extends jspb.Message { 
-    getId(): number;
-    setId(value: number): SurveyPageCreateUpdate;
-
-    getSurveyId(): number;
-    setSurveyId(value: number): SurveyPageCreateUpdate;
-
     getOrders(): number;
     setOrders(value: number): SurveyPageCreateUpdate;
 
@@ -58,8 +59,6 @@ export class SurveyPageCreateUpdate extends jspb.Message {
 
 export namespace SurveyPageCreateUpdate {
     export type AsObject = {
-        id: number,
-        surveyId: number,
         orders: number,
     }
 }
@@ -67,6 +66,15 @@ export namespace SurveyPageCreateUpdate {
 export class PageGetOneRequest extends jspb.Message { 
     getId(): number;
     setId(value: number): PageGetOneRequest;
+
+    getWithQuestion(): boolean;
+    setWithQuestion(value: boolean): PageGetOneRequest;
+
+    getWithQuestionOption(): boolean;
+    setWithQuestionOption(value: boolean): PageGetOneRequest;
+
+    getWithQuestionChoice(): boolean;
+    setWithQuestionChoice(value: boolean): PageGetOneRequest;
 
 
     serializeBinary(): Uint8Array;
@@ -82,6 +90,9 @@ export class PageGetOneRequest extends jspb.Message {
 export namespace PageGetOneRequest {
     export type AsObject = {
         id: number,
+        withQuestion: boolean,
+        withQuestionOption: boolean,
+        withQuestionChoice: boolean,
     }
 }
 
@@ -113,6 +124,15 @@ export class PageGetAllRequest extends jspb.Message {
     getSurveyId(): number;
     setSurveyId(value: number): PageGetAllRequest;
 
+    getWithQuestion(): boolean;
+    setWithQuestion(value: boolean): PageGetAllRequest;
+
+    getWithQuestionOption(): boolean;
+    setWithQuestionOption(value: boolean): PageGetAllRequest;
+
+    getWithQuestionChoice(): boolean;
+    setWithQuestionChoice(value: boolean): PageGetAllRequest;
+
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): PageGetAllRequest.AsObject;
@@ -127,6 +147,9 @@ export class PageGetAllRequest extends jspb.Message {
 export namespace PageGetAllRequest {
     export type AsObject = {
         surveyId: number,
+        withQuestion: boolean,
+        withQuestionOption: boolean,
+        withQuestionChoice: boolean,
     }
 }
 
@@ -154,6 +177,9 @@ export namespace PageGetAllResponse {
 }
 
 export class PageCreateRequest extends jspb.Message { 
+    getSurveyId(): number;
+    setSurveyId(value: number): PageCreateRequest;
+
 
     hasPage(): boolean;
     clearPage(): void;
@@ -173,6 +199,7 @@ export class PageCreateRequest extends jspb.Message {
 
 export namespace PageCreateRequest {
     export type AsObject = {
+        surveyId: number,
         page?: SurveyPageCreateUpdate.AsObject,
     }
 }

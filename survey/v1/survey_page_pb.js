@@ -15,6 +15,8 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
+var survey_v1_survey_question_pb = require('../../survey/v1/survey_question_pb.js');
+goog.object.extend(proto, survey_v1_survey_question_pb);
 goog.exportSymbol('proto.survey.v1.PageCreateRequest', null, global);
 goog.exportSymbol('proto.survey.v1.PageCreateResponse', null, global);
 goog.exportSymbol('proto.survey.v1.PageDeleteRequest', null, global);
@@ -38,7 +40,7 @@ goog.exportSymbol('proto.survey.v1.SurveyPageCreateUpdate', null, global);
  * @constructor
  */
 proto.survey.v1.SurveyPage = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.survey.v1.SurveyPage.repeatedFields_, null);
 };
 goog.inherits(proto.survey.v1.SurveyPage, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -280,6 +282,13 @@ if (goog.DEBUG && !COMPILED) {
   proto.survey.v1.PageDeleteResponse.displayName = 'proto.survey.v1.PageDeleteResponse';
 }
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.survey.v1.SurveyPage.repeatedFields_ = [4];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -313,7 +322,9 @@ proto.survey.v1.SurveyPage.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     surveyId: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    orders: jspb.Message.getFieldWithDefault(msg, 3, 0)
+    orders: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    questionsList: jspb.Message.toObjectList(msg.getQuestionsList(),
+    survey_v1_survey_question_pb.SurveyQuestion.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -361,6 +372,11 @@ proto.survey.v1.SurveyPage.deserializeBinaryFromReader = function(msg, reader) {
     case 3:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setOrders(value);
+      break;
+    case 4:
+      var value = new survey_v1_survey_question_pb.SurveyQuestion;
+      reader.readMessage(value,survey_v1_survey_question_pb.SurveyQuestion.deserializeBinaryFromReader);
+      msg.addQuestions(value);
       break;
     default:
       reader.skipField();
@@ -410,6 +426,14 @@ proto.survey.v1.SurveyPage.serializeBinaryToWriter = function(message, writer) {
     writer.writeInt32(
       3,
       f
+    );
+  }
+  f = message.getQuestionsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      4,
+      f,
+      survey_v1_survey_question_pb.SurveyQuestion.serializeBinaryToWriter
     );
   }
 };
@@ -469,6 +493,44 @@ proto.survey.v1.SurveyPage.prototype.setOrders = function(value) {
 };
 
 
+/**
+ * repeated SurveyQuestion questions = 4;
+ * @return {!Array<!proto.survey.v1.SurveyQuestion>}
+ */
+proto.survey.v1.SurveyPage.prototype.getQuestionsList = function() {
+  return /** @type{!Array<!proto.survey.v1.SurveyQuestion>} */ (
+    jspb.Message.getRepeatedWrapperField(this, survey_v1_survey_question_pb.SurveyQuestion, 4));
+};
+
+
+/**
+ * @param {!Array<!proto.survey.v1.SurveyQuestion>} value
+ * @return {!proto.survey.v1.SurveyPage} returns this
+*/
+proto.survey.v1.SurveyPage.prototype.setQuestionsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.survey.v1.SurveyQuestion=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.survey.v1.SurveyQuestion}
+ */
+proto.survey.v1.SurveyPage.prototype.addQuestions = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.survey.v1.SurveyQuestion, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.survey.v1.SurveyPage} returns this
+ */
+proto.survey.v1.SurveyPage.prototype.clearQuestionsList = function() {
+  return this.setQuestionsList([]);
+};
+
+
 
 
 
@@ -501,8 +563,6 @@ proto.survey.v1.SurveyPageCreateUpdate.prototype.toObject = function(opt_include
  */
 proto.survey.v1.SurveyPageCreateUpdate.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    surveyId: jspb.Message.getFieldWithDefault(msg, 2, 0),
     orders: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
@@ -540,14 +600,6 @@ proto.survey.v1.SurveyPageCreateUpdate.deserializeBinaryFromReader = function(ms
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setId(value);
-      break;
-    case 2:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setSurveyId(value);
-      break;
     case 3:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setOrders(value);
@@ -581,20 +633,6 @@ proto.survey.v1.SurveyPageCreateUpdate.prototype.serializeBinary = function() {
  */
 proto.survey.v1.SurveyPageCreateUpdate.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getId();
-  if (f !== 0) {
-    writer.writeInt32(
-      1,
-      f
-    );
-  }
-  f = message.getSurveyId();
-  if (f !== 0) {
-    writer.writeInt32(
-      2,
-      f
-    );
-  }
   f = message.getOrders();
   if (f !== 0) {
     writer.writeInt32(
@@ -602,42 +640,6 @@ proto.survey.v1.SurveyPageCreateUpdate.serializeBinaryToWriter = function(messag
       f
     );
   }
-};
-
-
-/**
- * optional int32 id = 1;
- * @return {number}
- */
-proto.survey.v1.SurveyPageCreateUpdate.prototype.getId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.survey.v1.SurveyPageCreateUpdate} returns this
- */
-proto.survey.v1.SurveyPageCreateUpdate.prototype.setId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
-};
-
-
-/**
- * optional int32 survey_id = 2;
- * @return {number}
- */
-proto.survey.v1.SurveyPageCreateUpdate.prototype.getSurveyId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.survey.v1.SurveyPageCreateUpdate} returns this
- */
-proto.survey.v1.SurveyPageCreateUpdate.prototype.setSurveyId = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
@@ -691,7 +693,10 @@ proto.survey.v1.PageGetOneRequest.prototype.toObject = function(opt_includeInsta
  */
 proto.survey.v1.PageGetOneRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    withQuestion: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+    withQuestionOption: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+    withQuestionChoice: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
   };
 
   if (includeInstance) {
@@ -732,6 +737,18 @@ proto.survey.v1.PageGetOneRequest.deserializeBinaryFromReader = function(msg, re
       var value = /** @type {number} */ (reader.readInt32());
       msg.setId(value);
       break;
+    case 2:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setWithQuestion(value);
+      break;
+    case 3:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setWithQuestionOption(value);
+      break;
+    case 4:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setWithQuestionChoice(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -768,6 +785,27 @@ proto.survey.v1.PageGetOneRequest.serializeBinaryToWriter = function(message, wr
       f
     );
   }
+  f = message.getWithQuestion();
+  if (f) {
+    writer.writeBool(
+      2,
+      f
+    );
+  }
+  f = message.getWithQuestionOption();
+  if (f) {
+    writer.writeBool(
+      3,
+      f
+    );
+  }
+  f = message.getWithQuestionChoice();
+  if (f) {
+    writer.writeBool(
+      4,
+      f
+    );
+  }
 };
 
 
@@ -786,6 +824,60 @@ proto.survey.v1.PageGetOneRequest.prototype.getId = function() {
  */
 proto.survey.v1.PageGetOneRequest.prototype.setId = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional bool with_question = 2;
+ * @return {boolean}
+ */
+proto.survey.v1.PageGetOneRequest.prototype.getWithQuestion = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.survey.v1.PageGetOneRequest} returns this
+ */
+proto.survey.v1.PageGetOneRequest.prototype.setWithQuestion = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 2, value);
+};
+
+
+/**
+ * optional bool with_question_option = 3;
+ * @return {boolean}
+ */
+proto.survey.v1.PageGetOneRequest.prototype.getWithQuestionOption = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.survey.v1.PageGetOneRequest} returns this
+ */
+proto.survey.v1.PageGetOneRequest.prototype.setWithQuestionOption = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 3, value);
+};
+
+
+/**
+ * optional bool with_question_choice = 4;
+ * @return {boolean}
+ */
+proto.survey.v1.PageGetOneRequest.prototype.getWithQuestionChoice = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.survey.v1.PageGetOneRequest} returns this
+ */
+proto.survey.v1.PageGetOneRequest.prototype.setWithQuestionChoice = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 4, value);
 };
 
 
@@ -972,7 +1064,10 @@ proto.survey.v1.PageGetAllRequest.prototype.toObject = function(opt_includeInsta
  */
 proto.survey.v1.PageGetAllRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    surveyId: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    surveyId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    withQuestion: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+    withQuestionOption: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+    withQuestionChoice: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
   };
 
   if (includeInstance) {
@@ -1013,6 +1108,18 @@ proto.survey.v1.PageGetAllRequest.deserializeBinaryFromReader = function(msg, re
       var value = /** @type {number} */ (reader.readInt32());
       msg.setSurveyId(value);
       break;
+    case 2:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setWithQuestion(value);
+      break;
+    case 3:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setWithQuestionOption(value);
+      break;
+    case 4:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setWithQuestionChoice(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1049,6 +1156,27 @@ proto.survey.v1.PageGetAllRequest.serializeBinaryToWriter = function(message, wr
       f
     );
   }
+  f = message.getWithQuestion();
+  if (f) {
+    writer.writeBool(
+      2,
+      f
+    );
+  }
+  f = message.getWithQuestionOption();
+  if (f) {
+    writer.writeBool(
+      3,
+      f
+    );
+  }
+  f = message.getWithQuestionChoice();
+  if (f) {
+    writer.writeBool(
+      4,
+      f
+    );
+  }
 };
 
 
@@ -1067,6 +1195,60 @@ proto.survey.v1.PageGetAllRequest.prototype.getSurveyId = function() {
  */
 proto.survey.v1.PageGetAllRequest.prototype.setSurveyId = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional bool with_question = 2;
+ * @return {boolean}
+ */
+proto.survey.v1.PageGetAllRequest.prototype.getWithQuestion = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.survey.v1.PageGetAllRequest} returns this
+ */
+proto.survey.v1.PageGetAllRequest.prototype.setWithQuestion = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 2, value);
+};
+
+
+/**
+ * optional bool with_question_option = 3;
+ * @return {boolean}
+ */
+proto.survey.v1.PageGetAllRequest.prototype.getWithQuestionOption = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.survey.v1.PageGetAllRequest} returns this
+ */
+proto.survey.v1.PageGetAllRequest.prototype.setWithQuestionOption = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 3, value);
+};
+
+
+/**
+ * optional bool with_question_choice = 4;
+ * @return {boolean}
+ */
+proto.survey.v1.PageGetAllRequest.prototype.getWithQuestionChoice = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.survey.v1.PageGetAllRequest} returns this
+ */
+proto.survey.v1.PageGetAllRequest.prototype.setWithQuestionChoice = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 4, value);
 };
 
 
@@ -1262,6 +1444,7 @@ proto.survey.v1.PageCreateRequest.prototype.toObject = function(opt_includeInsta
  */
 proto.survey.v1.PageCreateRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
+    surveyId: jspb.Message.getFieldWithDefault(msg, 1, 0),
     page: (f = msg.getPage()) && proto.survey.v1.SurveyPageCreateUpdate.toObject(includeInstance, f)
   };
 
@@ -1300,6 +1483,10 @@ proto.survey.v1.PageCreateRequest.deserializeBinaryFromReader = function(msg, re
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setSurveyId(value);
+      break;
+    case 2:
       var value = new proto.survey.v1.SurveyPageCreateUpdate;
       reader.readMessage(value,proto.survey.v1.SurveyPageCreateUpdate.deserializeBinaryFromReader);
       msg.setPage(value);
@@ -1333,10 +1520,17 @@ proto.survey.v1.PageCreateRequest.prototype.serializeBinary = function() {
  */
 proto.survey.v1.PageCreateRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getSurveyId();
+  if (f !== 0) {
+    writer.writeInt32(
+      1,
+      f
+    );
+  }
   f = message.getPage();
   if (f != null) {
     writer.writeMessage(
-      1,
+      2,
       f,
       proto.survey.v1.SurveyPageCreateUpdate.serializeBinaryToWriter
     );
@@ -1345,12 +1539,30 @@ proto.survey.v1.PageCreateRequest.serializeBinaryToWriter = function(message, wr
 
 
 /**
- * optional SurveyPageCreateUpdate page = 1;
+ * optional int32 survey_id = 1;
+ * @return {number}
+ */
+proto.survey.v1.PageCreateRequest.prototype.getSurveyId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.survey.v1.PageCreateRequest} returns this
+ */
+proto.survey.v1.PageCreateRequest.prototype.setSurveyId = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional SurveyPageCreateUpdate page = 2;
  * @return {?proto.survey.v1.SurveyPageCreateUpdate}
  */
 proto.survey.v1.PageCreateRequest.prototype.getPage = function() {
   return /** @type{?proto.survey.v1.SurveyPageCreateUpdate} */ (
-    jspb.Message.getWrapperField(this, proto.survey.v1.SurveyPageCreateUpdate, 1));
+    jspb.Message.getWrapperField(this, proto.survey.v1.SurveyPageCreateUpdate, 2));
 };
 
 
@@ -1359,7 +1571,7 @@ proto.survey.v1.PageCreateRequest.prototype.getPage = function() {
  * @return {!proto.survey.v1.PageCreateRequest} returns this
 */
 proto.survey.v1.PageCreateRequest.prototype.setPage = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
@@ -1377,7 +1589,7 @@ proto.survey.v1.PageCreateRequest.prototype.clearPage = function() {
  * @return {boolean}
  */
 proto.survey.v1.PageCreateRequest.prototype.hasPage = function() {
-  return jspb.Message.getField(this, 1) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 

@@ -540,7 +540,6 @@ proto.survey.v1.SurveyChoiceCreateUpdate.prototype.toObject = function(opt_inclu
  */
 proto.survey.v1.SurveyChoiceCreateUpdate.toObject = function(includeInstance, msg) {
   var f, obj = {
-    surveyQuestionId: jspb.Message.getFieldWithDefault(msg, 2, 0),
     choice: jspb.Message.getFieldWithDefault(msg, 3, ""),
     orders: jspb.Message.getFieldWithDefault(msg, 4, 0),
     score: jspb.Message.getFieldWithDefault(msg, 5, 0)
@@ -580,10 +579,6 @@ proto.survey.v1.SurveyChoiceCreateUpdate.deserializeBinaryFromReader = function(
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 2:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setSurveyQuestionId(value);
-      break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setChoice(value);
@@ -625,13 +620,6 @@ proto.survey.v1.SurveyChoiceCreateUpdate.prototype.serializeBinary = function() 
  */
 proto.survey.v1.SurveyChoiceCreateUpdate.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getSurveyQuestionId();
-  if (f !== 0) {
-    writer.writeInt32(
-      2,
-      f
-    );
-  }
   f = message.getChoice();
   if (f.length > 0) {
     writer.writeString(
@@ -653,24 +641,6 @@ proto.survey.v1.SurveyChoiceCreateUpdate.serializeBinaryToWriter = function(mess
       f
     );
   }
-};
-
-
-/**
- * optional int32 survey_question_id = 2;
- * @return {number}
- */
-proto.survey.v1.SurveyChoiceCreateUpdate.prototype.getSurveyQuestionId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.survey.v1.SurveyChoiceCreateUpdate} returns this
- */
-proto.survey.v1.SurveyChoiceCreateUpdate.prototype.setSurveyQuestionId = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
@@ -1210,6 +1180,7 @@ proto.survey.v1.ChoiceCreateRequest.prototype.toObject = function(opt_includeIns
  */
 proto.survey.v1.ChoiceCreateRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
+    surveyQuestionId: jspb.Message.getFieldWithDefault(msg, 1, 0),
     choice: (f = msg.getChoice()) && proto.survey.v1.SurveyChoiceCreateUpdate.toObject(includeInstance, f)
   };
 
@@ -1248,6 +1219,10 @@ proto.survey.v1.ChoiceCreateRequest.deserializeBinaryFromReader = function(msg, 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setSurveyQuestionId(value);
+      break;
+    case 2:
       var value = new proto.survey.v1.SurveyChoiceCreateUpdate;
       reader.readMessage(value,proto.survey.v1.SurveyChoiceCreateUpdate.deserializeBinaryFromReader);
       msg.setChoice(value);
@@ -1281,10 +1256,17 @@ proto.survey.v1.ChoiceCreateRequest.prototype.serializeBinary = function() {
  */
 proto.survey.v1.ChoiceCreateRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getSurveyQuestionId();
+  if (f !== 0) {
+    writer.writeInt32(
+      1,
+      f
+    );
+  }
   f = message.getChoice();
   if (f != null) {
     writer.writeMessage(
-      1,
+      2,
       f,
       proto.survey.v1.SurveyChoiceCreateUpdate.serializeBinaryToWriter
     );
@@ -1293,12 +1275,30 @@ proto.survey.v1.ChoiceCreateRequest.serializeBinaryToWriter = function(message, 
 
 
 /**
- * optional SurveyChoiceCreateUpdate choice = 1;
+ * optional int32 survey_question_id = 1;
+ * @return {number}
+ */
+proto.survey.v1.ChoiceCreateRequest.prototype.getSurveyQuestionId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.survey.v1.ChoiceCreateRequest} returns this
+ */
+proto.survey.v1.ChoiceCreateRequest.prototype.setSurveyQuestionId = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional SurveyChoiceCreateUpdate choice = 2;
  * @return {?proto.survey.v1.SurveyChoiceCreateUpdate}
  */
 proto.survey.v1.ChoiceCreateRequest.prototype.getChoice = function() {
   return /** @type{?proto.survey.v1.SurveyChoiceCreateUpdate} */ (
-    jspb.Message.getWrapperField(this, proto.survey.v1.SurveyChoiceCreateUpdate, 1));
+    jspb.Message.getWrapperField(this, proto.survey.v1.SurveyChoiceCreateUpdate, 2));
 };
 
 
@@ -1307,7 +1307,7 @@ proto.survey.v1.ChoiceCreateRequest.prototype.getChoice = function() {
  * @return {!proto.survey.v1.ChoiceCreateRequest} returns this
 */
 proto.survey.v1.ChoiceCreateRequest.prototype.setChoice = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
@@ -1325,7 +1325,7 @@ proto.survey.v1.ChoiceCreateRequest.prototype.clearChoice = function() {
  * @return {boolean}
  */
 proto.survey.v1.ChoiceCreateRequest.prototype.hasChoice = function() {
-  return jspb.Message.getField(this, 1) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 

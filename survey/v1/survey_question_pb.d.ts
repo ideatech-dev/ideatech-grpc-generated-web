@@ -29,6 +29,11 @@ export class SurveyQuestion extends jspb.Message {
     getOptionChoice(): survey_v1_survey_choice_pb.SurveyChoiceOption | undefined;
     setOptionChoice(value?: survey_v1_survey_choice_pb.SurveyChoiceOption): SurveyQuestion;
 
+    clearChoicesList(): void;
+    getChoicesList(): Array<survey_v1_survey_choice_pb.SurveyChoice>;
+    setChoicesList(value: Array<survey_v1_survey_choice_pb.SurveyChoice>): SurveyQuestion;
+    addChoices(value?: survey_v1_survey_choice_pb.SurveyChoice, index?: number): survey_v1_survey_choice_pb.SurveyChoice;
+
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SurveyQuestion.AsObject;
@@ -48,13 +53,11 @@ export namespace SurveyQuestion {
         orders: number,
         type: SurveyQuestionType,
         optionChoice?: survey_v1_survey_choice_pb.SurveyChoiceOption.AsObject,
+        choicesList: Array<survey_v1_survey_choice_pb.SurveyChoice.AsObject>,
     }
 }
 
 export class SurveyQuestionCreateUpdate extends jspb.Message { 
-    getSurveyPageId(): number;
-    setSurveyPageId(value: number): SurveyQuestionCreateUpdate;
-
     getQuestion(): string;
     setQuestion(value: string): SurveyQuestionCreateUpdate;
 
@@ -83,7 +86,6 @@ export class SurveyQuestionCreateUpdate extends jspb.Message {
 
 export namespace SurveyQuestionCreateUpdate {
     export type AsObject = {
-        surveyPageId: number,
         question: string,
         orders: number,
         type: SurveyQuestionType,
@@ -94,6 +96,12 @@ export namespace SurveyQuestionCreateUpdate {
 export class QuestionGetOneRequest extends jspb.Message { 
     getId(): number;
     setId(value: number): QuestionGetOneRequest;
+
+    getWithOption(): boolean;
+    setWithOption(value: boolean): QuestionGetOneRequest;
+
+    getWithChoice(): boolean;
+    setWithChoice(value: boolean): QuestionGetOneRequest;
 
 
     serializeBinary(): Uint8Array;
@@ -109,6 +117,8 @@ export class QuestionGetOneRequest extends jspb.Message {
 export namespace QuestionGetOneRequest {
     export type AsObject = {
         id: number,
+        withOption: boolean,
+        withChoice: boolean,
     }
 }
 
@@ -140,6 +150,12 @@ export class QuestionGetAllRequest extends jspb.Message {
     getPageId(): number;
     setPageId(value: number): QuestionGetAllRequest;
 
+    getWithOption(): boolean;
+    setWithOption(value: boolean): QuestionGetAllRequest;
+
+    getWithChoice(): boolean;
+    setWithChoice(value: boolean): QuestionGetAllRequest;
+
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): QuestionGetAllRequest.AsObject;
@@ -154,6 +170,8 @@ export class QuestionGetAllRequest extends jspb.Message {
 export namespace QuestionGetAllRequest {
     export type AsObject = {
         pageId: number,
+        withOption: boolean,
+        withChoice: boolean,
     }
 }
 
@@ -181,6 +199,9 @@ export namespace QuestionGetAllResponse {
 }
 
 export class QuestionCreateRequest extends jspb.Message { 
+    getSurveyPageId(): number;
+    setSurveyPageId(value: number): QuestionCreateRequest;
+
 
     hasQuestion(): boolean;
     clearQuestion(): void;
@@ -200,6 +221,7 @@ export class QuestionCreateRequest extends jspb.Message {
 
 export namespace QuestionCreateRequest {
     export type AsObject = {
+        surveyPageId: number,
         question?: SurveyQuestionCreateUpdate.AsObject,
     }
 }

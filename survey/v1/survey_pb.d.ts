@@ -6,6 +6,7 @@
 
 import * as jspb from "google-protobuf";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
+import * as survey_v1_survey_page_pb from "../../survey/v1/survey_page_pb";
 
 export class Survey extends jspb.Message { 
     getId(): number;
@@ -32,6 +33,11 @@ export class Survey extends jspb.Message {
     getType(): SurveyType;
     setType(value: SurveyType): Survey;
 
+    clearPagesList(): void;
+    getPagesList(): Array<survey_v1_survey_page_pb.SurveyPage>;
+    setPagesList(value: Array<survey_v1_survey_page_pb.SurveyPage>): Survey;
+    addPages(value?: survey_v1_survey_page_pb.SurveyPage, index?: number): survey_v1_survey_page_pb.SurveyPage;
+
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Survey.AsObject;
@@ -51,6 +57,7 @@ export namespace Survey {
         organizationId: number,
         name: string,
         type: SurveyType,
+        pagesList: Array<survey_v1_survey_page_pb.SurveyPage.AsObject>,
     }
 }
 
@@ -87,6 +94,18 @@ export class SurveyGetOneRequest extends jspb.Message {
     getId(): number;
     setId(value: number): SurveyGetOneRequest;
 
+    getWithPage(): boolean;
+    setWithPage(value: boolean): SurveyGetOneRequest;
+
+    getWithQuestion(): boolean;
+    setWithQuestion(value: boolean): SurveyGetOneRequest;
+
+    getWithQuestionOption(): boolean;
+    setWithQuestionOption(value: boolean): SurveyGetOneRequest;
+
+    getWithQuestionChoice(): boolean;
+    setWithQuestionChoice(value: boolean): SurveyGetOneRequest;
+
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SurveyGetOneRequest.AsObject;
@@ -101,6 +120,10 @@ export class SurveyGetOneRequest extends jspb.Message {
 export namespace SurveyGetOneRequest {
     export type AsObject = {
         id: number,
+        withPage: boolean,
+        withQuestion: boolean,
+        withQuestionOption: boolean,
+        withQuestionChoice: boolean,
     }
 }
 
