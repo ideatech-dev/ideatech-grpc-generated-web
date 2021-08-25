@@ -698,7 +698,6 @@ proto.survey.v1.SurveyCreateUpdate.prototype.toObject = function(opt_includeInst
  */
 proto.survey.v1.SurveyCreateUpdate.toObject = function(includeInstance, msg) {
   var f, obj = {
-    organizationId: jspb.Message.getFieldWithDefault(msg, 4, 0),
     name: jspb.Message.getFieldWithDefault(msg, 5, ""),
     type: jspb.Message.getFieldWithDefault(msg, 6, 0)
   };
@@ -737,10 +736,6 @@ proto.survey.v1.SurveyCreateUpdate.deserializeBinaryFromReader = function(msg, r
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 4:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setOrganizationId(value);
-      break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
@@ -778,13 +773,6 @@ proto.survey.v1.SurveyCreateUpdate.prototype.serializeBinary = function() {
  */
 proto.survey.v1.SurveyCreateUpdate.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getOrganizationId();
-  if (f !== 0) {
-    writer.writeInt32(
-      4,
-      f
-    );
-  }
   f = message.getName();
   if (f.length > 0) {
     writer.writeString(
@@ -799,24 +787,6 @@ proto.survey.v1.SurveyCreateUpdate.serializeBinaryToWriter = function(message, w
       f
     );
   }
-};
-
-
-/**
- * optional int32 organization_id = 4;
- * @return {number}
- */
-proto.survey.v1.SurveyCreateUpdate.prototype.getOrganizationId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.survey.v1.SurveyCreateUpdate} returns this
- */
-proto.survey.v1.SurveyCreateUpdate.prototype.setOrganizationId = function(value) {
-  return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
@@ -1609,6 +1579,7 @@ proto.survey.v1.SurveyCreateRequest.prototype.toObject = function(opt_includeIns
  */
 proto.survey.v1.SurveyCreateRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
+    organizationId: jspb.Message.getFieldWithDefault(msg, 1, 0),
     survey: (f = msg.getSurvey()) && proto.survey.v1.SurveyCreateUpdate.toObject(includeInstance, f)
   };
 
@@ -1647,6 +1618,10 @@ proto.survey.v1.SurveyCreateRequest.deserializeBinaryFromReader = function(msg, 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setOrganizationId(value);
+      break;
+    case 2:
       var value = new proto.survey.v1.SurveyCreateUpdate;
       reader.readMessage(value,proto.survey.v1.SurveyCreateUpdate.deserializeBinaryFromReader);
       msg.setSurvey(value);
@@ -1680,10 +1655,17 @@ proto.survey.v1.SurveyCreateRequest.prototype.serializeBinary = function() {
  */
 proto.survey.v1.SurveyCreateRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getOrganizationId();
+  if (f !== 0) {
+    writer.writeInt32(
+      1,
+      f
+    );
+  }
   f = message.getSurvey();
   if (f != null) {
     writer.writeMessage(
-      1,
+      2,
       f,
       proto.survey.v1.SurveyCreateUpdate.serializeBinaryToWriter
     );
@@ -1692,12 +1674,30 @@ proto.survey.v1.SurveyCreateRequest.serializeBinaryToWriter = function(message, 
 
 
 /**
- * optional SurveyCreateUpdate survey = 1;
+ * optional int32 organization_id = 1;
+ * @return {number}
+ */
+proto.survey.v1.SurveyCreateRequest.prototype.getOrganizationId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.survey.v1.SurveyCreateRequest} returns this
+ */
+proto.survey.v1.SurveyCreateRequest.prototype.setOrganizationId = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional SurveyCreateUpdate survey = 2;
  * @return {?proto.survey.v1.SurveyCreateUpdate}
  */
 proto.survey.v1.SurveyCreateRequest.prototype.getSurvey = function() {
   return /** @type{?proto.survey.v1.SurveyCreateUpdate} */ (
-    jspb.Message.getWrapperField(this, proto.survey.v1.SurveyCreateUpdate, 1));
+    jspb.Message.getWrapperField(this, proto.survey.v1.SurveyCreateUpdate, 2));
 };
 
 
@@ -1706,7 +1706,7 @@ proto.survey.v1.SurveyCreateRequest.prototype.getSurvey = function() {
  * @return {!proto.survey.v1.SurveyCreateRequest} returns this
 */
 proto.survey.v1.SurveyCreateRequest.prototype.setSurvey = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
@@ -1724,7 +1724,7 @@ proto.survey.v1.SurveyCreateRequest.prototype.clearSurvey = function() {
  * @return {boolean}
  */
 proto.survey.v1.SurveyCreateRequest.prototype.hasSurvey = function() {
-  return jspb.Message.getField(this, 1) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 

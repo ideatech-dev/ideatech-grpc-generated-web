@@ -62,9 +62,6 @@ export namespace Survey {
 }
 
 export class SurveyCreateUpdate extends jspb.Message { 
-    getOrganizationId(): number;
-    setOrganizationId(value: number): SurveyCreateUpdate;
-
     getName(): string;
     setName(value: string): SurveyCreateUpdate;
 
@@ -84,7 +81,6 @@ export class SurveyCreateUpdate extends jspb.Message {
 
 export namespace SurveyCreateUpdate {
     export type AsObject = {
-        organizationId: number,
         name: string,
         type: SurveyType,
     }
@@ -200,6 +196,9 @@ export namespace SurveyGetAllResponse {
 }
 
 export class SurveyCreateRequest extends jspb.Message { 
+    getOrganizationId(): number;
+    setOrganizationId(value: number): SurveyCreateRequest;
+
 
     hasSurvey(): boolean;
     clearSurvey(): void;
@@ -219,6 +218,7 @@ export class SurveyCreateRequest extends jspb.Message {
 
 export namespace SurveyCreateRequest {
     export type AsObject = {
+        organizationId: number,
         survey?: SurveyCreateUpdate.AsObject,
     }
 }
