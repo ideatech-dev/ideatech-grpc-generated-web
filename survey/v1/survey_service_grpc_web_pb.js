@@ -23,6 +23,8 @@ var survey_v1_survey_page_pb = require('../../survey/v1/survey_page_pb.js')
 var survey_v1_survey_question_pb = require('../../survey/v1/survey_question_pb.js')
 
 var survey_v1_survey_choice_pb = require('../../survey/v1/survey_choice_pb.js')
+
+var survey_v1_survey_response_pb = require('../../survey/v1/survey_response_pb.js')
 const proto = {};
 proto.survey = {};
 proto.survey.v1 = require('./survey_service_pb.js');
@@ -1596,6 +1598,246 @@ proto.survey.v1.SurveyServicePromiseClient.prototype.choiceDelete =
       request,
       metadata || {},
       methodDescriptor_SurveyService_ChoiceDelete);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.survey.v1.ResponseGetAllRequest,
+ *   !proto.survey.v1.ResponseGetAllResponse>}
+ */
+const methodDescriptor_SurveyService_ResponseGetAll = new grpc.web.MethodDescriptor(
+  '/survey.v1.SurveyService/ResponseGetAll',
+  grpc.web.MethodType.UNARY,
+  survey_v1_survey_response_pb.ResponseGetAllRequest,
+  survey_v1_survey_response_pb.ResponseGetAllResponse,
+  /**
+   * @param {!proto.survey.v1.ResponseGetAllRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  survey_v1_survey_response_pb.ResponseGetAllResponse.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.survey.v1.ResponseGetAllRequest,
+ *   !proto.survey.v1.ResponseGetAllResponse>}
+ */
+const methodInfo_SurveyService_ResponseGetAll = new grpc.web.AbstractClientBase.MethodInfo(
+  survey_v1_survey_response_pb.ResponseGetAllResponse,
+  /**
+   * @param {!proto.survey.v1.ResponseGetAllRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  survey_v1_survey_response_pb.ResponseGetAllResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.survey.v1.ResponseGetAllRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.survey.v1.ResponseGetAllResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.survey.v1.ResponseGetAllResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.survey.v1.SurveyServiceClient.prototype.responseGetAll =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/survey.v1.SurveyService/ResponseGetAll',
+      request,
+      metadata || {},
+      methodDescriptor_SurveyService_ResponseGetAll,
+      callback);
+};
+
+
+/**
+ * @param {!proto.survey.v1.ResponseGetAllRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.survey.v1.ResponseGetAllResponse>}
+ *     Promise that resolves to the response
+ */
+proto.survey.v1.SurveyServicePromiseClient.prototype.responseGetAll =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/survey.v1.SurveyService/ResponseGetAll',
+      request,
+      metadata || {},
+      methodDescriptor_SurveyService_ResponseGetAll);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.survey.v1.ResponseGetOneRequest,
+ *   !proto.survey.v1.ResponseGetOneResponse>}
+ */
+const methodDescriptor_SurveyService_ResponseGetOne = new grpc.web.MethodDescriptor(
+  '/survey.v1.SurveyService/ResponseGetOne',
+  grpc.web.MethodType.UNARY,
+  survey_v1_survey_response_pb.ResponseGetOneRequest,
+  survey_v1_survey_response_pb.ResponseGetOneResponse,
+  /**
+   * @param {!proto.survey.v1.ResponseGetOneRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  survey_v1_survey_response_pb.ResponseGetOneResponse.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.survey.v1.ResponseGetOneRequest,
+ *   !proto.survey.v1.ResponseGetOneResponse>}
+ */
+const methodInfo_SurveyService_ResponseGetOne = new grpc.web.AbstractClientBase.MethodInfo(
+  survey_v1_survey_response_pb.ResponseGetOneResponse,
+  /**
+   * @param {!proto.survey.v1.ResponseGetOneRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  survey_v1_survey_response_pb.ResponseGetOneResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.survey.v1.ResponseGetOneRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.survey.v1.ResponseGetOneResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.survey.v1.ResponseGetOneResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.survey.v1.SurveyServiceClient.prototype.responseGetOne =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/survey.v1.SurveyService/ResponseGetOne',
+      request,
+      metadata || {},
+      methodDescriptor_SurveyService_ResponseGetOne,
+      callback);
+};
+
+
+/**
+ * @param {!proto.survey.v1.ResponseGetOneRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.survey.v1.ResponseGetOneResponse>}
+ *     Promise that resolves to the response
+ */
+proto.survey.v1.SurveyServicePromiseClient.prototype.responseGetOne =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/survey.v1.SurveyService/ResponseGetOne',
+      request,
+      metadata || {},
+      methodDescriptor_SurveyService_ResponseGetOne);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.survey.v1.ResponseAnswerGetListRequest,
+ *   !proto.survey.v1.ResponseAnswerGetListResponse>}
+ */
+const methodDescriptor_SurveyService_ResponseAnswerGetList = new grpc.web.MethodDescriptor(
+  '/survey.v1.SurveyService/ResponseAnswerGetList',
+  grpc.web.MethodType.UNARY,
+  survey_v1_survey_response_pb.ResponseAnswerGetListRequest,
+  survey_v1_survey_response_pb.ResponseAnswerGetListResponse,
+  /**
+   * @param {!proto.survey.v1.ResponseAnswerGetListRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  survey_v1_survey_response_pb.ResponseAnswerGetListResponse.deserializeBinary
+);
+
+
+/**
+ * @const
+ * @type {!grpc.web.AbstractClientBase.MethodInfo<
+ *   !proto.survey.v1.ResponseAnswerGetListRequest,
+ *   !proto.survey.v1.ResponseAnswerGetListResponse>}
+ */
+const methodInfo_SurveyService_ResponseAnswerGetList = new grpc.web.AbstractClientBase.MethodInfo(
+  survey_v1_survey_response_pb.ResponseAnswerGetListResponse,
+  /**
+   * @param {!proto.survey.v1.ResponseAnswerGetListRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  survey_v1_survey_response_pb.ResponseAnswerGetListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.survey.v1.ResponseAnswerGetListRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.Error, ?proto.survey.v1.ResponseAnswerGetListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.survey.v1.ResponseAnswerGetListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.survey.v1.SurveyServiceClient.prototype.responseAnswerGetList =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/survey.v1.SurveyService/ResponseAnswerGetList',
+      request,
+      metadata || {},
+      methodDescriptor_SurveyService_ResponseAnswerGetList,
+      callback);
+};
+
+
+/**
+ * @param {!proto.survey.v1.ResponseAnswerGetListRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.survey.v1.ResponseAnswerGetListResponse>}
+ *     Promise that resolves to the response
+ */
+proto.survey.v1.SurveyServicePromiseClient.prototype.responseAnswerGetList =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/survey.v1.SurveyService/ResponseAnswerGetList',
+      request,
+      metadata || {},
+      methodDescriptor_SurveyService_ResponseAnswerGetList);
 };
 
 

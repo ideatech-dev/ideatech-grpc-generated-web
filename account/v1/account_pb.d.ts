@@ -10,25 +10,20 @@ import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/t
 export class User extends jspb.Message { 
     getId(): number;
     setId(value: number): User;
-
     getName(): string;
     setName(value: string): User;
-
     getEmail(): string;
     setEmail(value: string): User;
-
 
     hasDatetimeCreated(): boolean;
     clearDatetimeCreated(): void;
     getDatetimeCreated(): google_protobuf_timestamp_pb.Timestamp | undefined;
     setDatetimeCreated(value?: google_protobuf_timestamp_pb.Timestamp): User;
 
-
     hasDatetimeUpdated(): boolean;
     clearDatetimeUpdated(): void;
     getDatetimeUpdated(): google_protobuf_timestamp_pb.Timestamp | undefined;
     setDatetimeUpdated(value?: google_protobuf_timestamp_pb.Timestamp): User;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): User.AsObject;

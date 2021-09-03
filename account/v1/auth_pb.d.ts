@@ -10,10 +10,8 @@ import * as account_v1_account_pb from "../../account/v1/account_pb";
 export class LoginRequest extends jspb.Message { 
     getEmail(): string;
     setEmail(value: string): LoginRequest;
-
     getPassword(): string;
     setPassword(value: string): LoginRequest;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): LoginRequest.AsObject;
@@ -38,10 +36,8 @@ export class LoginResponse extends jspb.Message {
     clearUser(): void;
     getUser(): account_v1_account_pb.User | undefined;
     setUser(value?: account_v1_account_pb.User): LoginResponse;
-
     getAccessToken(): string;
     setAccessToken(value: string): LoginResponse;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): LoginResponse.AsObject;
@@ -63,13 +59,10 @@ export namespace LoginResponse {
 export class RegisterRequest extends jspb.Message { 
     getName(): string;
     setName(value: string): RegisterRequest;
-
     getEmail(): string;
     setEmail(value: string): RegisterRequest;
-
     getPassword(): string;
     setPassword(value: string): RegisterRequest;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): RegisterRequest.AsObject;
@@ -95,10 +88,8 @@ export class RegisterResponse extends jspb.Message {
     clearUser(): void;
     getUser(): account_v1_account_pb.User | undefined;
     setUser(value?: account_v1_account_pb.User): RegisterResponse;
-
     getAccessToken(): string;
     setAccessToken(value: string): RegisterResponse;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): RegisterResponse.AsObject;
@@ -140,7 +131,6 @@ export class AccountInformationResponse extends jspb.Message {
     clearUser(): void;
     getUser(): account_v1_account_pb.User | undefined;
     setUser(value?: account_v1_account_pb.User): AccountInformationResponse;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): AccountInformationResponse.AsObject;

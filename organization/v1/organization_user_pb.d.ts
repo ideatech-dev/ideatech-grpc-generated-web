@@ -11,7 +11,6 @@ export class GetUsersRequest extends jspb.Message {
     getOrganizationId(): number;
     setOrganizationId(value: number): GetUsersRequest;
 
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): GetUsersRequest.AsObject;
     static toObject(includeInstance: boolean, msg: GetUsersRequest): GetUsersRequest.AsObject;
@@ -33,13 +32,10 @@ export class GetUsersResponse extends jspb.Message {
     getUsersList(): Array<account_v1_account_pb.User>;
     setUsersList(value: Array<account_v1_account_pb.User>): GetUsersResponse;
     addUsers(value?: account_v1_account_pb.User, index?: number): account_v1_account_pb.User;
-
     getCount(): number;
     setCount(value: number): GetUsersResponse;
-
     getMaxPage(): number;
     setMaxPage(value: number): GetUsersResponse;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): GetUsersResponse.AsObject;
@@ -62,13 +58,10 @@ export namespace GetUsersResponse {
 export class InviteUserRequest extends jspb.Message { 
     getOrganizationId(): number;
     setOrganizationId(value: number): InviteUserRequest;
-
     getUserId(): number;
     setUserId(value: number): InviteUserRequest;
-
     getEmail(): string;
     setEmail(value: string): InviteUserRequest;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): InviteUserRequest.AsObject;
@@ -95,7 +88,6 @@ export class InviteUserResponse extends jspb.Message {
     getUser(): account_v1_account_pb.User | undefined;
     setUser(value?: account_v1_account_pb.User): InviteUserResponse;
 
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): InviteUserResponse.AsObject;
     static toObject(includeInstance: boolean, msg: InviteUserResponse): InviteUserResponse.AsObject;
@@ -115,13 +107,10 @@ export namespace InviteUserResponse {
 export class RemoveUserRequest extends jspb.Message { 
     getOrganizationId(): number;
     setOrganizationId(value: number): RemoveUserRequest;
-
     getUserId(): number;
     setUserId(value: number): RemoveUserRequest;
-
     getEmail(): string;
     setEmail(value: string): RemoveUserRequest;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): RemoveUserRequest.AsObject;
@@ -147,7 +136,6 @@ export class RemoveUserResponse extends jspb.Message {
     clearUser(): void;
     getUser(): account_v1_account_pb.User | undefined;
     setUser(value?: account_v1_account_pb.User): RemoveUserResponse;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): RemoveUserResponse.AsObject;

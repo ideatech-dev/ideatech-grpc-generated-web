@@ -5,7 +5,6 @@
 /* eslint-disable */
 
 import * as grpc from "@grpc/grpc-js";
-import {handleClientStreamingCall} from "@grpc/grpc-js/build/src/server-call";
 import * as organization_v1_organization_service_pb from "../../organization/v1/organization_service_pb";
 import * as organization_v1_organization_pb from "../../organization/v1/organization_pb";
 import * as organization_v1_organization_user_pb from "../../organization/v1/organization_user_pb";
@@ -96,7 +95,7 @@ interface IOrganizationServiceService_IRemoveUser extends grpc.MethodDefinition<
 
 export const OrganizationServiceService: IOrganizationServiceService;
 
-export interface IOrganizationServiceServer {
+export interface IOrganizationServiceServer extends grpc.UntypedServiceImplementation {
     getOne: grpc.handleUnaryCall<organization_v1_organization_pb.GetOneRequest, organization_v1_organization_pb.GetOneResponse>;
     getList: grpc.handleUnaryCall<organization_v1_organization_pb.GetListRequest, organization_v1_organization_pb.GetListResponse>;
     create: grpc.handleUnaryCall<organization_v1_organization_pb.CreateRequest, organization_v1_organization_pb.CreateResponse>;

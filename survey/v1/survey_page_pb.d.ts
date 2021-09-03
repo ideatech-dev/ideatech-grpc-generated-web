@@ -10,18 +10,14 @@ import * as survey_v1_survey_question_pb from "../../survey/v1/survey_question_p
 export class SurveyPage extends jspb.Message { 
     getId(): number;
     setId(value: number): SurveyPage;
-
     getSurveyId(): number;
     setSurveyId(value: number): SurveyPage;
-
     getOrders(): number;
     setOrders(value: number): SurveyPage;
-
     clearQuestionsList(): void;
     getQuestionsList(): Array<survey_v1_survey_question_pb.SurveyQuestion>;
     setQuestionsList(value: Array<survey_v1_survey_question_pb.SurveyQuestion>): SurveyPage;
     addQuestions(value?: survey_v1_survey_question_pb.SurveyQuestion, index?: number): survey_v1_survey_question_pb.SurveyQuestion;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SurveyPage.AsObject;
@@ -46,7 +42,6 @@ export class SurveyPageCreateUpdate extends jspb.Message {
     getOrders(): number;
     setOrders(value: number): SurveyPageCreateUpdate;
 
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SurveyPageCreateUpdate.AsObject;
     static toObject(includeInstance: boolean, msg: SurveyPageCreateUpdate): SurveyPageCreateUpdate.AsObject;
@@ -66,16 +61,12 @@ export namespace SurveyPageCreateUpdate {
 export class PageGetOneRequest extends jspb.Message { 
     getId(): number;
     setId(value: number): PageGetOneRequest;
-
     getWithQuestion(): boolean;
     setWithQuestion(value: boolean): PageGetOneRequest;
-
     getWithQuestionOption(): boolean;
     setWithQuestionOption(value: boolean): PageGetOneRequest;
-
     getWithQuestionChoice(): boolean;
     setWithQuestionChoice(value: boolean): PageGetOneRequest;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): PageGetOneRequest.AsObject;
@@ -103,7 +94,6 @@ export class PageGetOneResponse extends jspb.Message {
     getPage(): SurveyPage | undefined;
     setPage(value?: SurveyPage): PageGetOneResponse;
 
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): PageGetOneResponse.AsObject;
     static toObject(includeInstance: boolean, msg: PageGetOneResponse): PageGetOneResponse.AsObject;
@@ -123,16 +113,12 @@ export namespace PageGetOneResponse {
 export class PageGetAllRequest extends jspb.Message { 
     getSurveyId(): number;
     setSurveyId(value: number): PageGetAllRequest;
-
     getWithQuestion(): boolean;
     setWithQuestion(value: boolean): PageGetAllRequest;
-
     getWithQuestionOption(): boolean;
     setWithQuestionOption(value: boolean): PageGetAllRequest;
-
     getWithQuestionChoice(): boolean;
     setWithQuestionChoice(value: boolean): PageGetAllRequest;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): PageGetAllRequest.AsObject;
@@ -159,7 +145,6 @@ export class PageGetAllResponse extends jspb.Message {
     setPagesList(value: Array<SurveyPage>): PageGetAllResponse;
     addPages(value?: SurveyPage, index?: number): SurveyPage;
 
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): PageGetAllResponse.AsObject;
     static toObject(includeInstance: boolean, msg: PageGetAllResponse): PageGetAllResponse.AsObject;
@@ -180,12 +165,10 @@ export class PageCreateRequest extends jspb.Message {
     getSurveyId(): number;
     setSurveyId(value: number): PageCreateRequest;
 
-
     hasPage(): boolean;
     clearPage(): void;
     getPage(): SurveyPageCreateUpdate | undefined;
     setPage(value?: SurveyPageCreateUpdate): PageCreateRequest;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): PageCreateRequest.AsObject;
@@ -211,7 +194,6 @@ export class PageCreateResponse extends jspb.Message {
     getPage(): SurveyPage | undefined;
     setPage(value?: SurveyPage): PageCreateResponse;
 
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): PageCreateResponse.AsObject;
     static toObject(includeInstance: boolean, msg: PageCreateResponse): PageCreateResponse.AsObject;
@@ -232,12 +214,10 @@ export class PageUpdateRequest extends jspb.Message {
     getId(): number;
     setId(value: number): PageUpdateRequest;
 
-
     hasPage(): boolean;
     clearPage(): void;
     getPage(): SurveyPageCreateUpdate | undefined;
     setPage(value?: SurveyPageCreateUpdate): PageUpdateRequest;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): PageUpdateRequest.AsObject;
@@ -263,7 +243,6 @@ export class PageUpdateResponse extends jspb.Message {
     getPage(): SurveyPage | undefined;
     setPage(value?: SurveyPage): PageUpdateResponse;
 
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): PageUpdateResponse.AsObject;
     static toObject(includeInstance: boolean, msg: PageUpdateResponse): PageUpdateResponse.AsObject;
@@ -283,7 +262,6 @@ export namespace PageUpdateResponse {
 export class PageDeleteRequest extends jspb.Message { 
     getId(): number;
     setId(value: number): PageDeleteRequest;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): PageDeleteRequest.AsObject;
@@ -307,7 +285,6 @@ export class PageDeleteResponse extends jspb.Message {
     clearPage(): void;
     getPage(): SurveyPage | undefined;
     setPage(value?: SurveyPage): PageDeleteResponse;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): PageDeleteResponse.AsObject;

@@ -12,32 +12,25 @@ export class Survey extends jspb.Message {
     getId(): number;
     setId(value: number): Survey;
 
-
     hasDatetimeCreated(): boolean;
     clearDatetimeCreated(): void;
     getDatetimeCreated(): google_protobuf_timestamp_pb.Timestamp | undefined;
     setDatetimeCreated(value?: google_protobuf_timestamp_pb.Timestamp): Survey;
 
-
     hasDatetimeUpdated(): boolean;
     clearDatetimeUpdated(): void;
     getDatetimeUpdated(): google_protobuf_timestamp_pb.Timestamp | undefined;
     setDatetimeUpdated(value?: google_protobuf_timestamp_pb.Timestamp): Survey;
-
     getOrganizationId(): number;
     setOrganizationId(value: number): Survey;
-
     getName(): string;
     setName(value: string): Survey;
-
     getType(): SurveyType;
     setType(value: SurveyType): Survey;
-
     clearPagesList(): void;
     getPagesList(): Array<survey_v1_survey_page_pb.SurveyPage>;
     setPagesList(value: Array<survey_v1_survey_page_pb.SurveyPage>): Survey;
     addPages(value?: survey_v1_survey_page_pb.SurveyPage, index?: number): survey_v1_survey_page_pb.SurveyPage;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Survey.AsObject;
@@ -64,10 +57,8 @@ export namespace Survey {
 export class SurveyCreateUpdate extends jspb.Message { 
     getName(): string;
     setName(value: string): SurveyCreateUpdate;
-
     getType(): SurveyType;
     setType(value: SurveyType): SurveyCreateUpdate;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SurveyCreateUpdate.AsObject;
@@ -89,19 +80,14 @@ export namespace SurveyCreateUpdate {
 export class SurveyGetOneRequest extends jspb.Message { 
     getId(): number;
     setId(value: number): SurveyGetOneRequest;
-
     getWithPage(): boolean;
     setWithPage(value: boolean): SurveyGetOneRequest;
-
     getWithQuestion(): boolean;
     setWithQuestion(value: boolean): SurveyGetOneRequest;
-
     getWithQuestionOption(): boolean;
     setWithQuestionOption(value: boolean): SurveyGetOneRequest;
-
     getWithQuestionChoice(): boolean;
     setWithQuestionChoice(value: boolean): SurveyGetOneRequest;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SurveyGetOneRequest.AsObject;
@@ -130,7 +116,6 @@ export class SurveyGetOneResponse extends jspb.Message {
     getSurvey(): Survey | undefined;
     setSurvey(value?: Survey): SurveyGetOneResponse;
 
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SurveyGetOneResponse.AsObject;
     static toObject(includeInstance: boolean, msg: SurveyGetOneResponse): SurveyGetOneResponse.AsObject;
@@ -150,10 +135,8 @@ export namespace SurveyGetOneResponse {
 export class SurveyGetAllRequest extends jspb.Message { 
     getOrganizationId(): number;
     setOrganizationId(value: number): SurveyGetAllRequest;
-
     getFilterType(): SurveyType;
     setFilterType(value: SurveyType): SurveyGetAllRequest;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SurveyGetAllRequest.AsObject;
@@ -178,7 +161,6 @@ export class SurveyGetAllResponse extends jspb.Message {
     setSurveysList(value: Array<Survey>): SurveyGetAllResponse;
     addSurveys(value?: Survey, index?: number): Survey;
 
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SurveyGetAllResponse.AsObject;
     static toObject(includeInstance: boolean, msg: SurveyGetAllResponse): SurveyGetAllResponse.AsObject;
@@ -199,12 +181,10 @@ export class SurveyCreateRequest extends jspb.Message {
     getOrganizationId(): number;
     setOrganizationId(value: number): SurveyCreateRequest;
 
-
     hasSurvey(): boolean;
     clearSurvey(): void;
     getSurvey(): SurveyCreateUpdate | undefined;
     setSurvey(value?: SurveyCreateUpdate): SurveyCreateRequest;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SurveyCreateRequest.AsObject;
@@ -230,7 +210,6 @@ export class SurveyCreateResponse extends jspb.Message {
     getSurvey(): Survey | undefined;
     setSurvey(value?: Survey): SurveyCreateResponse;
 
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SurveyCreateResponse.AsObject;
     static toObject(includeInstance: boolean, msg: SurveyCreateResponse): SurveyCreateResponse.AsObject;
@@ -251,12 +230,10 @@ export class SurveyUpdateRequest extends jspb.Message {
     getId(): number;
     setId(value: number): SurveyUpdateRequest;
 
-
     hasSurvey(): boolean;
     clearSurvey(): void;
     getSurvey(): SurveyCreateUpdate | undefined;
     setSurvey(value?: SurveyCreateUpdate): SurveyUpdateRequest;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SurveyUpdateRequest.AsObject;
@@ -282,7 +259,6 @@ export class SurveyUpdateResponse extends jspb.Message {
     getSurvey(): Survey | undefined;
     setSurvey(value?: Survey): SurveyUpdateResponse;
 
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SurveyUpdateResponse.AsObject;
     static toObject(includeInstance: boolean, msg: SurveyUpdateResponse): SurveyUpdateResponse.AsObject;
@@ -302,7 +278,6 @@ export namespace SurveyUpdateResponse {
 export class SurveyDeleteRequest extends jspb.Message { 
     getId(): number;
     setId(value: number): SurveyDeleteRequest;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SurveyDeleteRequest.AsObject;
@@ -326,7 +301,6 @@ export class SurveyDeleteResponse extends jspb.Message {
     clearSurvey(): void;
     getSurvey(): Survey | undefined;
     setSurvey(value?: Survey): SurveyDeleteResponse;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SurveyDeleteResponse.AsObject;

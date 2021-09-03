@@ -5,12 +5,12 @@
 /* eslint-disable */
 
 import * as grpc from "@grpc/grpc-js";
-import {handleClientStreamingCall} from "@grpc/grpc-js/build/src/server-call";
 import * as survey_v1_survey_service_pb from "../../survey/v1/survey_service_pb";
 import * as survey_v1_survey_pb from "../../survey/v1/survey_pb";
 import * as survey_v1_survey_page_pb from "../../survey/v1/survey_page_pb";
 import * as survey_v1_survey_question_pb from "../../survey/v1/survey_question_pb";
 import * as survey_v1_survey_choice_pb from "../../survey/v1/survey_choice_pb";
+import * as survey_v1_survey_response_pb from "../../survey/v1/survey_response_pb";
 
 interface ISurveyServiceService extends grpc.ServiceDefinition<grpc.UntypedServiceImplementation> {
     surveyGetOne: ISurveyServiceService_ISurveyGetOne;
@@ -32,6 +32,9 @@ interface ISurveyServiceService extends grpc.ServiceDefinition<grpc.UntypedServi
     choiceCreate: ISurveyServiceService_IChoiceCreate;
     choiceUpdate: ISurveyServiceService_IChoiceUpdate;
     choiceDelete: ISurveyServiceService_IChoiceDelete;
+    responseGetAll: ISurveyServiceService_IResponseGetAll;
+    responseGetOne: ISurveyServiceService_IResponseGetOne;
+    responseAnswerGetList: ISurveyServiceService_IResponseAnswerGetList;
 }
 
 interface ISurveyServiceService_ISurveyGetOne extends grpc.MethodDefinition<survey_v1_survey_pb.SurveyGetOneRequest, survey_v1_survey_pb.SurveyGetOneResponse> {
@@ -205,10 +208,37 @@ interface ISurveyServiceService_IChoiceDelete extends grpc.MethodDefinition<surv
     responseSerialize: grpc.serialize<survey_v1_survey_choice_pb.ChoiceDeleteResponse>;
     responseDeserialize: grpc.deserialize<survey_v1_survey_choice_pb.ChoiceDeleteResponse>;
 }
+interface ISurveyServiceService_IResponseGetAll extends grpc.MethodDefinition<survey_v1_survey_response_pb.ResponseGetAllRequest, survey_v1_survey_response_pb.ResponseGetAllResponse> {
+    path: "/survey.v1.SurveyService/ResponseGetAll";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<survey_v1_survey_response_pb.ResponseGetAllRequest>;
+    requestDeserialize: grpc.deserialize<survey_v1_survey_response_pb.ResponseGetAllRequest>;
+    responseSerialize: grpc.serialize<survey_v1_survey_response_pb.ResponseGetAllResponse>;
+    responseDeserialize: grpc.deserialize<survey_v1_survey_response_pb.ResponseGetAllResponse>;
+}
+interface ISurveyServiceService_IResponseGetOne extends grpc.MethodDefinition<survey_v1_survey_response_pb.ResponseGetOneRequest, survey_v1_survey_response_pb.ResponseGetOneResponse> {
+    path: "/survey.v1.SurveyService/ResponseGetOne";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<survey_v1_survey_response_pb.ResponseGetOneRequest>;
+    requestDeserialize: grpc.deserialize<survey_v1_survey_response_pb.ResponseGetOneRequest>;
+    responseSerialize: grpc.serialize<survey_v1_survey_response_pb.ResponseGetOneResponse>;
+    responseDeserialize: grpc.deserialize<survey_v1_survey_response_pb.ResponseGetOneResponse>;
+}
+interface ISurveyServiceService_IResponseAnswerGetList extends grpc.MethodDefinition<survey_v1_survey_response_pb.ResponseAnswerGetListRequest, survey_v1_survey_response_pb.ResponseAnswerGetListResponse> {
+    path: "/survey.v1.SurveyService/ResponseAnswerGetList";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<survey_v1_survey_response_pb.ResponseAnswerGetListRequest>;
+    requestDeserialize: grpc.deserialize<survey_v1_survey_response_pb.ResponseAnswerGetListRequest>;
+    responseSerialize: grpc.serialize<survey_v1_survey_response_pb.ResponseAnswerGetListResponse>;
+    responseDeserialize: grpc.deserialize<survey_v1_survey_response_pb.ResponseAnswerGetListResponse>;
+}
 
 export const SurveyServiceService: ISurveyServiceService;
 
-export interface ISurveyServiceServer {
+export interface ISurveyServiceServer extends grpc.UntypedServiceImplementation {
     surveyGetOne: grpc.handleUnaryCall<survey_v1_survey_pb.SurveyGetOneRequest, survey_v1_survey_pb.SurveyGetOneResponse>;
     surveyGetAll: grpc.handleUnaryCall<survey_v1_survey_pb.SurveyGetAllRequest, survey_v1_survey_pb.SurveyGetAllResponse>;
     surveyCreate: grpc.handleUnaryCall<survey_v1_survey_pb.SurveyCreateRequest, survey_v1_survey_pb.SurveyCreateResponse>;
@@ -228,6 +258,9 @@ export interface ISurveyServiceServer {
     choiceCreate: grpc.handleUnaryCall<survey_v1_survey_choice_pb.ChoiceCreateRequest, survey_v1_survey_choice_pb.ChoiceCreateResponse>;
     choiceUpdate: grpc.handleUnaryCall<survey_v1_survey_choice_pb.ChoiceUpdateRequest, survey_v1_survey_choice_pb.ChoiceUpdateResponse>;
     choiceDelete: grpc.handleUnaryCall<survey_v1_survey_choice_pb.ChoiceDeleteRequest, survey_v1_survey_choice_pb.ChoiceDeleteResponse>;
+    responseGetAll: grpc.handleUnaryCall<survey_v1_survey_response_pb.ResponseGetAllRequest, survey_v1_survey_response_pb.ResponseGetAllResponse>;
+    responseGetOne: grpc.handleUnaryCall<survey_v1_survey_response_pb.ResponseGetOneRequest, survey_v1_survey_response_pb.ResponseGetOneResponse>;
+    responseAnswerGetList: grpc.handleUnaryCall<survey_v1_survey_response_pb.ResponseAnswerGetListRequest, survey_v1_survey_response_pb.ResponseAnswerGetListResponse>;
 }
 
 export interface ISurveyServiceClient {
@@ -288,6 +321,15 @@ export interface ISurveyServiceClient {
     choiceDelete(request: survey_v1_survey_choice_pb.ChoiceDeleteRequest, callback: (error: grpc.ServiceError | null, response: survey_v1_survey_choice_pb.ChoiceDeleteResponse) => void): grpc.ClientUnaryCall;
     choiceDelete(request: survey_v1_survey_choice_pb.ChoiceDeleteRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: survey_v1_survey_choice_pb.ChoiceDeleteResponse) => void): grpc.ClientUnaryCall;
     choiceDelete(request: survey_v1_survey_choice_pb.ChoiceDeleteRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: survey_v1_survey_choice_pb.ChoiceDeleteResponse) => void): grpc.ClientUnaryCall;
+    responseGetAll(request: survey_v1_survey_response_pb.ResponseGetAllRequest, callback: (error: grpc.ServiceError | null, response: survey_v1_survey_response_pb.ResponseGetAllResponse) => void): grpc.ClientUnaryCall;
+    responseGetAll(request: survey_v1_survey_response_pb.ResponseGetAllRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: survey_v1_survey_response_pb.ResponseGetAllResponse) => void): grpc.ClientUnaryCall;
+    responseGetAll(request: survey_v1_survey_response_pb.ResponseGetAllRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: survey_v1_survey_response_pb.ResponseGetAllResponse) => void): grpc.ClientUnaryCall;
+    responseGetOne(request: survey_v1_survey_response_pb.ResponseGetOneRequest, callback: (error: grpc.ServiceError | null, response: survey_v1_survey_response_pb.ResponseGetOneResponse) => void): grpc.ClientUnaryCall;
+    responseGetOne(request: survey_v1_survey_response_pb.ResponseGetOneRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: survey_v1_survey_response_pb.ResponseGetOneResponse) => void): grpc.ClientUnaryCall;
+    responseGetOne(request: survey_v1_survey_response_pb.ResponseGetOneRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: survey_v1_survey_response_pb.ResponseGetOneResponse) => void): grpc.ClientUnaryCall;
+    responseAnswerGetList(request: survey_v1_survey_response_pb.ResponseAnswerGetListRequest, callback: (error: grpc.ServiceError | null, response: survey_v1_survey_response_pb.ResponseAnswerGetListResponse) => void): grpc.ClientUnaryCall;
+    responseAnswerGetList(request: survey_v1_survey_response_pb.ResponseAnswerGetListRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: survey_v1_survey_response_pb.ResponseAnswerGetListResponse) => void): grpc.ClientUnaryCall;
+    responseAnswerGetList(request: survey_v1_survey_response_pb.ResponseAnswerGetListRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: survey_v1_survey_response_pb.ResponseAnswerGetListResponse) => void): grpc.ClientUnaryCall;
 }
 
 export class SurveyServiceClient extends grpc.Client implements ISurveyServiceClient {
@@ -349,4 +391,13 @@ export class SurveyServiceClient extends grpc.Client implements ISurveyServiceCl
     public choiceDelete(request: survey_v1_survey_choice_pb.ChoiceDeleteRequest, callback: (error: grpc.ServiceError | null, response: survey_v1_survey_choice_pb.ChoiceDeleteResponse) => void): grpc.ClientUnaryCall;
     public choiceDelete(request: survey_v1_survey_choice_pb.ChoiceDeleteRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: survey_v1_survey_choice_pb.ChoiceDeleteResponse) => void): grpc.ClientUnaryCall;
     public choiceDelete(request: survey_v1_survey_choice_pb.ChoiceDeleteRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: survey_v1_survey_choice_pb.ChoiceDeleteResponse) => void): grpc.ClientUnaryCall;
+    public responseGetAll(request: survey_v1_survey_response_pb.ResponseGetAllRequest, callback: (error: grpc.ServiceError | null, response: survey_v1_survey_response_pb.ResponseGetAllResponse) => void): grpc.ClientUnaryCall;
+    public responseGetAll(request: survey_v1_survey_response_pb.ResponseGetAllRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: survey_v1_survey_response_pb.ResponseGetAllResponse) => void): grpc.ClientUnaryCall;
+    public responseGetAll(request: survey_v1_survey_response_pb.ResponseGetAllRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: survey_v1_survey_response_pb.ResponseGetAllResponse) => void): grpc.ClientUnaryCall;
+    public responseGetOne(request: survey_v1_survey_response_pb.ResponseGetOneRequest, callback: (error: grpc.ServiceError | null, response: survey_v1_survey_response_pb.ResponseGetOneResponse) => void): grpc.ClientUnaryCall;
+    public responseGetOne(request: survey_v1_survey_response_pb.ResponseGetOneRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: survey_v1_survey_response_pb.ResponseGetOneResponse) => void): grpc.ClientUnaryCall;
+    public responseGetOne(request: survey_v1_survey_response_pb.ResponseGetOneRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: survey_v1_survey_response_pb.ResponseGetOneResponse) => void): grpc.ClientUnaryCall;
+    public responseAnswerGetList(request: survey_v1_survey_response_pb.ResponseAnswerGetListRequest, callback: (error: grpc.ServiceError | null, response: survey_v1_survey_response_pb.ResponseAnswerGetListResponse) => void): grpc.ClientUnaryCall;
+    public responseAnswerGetList(request: survey_v1_survey_response_pb.ResponseAnswerGetListRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: survey_v1_survey_response_pb.ResponseAnswerGetListResponse) => void): grpc.ClientUnaryCall;
+    public responseAnswerGetList(request: survey_v1_survey_response_pb.ResponseAnswerGetListRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: survey_v1_survey_response_pb.ResponseAnswerGetListResponse) => void): grpc.ClientUnaryCall;
 }

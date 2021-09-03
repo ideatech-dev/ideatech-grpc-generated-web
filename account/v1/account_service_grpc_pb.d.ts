@@ -5,7 +5,6 @@
 /* eslint-disable */
 
 import * as grpc from "@grpc/grpc-js";
-import {handleClientStreamingCall} from "@grpc/grpc-js/build/src/server-call";
 import * as account_v1_account_service_pb from "../../account/v1/account_service_pb";
 import * as account_v1_auth_pb from "../../account/v1/auth_pb";
 
@@ -45,7 +44,7 @@ interface IAccountServiceService_IAccountInformation extends grpc.MethodDefiniti
 
 export const AccountServiceService: IAccountServiceService;
 
-export interface IAccountServiceServer {
+export interface IAccountServiceServer extends grpc.UntypedServiceImplementation {
     login: grpc.handleUnaryCall<account_v1_auth_pb.LoginRequest, account_v1_auth_pb.LoginResponse>;
     register: grpc.handleUnaryCall<account_v1_auth_pb.RegisterRequest, account_v1_auth_pb.RegisterResponse>;
     accountInformation: grpc.handleUnaryCall<account_v1_auth_pb.AccountInformationRequest, account_v1_auth_pb.AccountInformationResponse>;

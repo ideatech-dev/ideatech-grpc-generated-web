@@ -3,6 +3,7 @@ import * as grpcWeb from 'grpc-web';
 import * as survey_v1_survey_choice_pb from '../../survey/v1/survey_choice_pb';
 import * as survey_v1_survey_question_pb from '../../survey/v1/survey_question_pb';
 import * as survey_v1_survey_page_pb from '../../survey/v1/survey_page_pb';
+import * as survey_v1_survey_response_pb from '../../survey/v1/survey_response_pb';
 import * as survey_v1_survey_pb from '../../survey/v1/survey_pb';
 
 
@@ -144,6 +145,27 @@ export class SurveyServiceClient {
                response: survey_v1_survey_choice_pb.ChoiceDeleteResponse) => void
   ): grpcWeb.ClientReadableStream<survey_v1_survey_choice_pb.ChoiceDeleteResponse>;
 
+  responseGetAll(
+    request: survey_v1_survey_response_pb.ResponseGetAllRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.Error,
+               response: survey_v1_survey_response_pb.ResponseGetAllResponse) => void
+  ): grpcWeb.ClientReadableStream<survey_v1_survey_response_pb.ResponseGetAllResponse>;
+
+  responseGetOne(
+    request: survey_v1_survey_response_pb.ResponseGetOneRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.Error,
+               response: survey_v1_survey_response_pb.ResponseGetOneResponse) => void
+  ): grpcWeb.ClientReadableStream<survey_v1_survey_response_pb.ResponseGetOneResponse>;
+
+  responseAnswerGetList(
+    request: survey_v1_survey_response_pb.ResponseAnswerGetListRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.Error,
+               response: survey_v1_survey_response_pb.ResponseAnswerGetListResponse) => void
+  ): grpcWeb.ClientReadableStream<survey_v1_survey_response_pb.ResponseAnswerGetListResponse>;
+
 }
 
 export class SurveyServicePromiseClient {
@@ -245,6 +267,21 @@ export class SurveyServicePromiseClient {
     request: survey_v1_survey_choice_pb.ChoiceDeleteRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<survey_v1_survey_choice_pb.ChoiceDeleteResponse>;
+
+  responseGetAll(
+    request: survey_v1_survey_response_pb.ResponseGetAllRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<survey_v1_survey_response_pb.ResponseGetAllResponse>;
+
+  responseGetOne(
+    request: survey_v1_survey_response_pb.ResponseGetOneRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<survey_v1_survey_response_pb.ResponseGetOneResponse>;
+
+  responseAnswerGetList(
+    request: survey_v1_survey_response_pb.ResponseAnswerGetListRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<survey_v1_survey_response_pb.ResponseAnswerGetListResponse>;
 
 }
 

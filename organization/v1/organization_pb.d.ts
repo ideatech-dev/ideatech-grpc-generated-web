@@ -11,21 +11,17 @@ export class Organization extends jspb.Message {
     getId(): number;
     setId(value: number): Organization;
 
-
     hasDatetimeCreated(): boolean;
     clearDatetimeCreated(): void;
     getDatetimeCreated(): google_protobuf_timestamp_pb.Timestamp | undefined;
     setDatetimeCreated(value?: google_protobuf_timestamp_pb.Timestamp): Organization;
 
-
     hasDatetimeUpdated(): boolean;
     clearDatetimeUpdated(): void;
     getDatetimeUpdated(): google_protobuf_timestamp_pb.Timestamp | undefined;
     setDatetimeUpdated(value?: google_protobuf_timestamp_pb.Timestamp): Organization;
-
     getName(): string;
     setName(value: string): Organization;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Organization.AsObject;
@@ -50,7 +46,6 @@ export class OrganizationCreateUpdate extends jspb.Message {
     getName(): string;
     setName(value: string): OrganizationCreateUpdate;
 
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): OrganizationCreateUpdate.AsObject;
     static toObject(includeInstance: boolean, msg: OrganizationCreateUpdate): OrganizationCreateUpdate.AsObject;
@@ -70,7 +65,6 @@ export namespace OrganizationCreateUpdate {
 export class GetOneRequest extends jspb.Message { 
     getId(): number;
     setId(value: number): GetOneRequest;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): GetOneRequest.AsObject;
@@ -94,7 +88,6 @@ export class GetOneResponse extends jspb.Message {
     clearOrganization(): void;
     getOrganization(): Organization | undefined;
     setOrganization(value?: Organization): GetOneResponse;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): GetOneResponse.AsObject;
@@ -134,13 +127,10 @@ export class GetListResponse extends jspb.Message {
     getOrganizationList(): Array<Organization>;
     setOrganizationList(value: Array<Organization>): GetListResponse;
     addOrganization(value?: Organization, index?: number): Organization;
-
     getCount(): number;
     setCount(value: number): GetListResponse;
-
     getMaxPage(): number;
     setMaxPage(value: number): GetListResponse;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): GetListResponse.AsObject;
@@ -167,7 +157,6 @@ export class CreateRequest extends jspb.Message {
     getOrganization(): OrganizationCreateUpdate | undefined;
     setOrganization(value?: OrganizationCreateUpdate): CreateRequest;
 
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CreateRequest.AsObject;
     static toObject(includeInstance: boolean, msg: CreateRequest): CreateRequest.AsObject;
@@ -191,7 +180,6 @@ export class CreateResponse extends jspb.Message {
     getOrganization(): Organization | undefined;
     setOrganization(value?: Organization): CreateResponse;
 
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CreateResponse.AsObject;
     static toObject(includeInstance: boolean, msg: CreateResponse): CreateResponse.AsObject;
@@ -212,12 +200,10 @@ export class UpdateRequest extends jspb.Message {
     getId(): number;
     setId(value: number): UpdateRequest;
 
-
     hasOrganization(): boolean;
     clearOrganization(): void;
     getOrganization(): OrganizationCreateUpdate | undefined;
     setOrganization(value?: OrganizationCreateUpdate): UpdateRequest;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): UpdateRequest.AsObject;
@@ -243,7 +229,6 @@ export class UpdateResponse extends jspb.Message {
     getOrganization(): Organization | undefined;
     setOrganization(value?: Organization): UpdateResponse;
 
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): UpdateResponse.AsObject;
     static toObject(includeInstance: boolean, msg: UpdateResponse): UpdateResponse.AsObject;
@@ -263,7 +248,6 @@ export namespace UpdateResponse {
 export class DeleteRequest extends jspb.Message { 
     getId(): number;
     setId(value: number): DeleteRequest;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): DeleteRequest.AsObject;
@@ -287,7 +271,6 @@ export class DeleteResponse extends jspb.Message {
     clearOrganization(): void;
     getOrganization(): Organization | undefined;
     setOrganization(value?: Organization): DeleteResponse;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): DeleteResponse.AsObject;

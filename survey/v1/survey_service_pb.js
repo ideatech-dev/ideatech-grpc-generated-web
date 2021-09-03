@@ -23,3 +23,5 @@ var survey_v1_survey_question_pb = require('../../survey/v1/survey_question_pb.j
 goog.object.extend(proto, survey_v1_survey_question_pb);
 var survey_v1_survey_choice_pb = require('../../survey/v1/survey_choice_pb.js');
 goog.object.extend(proto, survey_v1_survey_choice_pb);
+var survey_v1_survey_response_pb = require('../../survey/v1/survey_response_pb.js');
+goog.object.extend(proto, survey_v1_survey_response_pb);

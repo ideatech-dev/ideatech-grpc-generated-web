@@ -9,19 +9,14 @@ import * as jspb from "google-protobuf";
 export class SurveyChoice extends jspb.Message { 
     getId(): number;
     setId(value: number): SurveyChoice;
-
     getSurveyQuestionId(): number;
     setSurveyQuestionId(value: number): SurveyChoice;
-
     getChoice(): string;
     setChoice(value: string): SurveyChoice;
-
     getOrders(): number;
     setOrders(value: number): SurveyChoice;
-
     getScore(): number;
     setScore(value: number): SurveyChoice;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SurveyChoice.AsObject;
@@ -46,13 +41,10 @@ export namespace SurveyChoice {
 export class SurveyChoiceCreateUpdate extends jspb.Message { 
     getChoice(): string;
     setChoice(value: string): SurveyChoiceCreateUpdate;
-
     getOrders(): number;
     setOrders(value: number): SurveyChoiceCreateUpdate;
-
     getScore(): number;
     setScore(value: number): SurveyChoiceCreateUpdate;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SurveyChoiceCreateUpdate.AsObject;
@@ -75,10 +67,8 @@ export namespace SurveyChoiceCreateUpdate {
 export class SurveyChoiceOption extends jspb.Message { 
     getIsRandom(): boolean;
     setIsRandom(value: boolean): SurveyChoiceOption;
-
     getMode(): SurveyChoiceOptionMode;
     setMode(value: SurveyChoiceOptionMode): SurveyChoiceOption;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SurveyChoiceOption.AsObject;
@@ -100,7 +90,6 @@ export namespace SurveyChoiceOption {
 export class ChoiceGetAllRequest extends jspb.Message { 
     getQuestionId(): number;
     setQuestionId(value: number): ChoiceGetAllRequest;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ChoiceGetAllRequest.AsObject;
@@ -124,7 +113,6 @@ export class ChoiceGetAllResponse extends jspb.Message {
     setChoicesList(value: Array<SurveyChoice>): ChoiceGetAllResponse;
     addChoices(value?: SurveyChoice, index?: number): SurveyChoice;
 
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ChoiceGetAllResponse.AsObject;
     static toObject(includeInstance: boolean, msg: ChoiceGetAllResponse): ChoiceGetAllResponse.AsObject;
@@ -145,12 +133,10 @@ export class ChoiceCreateRequest extends jspb.Message {
     getSurveyQuestionId(): number;
     setSurveyQuestionId(value: number): ChoiceCreateRequest;
 
-
     hasChoice(): boolean;
     clearChoice(): void;
     getChoice(): SurveyChoiceCreateUpdate | undefined;
     setChoice(value?: SurveyChoiceCreateUpdate): ChoiceCreateRequest;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ChoiceCreateRequest.AsObject;
@@ -176,7 +162,6 @@ export class ChoiceCreateResponse extends jspb.Message {
     getChoice(): SurveyChoice | undefined;
     setChoice(value?: SurveyChoice): ChoiceCreateResponse;
 
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ChoiceCreateResponse.AsObject;
     static toObject(includeInstance: boolean, msg: ChoiceCreateResponse): ChoiceCreateResponse.AsObject;
@@ -197,12 +182,10 @@ export class ChoiceUpdateRequest extends jspb.Message {
     getId(): number;
     setId(value: number): ChoiceUpdateRequest;
 
-
     hasChoice(): boolean;
     clearChoice(): void;
     getChoice(): SurveyChoiceCreateUpdate | undefined;
     setChoice(value?: SurveyChoiceCreateUpdate): ChoiceUpdateRequest;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ChoiceUpdateRequest.AsObject;
@@ -228,7 +211,6 @@ export class ChoiceUpdateResponse extends jspb.Message {
     getChoice(): SurveyChoice | undefined;
     setChoice(value?: SurveyChoice): ChoiceUpdateResponse;
 
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ChoiceUpdateResponse.AsObject;
     static toObject(includeInstance: boolean, msg: ChoiceUpdateResponse): ChoiceUpdateResponse.AsObject;
@@ -248,7 +230,6 @@ export namespace ChoiceUpdateResponse {
 export class ChoiceDeleteRequest extends jspb.Message { 
     getId(): number;
     setId(value: number): ChoiceDeleteRequest;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ChoiceDeleteRequest.AsObject;
@@ -272,7 +253,6 @@ export class ChoiceDeleteResponse extends jspb.Message {
     clearChoice(): void;
     getChoice(): SurveyChoice | undefined;
     setChoice(value?: SurveyChoice): ChoiceDeleteResponse;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ChoiceDeleteResponse.AsObject;

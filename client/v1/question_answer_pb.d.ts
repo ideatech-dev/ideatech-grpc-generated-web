@@ -10,13 +10,10 @@ import * as survey_v1_survey_question_pb from "../../survey/v1/survey_question_p
 export class StartSurveyRequest extends jspb.Message { 
     getDryrun(): boolean;
     setDryrun(value: boolean): StartSurveyRequest;
-
     getSession(): string;
     setSession(value: string): StartSurveyRequest;
-
     getSurveyId(): number;
     setSurveyId(value: number): StartSurveyRequest;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): StartSurveyRequest.AsObject;
@@ -40,7 +37,6 @@ export class StartSurveyResponse extends jspb.Message {
     getStartPageId(): number;
     setStartPageId(value: number): StartSurveyResponse;
 
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): StartSurveyResponse.AsObject;
     static toObject(includeInstance: boolean, msg: StartSurveyResponse): StartSurveyResponse.AsObject;
@@ -60,7 +56,6 @@ export namespace StartSurveyResponse {
 export class GetQuestionRequest extends jspb.Message { 
     getCurrentPageId(): number;
     setCurrentPageId(value: number): GetQuestionRequest;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): GetQuestionRequest.AsObject;
@@ -84,7 +79,6 @@ export class GetQuestionResponse extends jspb.Message {
     setQuestionsList(value: Array<survey_v1_survey_question_pb.SurveyQuestion>): GetQuestionResponse;
     addQuestions(value?: survey_v1_survey_question_pb.SurveyQuestion, index?: number): survey_v1_survey_question_pb.SurveyQuestion;
 
-
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): GetQuestionResponse.AsObject;
     static toObject(includeInstance: boolean, msg: GetQuestionResponse): GetQuestionResponse.AsObject;
@@ -104,18 +98,14 @@ export namespace GetQuestionResponse {
 export class SubmitAnswerRequest extends jspb.Message { 
     getDryrun(): boolean;
     setDryrun(value: boolean): SubmitAnswerRequest;
-
     getCurrentPageId(): number;
     setCurrentPageId(value: number): SubmitAnswerRequest;
-
     getSession(): string;
     setSession(value: string): SubmitAnswerRequest;
-
     clearAnswersList(): void;
     getAnswersList(): Array<SubmitAnswerRequest.Answer>;
     setAnswersList(value: Array<SubmitAnswerRequest.Answer>): SubmitAnswerRequest;
     addAnswers(value?: SubmitAnswerRequest.Answer, index?: number): SubmitAnswerRequest.Answer;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SubmitAnswerRequest.AsObject;
@@ -139,12 +129,10 @@ export namespace SubmitAnswerRequest {
     export class Answer extends jspb.Message { 
         getQuestionId(): number;
         setQuestionId(value: number): Answer;
-
         clearValuesList(): void;
         getValuesList(): Array<string>;
         setValuesList(value: Array<string>): Answer;
         addValues(value: string, index?: number): string;
-
 
         serializeBinary(): Uint8Array;
         toObject(includeInstance?: boolean): Answer.AsObject;
@@ -168,19 +156,14 @@ export namespace SubmitAnswerRequest {
 export class SubmitAnswerResponse extends jspb.Message { 
     getNextPageId(): number;
     setNextPageId(value: number): SubmitAnswerResponse;
-
     getIsCompleted(): boolean;
     setIsCompleted(value: boolean): SubmitAnswerResponse;
-
     getIsDisqualified(): boolean;
     setIsDisqualified(value: boolean): SubmitAnswerResponse;
-
     getIsNonactive(): boolean;
     setIsNonactive(value: boolean): SubmitAnswerResponse;
-
     getRedirectTo(): string;
     setRedirectTo(value: string): SubmitAnswerResponse;
-
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SubmitAnswerResponse.AsObject;

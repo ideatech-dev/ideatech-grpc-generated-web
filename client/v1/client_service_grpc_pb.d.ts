@@ -5,7 +5,6 @@
 /* eslint-disable */
 
 import * as grpc from "@grpc/grpc-js";
-import {handleClientStreamingCall} from "@grpc/grpc-js/build/src/server-call";
 import * as client_v1_client_service_pb from "../../client/v1/client_service_pb";
 import * as client_v1_question_answer_pb from "../../client/v1/question_answer_pb";
 
@@ -45,7 +44,7 @@ interface ISurveyClientServiceService_ISubmitAnswer extends grpc.MethodDefinitio
 
 export const SurveyClientServiceService: ISurveyClientServiceService;
 
-export interface ISurveyClientServiceServer {
+export interface ISurveyClientServiceServer extends grpc.UntypedServiceImplementation {
     startSurvey: grpc.handleUnaryCall<client_v1_question_answer_pb.StartSurveyRequest, client_v1_question_answer_pb.StartSurveyResponse>;
     getQuestion: grpc.handleUnaryCall<client_v1_question_answer_pb.GetQuestionRequest, client_v1_question_answer_pb.GetQuestionResponse>;
     submitAnswer: grpc.handleUnaryCall<client_v1_question_answer_pb.SubmitAnswerRequest, client_v1_question_answer_pb.SubmitAnswerResponse>;
