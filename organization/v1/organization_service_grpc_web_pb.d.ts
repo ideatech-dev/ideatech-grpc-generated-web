@@ -1,7 +1,7 @@
 import * as grpcWeb from 'grpc-web';
 
-import * as organization_v1_organization_user_pb from '../../organization/v1/organization_user_pb';
 import * as organization_v1_organization_pb from '../../organization/v1/organization_pb';
+import * as organization_v1_organization_user_pb from '../../organization/v1/organization_user_pb';
 
 
 export class OrganizationServiceClient {
