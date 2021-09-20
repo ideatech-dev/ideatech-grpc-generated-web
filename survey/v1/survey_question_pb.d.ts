@@ -53,8 +53,6 @@ export namespace SurveyQuestion {
 export class SurveyQuestionCreateUpdate extends jspb.Message { 
     getQuestion(): string;
     setQuestion(value: string): SurveyQuestionCreateUpdate;
-    getOrders(): number;
-    setOrders(value: number): SurveyQuestionCreateUpdate;
     getType(): SurveyQuestionType;
     setType(value: SurveyQuestionType): SurveyQuestionCreateUpdate;
 
@@ -76,7 +74,6 @@ export class SurveyQuestionCreateUpdate extends jspb.Message {
 export namespace SurveyQuestionCreateUpdate {
     export type AsObject = {
         question: string,
-        orders: number,
         type: SurveyQuestionType,
         optionChoice?: survey_v1_survey_choice_pb.SurveyChoiceOption.AsObject,
     }

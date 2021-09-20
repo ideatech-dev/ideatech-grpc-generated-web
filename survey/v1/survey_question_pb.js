@@ -676,7 +676,6 @@ proto.survey.v1.SurveyQuestionCreateUpdate.prototype.toObject = function(opt_inc
 proto.survey.v1.SurveyQuestionCreateUpdate.toObject = function(includeInstance, msg) {
   var f, obj = {
     question: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    orders: jspb.Message.getFieldWithDefault(msg, 4, 0),
     type: jspb.Message.getFieldWithDefault(msg, 5, 0),
     optionChoice: (f = msg.getOptionChoice()) && survey_v1_survey_choice_pb.SurveyChoiceOption.toObject(includeInstance, f)
   };
@@ -718,10 +717,6 @@ proto.survey.v1.SurveyQuestionCreateUpdate.deserializeBinaryFromReader = functio
     case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setQuestion(value);
-      break;
-    case 4:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setOrders(value);
       break;
     case 5:
       var value = /** @type {!proto.survey.v1.SurveyQuestionType} */ (reader.readEnum());
@@ -768,13 +763,6 @@ proto.survey.v1.SurveyQuestionCreateUpdate.serializeBinaryToWriter = function(me
       f
     );
   }
-  f = message.getOrders();
-  if (f !== 0) {
-    writer.writeInt32(
-      4,
-      f
-    );
-  }
   f = message.getType();
   if (f !== 0.0) {
     writer.writeEnum(
@@ -808,24 +796,6 @@ proto.survey.v1.SurveyQuestionCreateUpdate.prototype.getQuestion = function() {
  */
 proto.survey.v1.SurveyQuestionCreateUpdate.prototype.setQuestion = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * optional int32 orders = 4;
- * @return {number}
- */
-proto.survey.v1.SurveyQuestionCreateUpdate.prototype.getOrders = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.survey.v1.SurveyQuestionCreateUpdate} returns this
- */
-proto.survey.v1.SurveyQuestionCreateUpdate.prototype.setOrders = function(value) {
-  return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
