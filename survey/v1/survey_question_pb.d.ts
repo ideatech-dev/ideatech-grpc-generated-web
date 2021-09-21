@@ -18,11 +18,6 @@ export class SurveyQuestion extends jspb.Message {
     setOrders(value: number): SurveyQuestion;
     getType(): SurveyQuestionType;
     setType(value: SurveyQuestionType): SurveyQuestion;
-
-    hasOptionChoice(): boolean;
-    clearOptionChoice(): void;
-    getOptionChoice(): survey_v1_survey_choice_pb.SurveyChoiceOption | undefined;
-    setOptionChoice(value?: survey_v1_survey_choice_pb.SurveyChoiceOption): SurveyQuestion;
     clearChoicesList(): void;
     getChoicesList(): Array<survey_v1_survey_choice_pb.SurveyChoice>;
     setChoicesList(value: Array<survey_v1_survey_choice_pb.SurveyChoice>): SurveyQuestion;
@@ -45,7 +40,6 @@ export namespace SurveyQuestion {
         question: string,
         orders: number,
         type: SurveyQuestionType,
-        optionChoice?: survey_v1_survey_choice_pb.SurveyChoiceOption.AsObject,
         choicesList: Array<survey_v1_survey_choice_pb.SurveyChoice.AsObject>,
     }
 }
@@ -55,11 +49,6 @@ export class SurveyQuestionCreateUpdate extends jspb.Message {
     setQuestion(value: string): SurveyQuestionCreateUpdate;
     getType(): SurveyQuestionType;
     setType(value: SurveyQuestionType): SurveyQuestionCreateUpdate;
-
-    hasOptionChoice(): boolean;
-    clearOptionChoice(): void;
-    getOptionChoice(): survey_v1_survey_choice_pb.SurveyChoiceOption | undefined;
-    setOptionChoice(value?: survey_v1_survey_choice_pb.SurveyChoiceOption): SurveyQuestionCreateUpdate;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SurveyQuestionCreateUpdate.AsObject;
@@ -75,7 +64,6 @@ export namespace SurveyQuestionCreateUpdate {
     export type AsObject = {
         question: string,
         type: SurveyQuestionType,
-        optionChoice?: survey_v1_survey_choice_pb.SurveyChoiceOption.AsObject,
     }
 }
 

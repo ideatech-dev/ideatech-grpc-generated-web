@@ -64,29 +64,6 @@ export namespace SurveyChoiceCreateUpdate {
     }
 }
 
-export class SurveyChoiceOption extends jspb.Message { 
-    getIsRandom(): boolean;
-    setIsRandom(value: boolean): SurveyChoiceOption;
-    getMode(): SurveyChoiceOptionMode;
-    setMode(value: SurveyChoiceOptionMode): SurveyChoiceOption;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): SurveyChoiceOption.AsObject;
-    static toObject(includeInstance: boolean, msg: SurveyChoiceOption): SurveyChoiceOption.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: SurveyChoiceOption, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): SurveyChoiceOption;
-    static deserializeBinaryFromReader(message: SurveyChoiceOption, reader: jspb.BinaryReader): SurveyChoiceOption;
-}
-
-export namespace SurveyChoiceOption {
-    export type AsObject = {
-        isRandom: boolean,
-        mode: SurveyChoiceOptionMode,
-    }
-}
-
 export class ChoiceGetAllRequest extends jspb.Message { 
     getQuestionId(): number;
     setQuestionId(value: number): ChoiceGetAllRequest;
@@ -268,10 +245,4 @@ export namespace ChoiceDeleteResponse {
     export type AsObject = {
         choice?: SurveyChoice.AsObject,
     }
-}
-
-export enum SurveyChoiceOptionMode {
-    CHOICE_MODE_FILL_UNSPECIFIED = 0,
-    CHOICE_MODE_RADIO = 1,
-    CHOICE_MODE_CHECKBOX = 2,
 }

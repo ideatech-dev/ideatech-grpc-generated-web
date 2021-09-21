@@ -326,7 +326,6 @@ proto.survey.v1.SurveyQuestion.toObject = function(includeInstance, msg) {
     question: jspb.Message.getFieldWithDefault(msg, 3, ""),
     orders: jspb.Message.getFieldWithDefault(msg, 4, 0),
     type: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    optionChoice: (f = msg.getOptionChoice()) && survey_v1_survey_choice_pb.SurveyChoiceOption.toObject(includeInstance, f),
     choicesList: jspb.Message.toObjectList(msg.getChoicesList(),
     survey_v1_survey_choice_pb.SurveyChoice.toObject, includeInstance)
   };
@@ -384,11 +383,6 @@ proto.survey.v1.SurveyQuestion.deserializeBinaryFromReader = function(msg, reade
     case 5:
       var value = /** @type {!proto.survey.v1.SurveyQuestionType} */ (reader.readEnum());
       msg.setType(value);
-      break;
-    case 6:
-      var value = new survey_v1_survey_choice_pb.SurveyChoiceOption;
-      reader.readMessage(value,survey_v1_survey_choice_pb.SurveyChoiceOption.deserializeBinaryFromReader);
-      msg.setOptionChoice(value);
       break;
     case 7:
       var value = new survey_v1_survey_choice_pb.SurveyChoice;
@@ -457,14 +451,6 @@ proto.survey.v1.SurveyQuestion.serializeBinaryToWriter = function(message, write
     writer.writeEnum(
       5,
       f
-    );
-  }
-  f = message.getOptionChoice();
-  if (f != null) {
-    writer.writeMessage(
-      6,
-      f,
-      survey_v1_survey_choice_pb.SurveyChoiceOption.serializeBinaryToWriter
     );
   }
   f = message.getChoicesList();
@@ -569,43 +555,6 @@ proto.survey.v1.SurveyQuestion.prototype.setType = function(value) {
 
 
 /**
- * optional SurveyChoiceOption option_choice = 6;
- * @return {?proto.survey.v1.SurveyChoiceOption}
- */
-proto.survey.v1.SurveyQuestion.prototype.getOptionChoice = function() {
-  return /** @type{?proto.survey.v1.SurveyChoiceOption} */ (
-    jspb.Message.getWrapperField(this, survey_v1_survey_choice_pb.SurveyChoiceOption, 6));
-};
-
-
-/**
- * @param {?proto.survey.v1.SurveyChoiceOption|undefined} value
- * @return {!proto.survey.v1.SurveyQuestion} returns this
-*/
-proto.survey.v1.SurveyQuestion.prototype.setOptionChoice = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.survey.v1.SurveyQuestion} returns this
- */
-proto.survey.v1.SurveyQuestion.prototype.clearOptionChoice = function() {
-  return this.setOptionChoice(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.survey.v1.SurveyQuestion.prototype.hasOptionChoice = function() {
-  return jspb.Message.getField(this, 6) != null;
-};
-
-
-/**
  * repeated SurveyChoice choices = 7;
  * @return {!Array<!proto.survey.v1.SurveyChoice>}
  */
@@ -676,8 +625,7 @@ proto.survey.v1.SurveyQuestionCreateUpdate.prototype.toObject = function(opt_inc
 proto.survey.v1.SurveyQuestionCreateUpdate.toObject = function(includeInstance, msg) {
   var f, obj = {
     question: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    type: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    optionChoice: (f = msg.getOptionChoice()) && survey_v1_survey_choice_pb.SurveyChoiceOption.toObject(includeInstance, f)
+    type: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
   if (includeInstance) {
@@ -722,11 +670,6 @@ proto.survey.v1.SurveyQuestionCreateUpdate.deserializeBinaryFromReader = functio
       var value = /** @type {!proto.survey.v1.SurveyQuestionType} */ (reader.readEnum());
       msg.setType(value);
       break;
-    case 6:
-      var value = new survey_v1_survey_choice_pb.SurveyChoiceOption;
-      reader.readMessage(value,survey_v1_survey_choice_pb.SurveyChoiceOption.deserializeBinaryFromReader);
-      msg.setOptionChoice(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -770,14 +713,6 @@ proto.survey.v1.SurveyQuestionCreateUpdate.serializeBinaryToWriter = function(me
       f
     );
   }
-  f = message.getOptionChoice();
-  if (f != null) {
-    writer.writeMessage(
-      6,
-      f,
-      survey_v1_survey_choice_pb.SurveyChoiceOption.serializeBinaryToWriter
-    );
-  }
 };
 
 
@@ -814,43 +749,6 @@ proto.survey.v1.SurveyQuestionCreateUpdate.prototype.getType = function() {
  */
 proto.survey.v1.SurveyQuestionCreateUpdate.prototype.setType = function(value) {
   return jspb.Message.setProto3EnumField(this, 5, value);
-};
-
-
-/**
- * optional SurveyChoiceOption option_choice = 6;
- * @return {?proto.survey.v1.SurveyChoiceOption}
- */
-proto.survey.v1.SurveyQuestionCreateUpdate.prototype.getOptionChoice = function() {
-  return /** @type{?proto.survey.v1.SurveyChoiceOption} */ (
-    jspb.Message.getWrapperField(this, survey_v1_survey_choice_pb.SurveyChoiceOption, 6));
-};
-
-
-/**
- * @param {?proto.survey.v1.SurveyChoiceOption|undefined} value
- * @return {!proto.survey.v1.SurveyQuestionCreateUpdate} returns this
-*/
-proto.survey.v1.SurveyQuestionCreateUpdate.prototype.setOptionChoice = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.survey.v1.SurveyQuestionCreateUpdate} returns this
- */
-proto.survey.v1.SurveyQuestionCreateUpdate.prototype.clearOptionChoice = function() {
-  return this.setOptionChoice(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.survey.v1.SurveyQuestionCreateUpdate.prototype.hasOptionChoice = function() {
-  return jspb.Message.getField(this, 6) != null;
 };
 
 
