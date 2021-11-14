@@ -11,35 +11,35 @@ export class OrganizationServiceClient {
   getOne(
     request: web_organization_v1_organization_service_pb.GetOneRequest,
     metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: web_organization_v1_organization_service_pb.GetOneResponse) => void
   ): grpcWeb.ClientReadableStream<web_organization_v1_organization_service_pb.GetOneResponse>;
 
   getList(
     request: web_organization_v1_organization_service_pb.GetListRequest,
     metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: web_organization_v1_organization_service_pb.GetListResponse) => void
   ): grpcWeb.ClientReadableStream<web_organization_v1_organization_service_pb.GetListResponse>;
 
   create(
     request: web_organization_v1_organization_service_pb.CreateRequest,
     metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: web_organization_v1_organization_service_pb.CreateResponse) => void
   ): grpcWeb.ClientReadableStream<web_organization_v1_organization_service_pb.CreateResponse>;
 
   update(
     request: web_organization_v1_organization_service_pb.UpdateRequest,
     metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: web_organization_v1_organization_service_pb.UpdateResponse) => void
   ): grpcWeb.ClientReadableStream<web_organization_v1_organization_service_pb.UpdateResponse>;
 
   delete(
     request: web_organization_v1_organization_service_pb.DeleteRequest,
     metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: web_organization_v1_organization_service_pb.DeleteResponse) => void
   ): grpcWeb.ClientReadableStream<web_organization_v1_organization_service_pb.DeleteResponse>;
 

@@ -11,21 +11,21 @@ export class SurveyClientServiceClient {
   startSurvey(
     request: web_client_v1_client_service_pb.StartSurveyRequest,
     metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: web_client_v1_client_service_pb.StartSurveyResponse) => void
   ): grpcWeb.ClientReadableStream<web_client_v1_client_service_pb.StartSurveyResponse>;
 
   getQuestion(
     request: web_client_v1_client_service_pb.GetQuestionRequest,
     metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: web_client_v1_client_service_pb.GetQuestionResponse) => void
   ): grpcWeb.ClientReadableStream<web_client_v1_client_service_pb.GetQuestionResponse>;
 
   submitAnswer(
     request: web_client_v1_client_service_pb.SubmitAnswerRequest,
     metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: web_client_v1_client_service_pb.SubmitAnswerResponse) => void
   ): grpcWeb.ClientReadableStream<web_client_v1_client_service_pb.SubmitAnswerResponse>;
 

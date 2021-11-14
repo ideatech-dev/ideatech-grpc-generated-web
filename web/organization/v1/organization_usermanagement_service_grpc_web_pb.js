@@ -25,7 +25,7 @@ proto.web.organization.v1 = require('./organization_usermanagement_service_pb.js
 /**
  * @param {string} hostname
  * @param {?Object} credentials
- * @param {?Object} options
+ * @param {?grpc.web.ClientOptions} options
  * @constructor
  * @struct
  * @final
@@ -33,7 +33,7 @@ proto.web.organization.v1 = require('./organization_usermanagement_service_pb.js
 proto.web.organization.v1.OrganizationUserManagementServiceClient =
     function(hostname, credentials, options) {
   if (!options) options = {};
-  options['format'] = 'binary';
+  options.format = 'binary';
 
   /**
    * @private @const {!grpc.web.GrpcWebClientBase} The client
@@ -51,7 +51,7 @@ proto.web.organization.v1.OrganizationUserManagementServiceClient =
 /**
  * @param {string} hostname
  * @param {?Object} credentials
- * @param {?Object} options
+ * @param {?grpc.web.ClientOptions} options
  * @constructor
  * @struct
  * @final
@@ -59,7 +59,7 @@ proto.web.organization.v1.OrganizationUserManagementServiceClient =
 proto.web.organization.v1.OrganizationUserManagementServicePromiseClient =
     function(hostname, credentials, options) {
   if (!options) options = {};
-  options['format'] = 'binary';
+  options.format = 'binary';
 
   /**
    * @private @const {!grpc.web.GrpcWebClientBase} The client
@@ -97,30 +97,11 @@ const methodDescriptor_OrganizationUserManagementService_GetUsers = new grpc.web
 
 
 /**
- * @const
- * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.web.organization.v1.GetUsersRequest,
- *   !proto.web.organization.v1.GetUsersResponse>}
- */
-const methodInfo_OrganizationUserManagementService_GetUsers = new grpc.web.AbstractClientBase.MethodInfo(
-  proto.web.organization.v1.GetUsersResponse,
-  /**
-   * @param {!proto.web.organization.v1.GetUsersRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.web.organization.v1.GetUsersResponse.deserializeBinary
-);
-
-
-/**
  * @param {!proto.web.organization.v1.GetUsersRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.Error, ?proto.web.organization.v1.GetUsersResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.web.organization.v1.GetUsersResponse)}
  *     callback The callback function(error, response)
  * @return {!grpc.web.ClientReadableStream<!proto.web.organization.v1.GetUsersResponse>|undefined}
  *     The XHR Node Readable Stream
@@ -139,7 +120,7 @@ proto.web.organization.v1.OrganizationUserManagementServiceClient.prototype.getU
 /**
  * @param {!proto.web.organization.v1.GetUsersRequest} request The
  *     request proto
- * @param {?Object<string, string>} metadata User defined
+ * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.web.organization.v1.GetUsersResponse>}
  *     Promise that resolves to the response
@@ -177,30 +158,11 @@ const methodDescriptor_OrganizationUserManagementService_InviteUser = new grpc.w
 
 
 /**
- * @const
- * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.web.organization.v1.InviteUserRequest,
- *   !proto.web.organization.v1.InviteUserResponse>}
- */
-const methodInfo_OrganizationUserManagementService_InviteUser = new grpc.web.AbstractClientBase.MethodInfo(
-  proto.web.organization.v1.InviteUserResponse,
-  /**
-   * @param {!proto.web.organization.v1.InviteUserRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.web.organization.v1.InviteUserResponse.deserializeBinary
-);
-
-
-/**
  * @param {!proto.web.organization.v1.InviteUserRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.Error, ?proto.web.organization.v1.InviteUserResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.web.organization.v1.InviteUserResponse)}
  *     callback The callback function(error, response)
  * @return {!grpc.web.ClientReadableStream<!proto.web.organization.v1.InviteUserResponse>|undefined}
  *     The XHR Node Readable Stream
@@ -219,7 +181,7 @@ proto.web.organization.v1.OrganizationUserManagementServiceClient.prototype.invi
 /**
  * @param {!proto.web.organization.v1.InviteUserRequest} request The
  *     request proto
- * @param {?Object<string, string>} metadata User defined
+ * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.web.organization.v1.InviteUserResponse>}
  *     Promise that resolves to the response
@@ -257,30 +219,11 @@ const methodDescriptor_OrganizationUserManagementService_RemoveUser = new grpc.w
 
 
 /**
- * @const
- * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.web.organization.v1.RemoveUserRequest,
- *   !proto.web.organization.v1.RemoveUserResponse>}
- */
-const methodInfo_OrganizationUserManagementService_RemoveUser = new grpc.web.AbstractClientBase.MethodInfo(
-  proto.web.organization.v1.RemoveUserResponse,
-  /**
-   * @param {!proto.web.organization.v1.RemoveUserRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.web.organization.v1.RemoveUserResponse.deserializeBinary
-);
-
-
-/**
  * @param {!proto.web.organization.v1.RemoveUserRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.Error, ?proto.web.organization.v1.RemoveUserResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.web.organization.v1.RemoveUserResponse)}
  *     callback The callback function(error, response)
  * @return {!grpc.web.ClientReadableStream<!proto.web.organization.v1.RemoveUserResponse>|undefined}
  *     The XHR Node Readable Stream
@@ -299,7 +242,7 @@ proto.web.organization.v1.OrganizationUserManagementServiceClient.prototype.remo
 /**
  * @param {!proto.web.organization.v1.RemoveUserRequest} request The
  *     request proto
- * @param {?Object<string, string>} metadata User defined
+ * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.web.organization.v1.RemoveUserResponse>}
  *     Promise that resolves to the response

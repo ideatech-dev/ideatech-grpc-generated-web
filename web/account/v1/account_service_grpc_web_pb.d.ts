@@ -11,21 +11,21 @@ export class AccountServiceClient {
   login(
     request: web_account_v1_account_service_pb.LoginRequest,
     metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: web_account_v1_account_service_pb.LoginResponse) => void
   ): grpcWeb.ClientReadableStream<web_account_v1_account_service_pb.LoginResponse>;
 
   register(
     request: web_account_v1_account_service_pb.RegisterRequest,
     metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: web_account_v1_account_service_pb.RegisterResponse) => void
   ): grpcWeb.ClientReadableStream<web_account_v1_account_service_pb.RegisterResponse>;
 
   accountInformation(
     request: web_account_v1_account_service_pb.AccountInformationRequest,
     metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: web_account_v1_account_service_pb.AccountInformationResponse) => void
   ): grpcWeb.ClientReadableStream<web_account_v1_account_service_pb.AccountInformationResponse>;
 

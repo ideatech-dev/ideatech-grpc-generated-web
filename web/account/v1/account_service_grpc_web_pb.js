@@ -25,7 +25,7 @@ proto.web.account.v1 = require('./account_service_pb.js');
 /**
  * @param {string} hostname
  * @param {?Object} credentials
- * @param {?Object} options
+ * @param {?grpc.web.ClientOptions} options
  * @constructor
  * @struct
  * @final
@@ -33,7 +33,7 @@ proto.web.account.v1 = require('./account_service_pb.js');
 proto.web.account.v1.AccountServiceClient =
     function(hostname, credentials, options) {
   if (!options) options = {};
-  options['format'] = 'binary';
+  options.format = 'binary';
 
   /**
    * @private @const {!grpc.web.GrpcWebClientBase} The client
@@ -51,7 +51,7 @@ proto.web.account.v1.AccountServiceClient =
 /**
  * @param {string} hostname
  * @param {?Object} credentials
- * @param {?Object} options
+ * @param {?grpc.web.ClientOptions} options
  * @constructor
  * @struct
  * @final
@@ -59,7 +59,7 @@ proto.web.account.v1.AccountServiceClient =
 proto.web.account.v1.AccountServicePromiseClient =
     function(hostname, credentials, options) {
   if (!options) options = {};
-  options['format'] = 'binary';
+  options.format = 'binary';
 
   /**
    * @private @const {!grpc.web.GrpcWebClientBase} The client
@@ -97,30 +97,11 @@ const methodDescriptor_AccountService_Login = new grpc.web.MethodDescriptor(
 
 
 /**
- * @const
- * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.web.account.v1.LoginRequest,
- *   !proto.web.account.v1.LoginResponse>}
- */
-const methodInfo_AccountService_Login = new grpc.web.AbstractClientBase.MethodInfo(
-  proto.web.account.v1.LoginResponse,
-  /**
-   * @param {!proto.web.account.v1.LoginRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.web.account.v1.LoginResponse.deserializeBinary
-);
-
-
-/**
  * @param {!proto.web.account.v1.LoginRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.Error, ?proto.web.account.v1.LoginResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.web.account.v1.LoginResponse)}
  *     callback The callback function(error, response)
  * @return {!grpc.web.ClientReadableStream<!proto.web.account.v1.LoginResponse>|undefined}
  *     The XHR Node Readable Stream
@@ -139,7 +120,7 @@ proto.web.account.v1.AccountServiceClient.prototype.login =
 /**
  * @param {!proto.web.account.v1.LoginRequest} request The
  *     request proto
- * @param {?Object<string, string>} metadata User defined
+ * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.web.account.v1.LoginResponse>}
  *     Promise that resolves to the response
@@ -177,30 +158,11 @@ const methodDescriptor_AccountService_Register = new grpc.web.MethodDescriptor(
 
 
 /**
- * @const
- * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.web.account.v1.RegisterRequest,
- *   !proto.web.account.v1.RegisterResponse>}
- */
-const methodInfo_AccountService_Register = new grpc.web.AbstractClientBase.MethodInfo(
-  proto.web.account.v1.RegisterResponse,
-  /**
-   * @param {!proto.web.account.v1.RegisterRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.web.account.v1.RegisterResponse.deserializeBinary
-);
-
-
-/**
  * @param {!proto.web.account.v1.RegisterRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.Error, ?proto.web.account.v1.RegisterResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.web.account.v1.RegisterResponse)}
  *     callback The callback function(error, response)
  * @return {!grpc.web.ClientReadableStream<!proto.web.account.v1.RegisterResponse>|undefined}
  *     The XHR Node Readable Stream
@@ -219,7 +181,7 @@ proto.web.account.v1.AccountServiceClient.prototype.register =
 /**
  * @param {!proto.web.account.v1.RegisterRequest} request The
  *     request proto
- * @param {?Object<string, string>} metadata User defined
+ * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.web.account.v1.RegisterResponse>}
  *     Promise that resolves to the response
@@ -257,30 +219,11 @@ const methodDescriptor_AccountService_AccountInformation = new grpc.web.MethodDe
 
 
 /**
- * @const
- * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.web.account.v1.AccountInformationRequest,
- *   !proto.web.account.v1.AccountInformationResponse>}
- */
-const methodInfo_AccountService_AccountInformation = new grpc.web.AbstractClientBase.MethodInfo(
-  proto.web.account.v1.AccountInformationResponse,
-  /**
-   * @param {!proto.web.account.v1.AccountInformationRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.web.account.v1.AccountInformationResponse.deserializeBinary
-);
-
-
-/**
  * @param {!proto.web.account.v1.AccountInformationRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.Error, ?proto.web.account.v1.AccountInformationResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.web.account.v1.AccountInformationResponse)}
  *     callback The callback function(error, response)
  * @return {!grpc.web.ClientReadableStream<!proto.web.account.v1.AccountInformationResponse>|undefined}
  *     The XHR Node Readable Stream
@@ -299,7 +242,7 @@ proto.web.account.v1.AccountServiceClient.prototype.accountInformation =
 /**
  * @param {!proto.web.account.v1.AccountInformationRequest} request The
  *     request proto
- * @param {?Object<string, string>} metadata User defined
+ * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.web.account.v1.AccountInformationResponse>}
  *     Promise that resolves to the response

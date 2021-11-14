@@ -25,7 +25,7 @@ proto.web.organization.v1 = require('./organization_service_pb.js');
 /**
  * @param {string} hostname
  * @param {?Object} credentials
- * @param {?Object} options
+ * @param {?grpc.web.ClientOptions} options
  * @constructor
  * @struct
  * @final
@@ -33,7 +33,7 @@ proto.web.organization.v1 = require('./organization_service_pb.js');
 proto.web.organization.v1.OrganizationServiceClient =
     function(hostname, credentials, options) {
   if (!options) options = {};
-  options['format'] = 'binary';
+  options.format = 'binary';
 
   /**
    * @private @const {!grpc.web.GrpcWebClientBase} The client
@@ -51,7 +51,7 @@ proto.web.organization.v1.OrganizationServiceClient =
 /**
  * @param {string} hostname
  * @param {?Object} credentials
- * @param {?Object} options
+ * @param {?grpc.web.ClientOptions} options
  * @constructor
  * @struct
  * @final
@@ -59,7 +59,7 @@ proto.web.organization.v1.OrganizationServiceClient =
 proto.web.organization.v1.OrganizationServicePromiseClient =
     function(hostname, credentials, options) {
   if (!options) options = {};
-  options['format'] = 'binary';
+  options.format = 'binary';
 
   /**
    * @private @const {!grpc.web.GrpcWebClientBase} The client
@@ -97,30 +97,11 @@ const methodDescriptor_OrganizationService_GetOne = new grpc.web.MethodDescripto
 
 
 /**
- * @const
- * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.web.organization.v1.GetOneRequest,
- *   !proto.web.organization.v1.GetOneResponse>}
- */
-const methodInfo_OrganizationService_GetOne = new grpc.web.AbstractClientBase.MethodInfo(
-  proto.web.organization.v1.GetOneResponse,
-  /**
-   * @param {!proto.web.organization.v1.GetOneRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.web.organization.v1.GetOneResponse.deserializeBinary
-);
-
-
-/**
  * @param {!proto.web.organization.v1.GetOneRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.Error, ?proto.web.organization.v1.GetOneResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.web.organization.v1.GetOneResponse)}
  *     callback The callback function(error, response)
  * @return {!grpc.web.ClientReadableStream<!proto.web.organization.v1.GetOneResponse>|undefined}
  *     The XHR Node Readable Stream
@@ -139,7 +120,7 @@ proto.web.organization.v1.OrganizationServiceClient.prototype.getOne =
 /**
  * @param {!proto.web.organization.v1.GetOneRequest} request The
  *     request proto
- * @param {?Object<string, string>} metadata User defined
+ * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.web.organization.v1.GetOneResponse>}
  *     Promise that resolves to the response
@@ -177,30 +158,11 @@ const methodDescriptor_OrganizationService_GetList = new grpc.web.MethodDescript
 
 
 /**
- * @const
- * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.web.organization.v1.GetListRequest,
- *   !proto.web.organization.v1.GetListResponse>}
- */
-const methodInfo_OrganizationService_GetList = new grpc.web.AbstractClientBase.MethodInfo(
-  proto.web.organization.v1.GetListResponse,
-  /**
-   * @param {!proto.web.organization.v1.GetListRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.web.organization.v1.GetListResponse.deserializeBinary
-);
-
-
-/**
  * @param {!proto.web.organization.v1.GetListRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.Error, ?proto.web.organization.v1.GetListResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.web.organization.v1.GetListResponse)}
  *     callback The callback function(error, response)
  * @return {!grpc.web.ClientReadableStream<!proto.web.organization.v1.GetListResponse>|undefined}
  *     The XHR Node Readable Stream
@@ -219,7 +181,7 @@ proto.web.organization.v1.OrganizationServiceClient.prototype.getList =
 /**
  * @param {!proto.web.organization.v1.GetListRequest} request The
  *     request proto
- * @param {?Object<string, string>} metadata User defined
+ * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.web.organization.v1.GetListResponse>}
  *     Promise that resolves to the response
@@ -257,30 +219,11 @@ const methodDescriptor_OrganizationService_Create = new grpc.web.MethodDescripto
 
 
 /**
- * @const
- * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.web.organization.v1.CreateRequest,
- *   !proto.web.organization.v1.CreateResponse>}
- */
-const methodInfo_OrganizationService_Create = new grpc.web.AbstractClientBase.MethodInfo(
-  proto.web.organization.v1.CreateResponse,
-  /**
-   * @param {!proto.web.organization.v1.CreateRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.web.organization.v1.CreateResponse.deserializeBinary
-);
-
-
-/**
  * @param {!proto.web.organization.v1.CreateRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.Error, ?proto.web.organization.v1.CreateResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.web.organization.v1.CreateResponse)}
  *     callback The callback function(error, response)
  * @return {!grpc.web.ClientReadableStream<!proto.web.organization.v1.CreateResponse>|undefined}
  *     The XHR Node Readable Stream
@@ -299,7 +242,7 @@ proto.web.organization.v1.OrganizationServiceClient.prototype.create =
 /**
  * @param {!proto.web.organization.v1.CreateRequest} request The
  *     request proto
- * @param {?Object<string, string>} metadata User defined
+ * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.web.organization.v1.CreateResponse>}
  *     Promise that resolves to the response
@@ -337,30 +280,11 @@ const methodDescriptor_OrganizationService_Update = new grpc.web.MethodDescripto
 
 
 /**
- * @const
- * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.web.organization.v1.UpdateRequest,
- *   !proto.web.organization.v1.UpdateResponse>}
- */
-const methodInfo_OrganizationService_Update = new grpc.web.AbstractClientBase.MethodInfo(
-  proto.web.organization.v1.UpdateResponse,
-  /**
-   * @param {!proto.web.organization.v1.UpdateRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.web.organization.v1.UpdateResponse.deserializeBinary
-);
-
-
-/**
  * @param {!proto.web.organization.v1.UpdateRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.Error, ?proto.web.organization.v1.UpdateResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.web.organization.v1.UpdateResponse)}
  *     callback The callback function(error, response)
  * @return {!grpc.web.ClientReadableStream<!proto.web.organization.v1.UpdateResponse>|undefined}
  *     The XHR Node Readable Stream
@@ -379,7 +303,7 @@ proto.web.organization.v1.OrganizationServiceClient.prototype.update =
 /**
  * @param {!proto.web.organization.v1.UpdateRequest} request The
  *     request proto
- * @param {?Object<string, string>} metadata User defined
+ * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.web.organization.v1.UpdateResponse>}
  *     Promise that resolves to the response
@@ -417,30 +341,11 @@ const methodDescriptor_OrganizationService_Delete = new grpc.web.MethodDescripto
 
 
 /**
- * @const
- * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.web.organization.v1.DeleteRequest,
- *   !proto.web.organization.v1.DeleteResponse>}
- */
-const methodInfo_OrganizationService_Delete = new grpc.web.AbstractClientBase.MethodInfo(
-  proto.web.organization.v1.DeleteResponse,
-  /**
-   * @param {!proto.web.organization.v1.DeleteRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.web.organization.v1.DeleteResponse.deserializeBinary
-);
-
-
-/**
  * @param {!proto.web.organization.v1.DeleteRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.Error, ?proto.web.organization.v1.DeleteResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.web.organization.v1.DeleteResponse)}
  *     callback The callback function(error, response)
  * @return {!grpc.web.ClientReadableStream<!proto.web.organization.v1.DeleteResponse>|undefined}
  *     The XHR Node Readable Stream
@@ -459,7 +364,7 @@ proto.web.organization.v1.OrganizationServiceClient.prototype.delete =
 /**
  * @param {!proto.web.organization.v1.DeleteRequest} request The
  *     request proto
- * @param {?Object<string, string>} metadata User defined
+ * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.web.organization.v1.DeleteResponse>}
  *     Promise that resolves to the response

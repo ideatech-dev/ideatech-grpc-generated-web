@@ -25,7 +25,7 @@ proto.web.survey.v1 = require('./survey_response_service_pb.js');
 /**
  * @param {string} hostname
  * @param {?Object} credentials
- * @param {?Object} options
+ * @param {?grpc.web.ClientOptions} options
  * @constructor
  * @struct
  * @final
@@ -33,7 +33,7 @@ proto.web.survey.v1 = require('./survey_response_service_pb.js');
 proto.web.survey.v1.SurveyResponseServiceClient =
     function(hostname, credentials, options) {
   if (!options) options = {};
-  options['format'] = 'binary';
+  options.format = 'binary';
 
   /**
    * @private @const {!grpc.web.GrpcWebClientBase} The client
@@ -51,7 +51,7 @@ proto.web.survey.v1.SurveyResponseServiceClient =
 /**
  * @param {string} hostname
  * @param {?Object} credentials
- * @param {?Object} options
+ * @param {?grpc.web.ClientOptions} options
  * @constructor
  * @struct
  * @final
@@ -59,7 +59,7 @@ proto.web.survey.v1.SurveyResponseServiceClient =
 proto.web.survey.v1.SurveyResponseServicePromiseClient =
     function(hostname, credentials, options) {
   if (!options) options = {};
-  options['format'] = 'binary';
+  options.format = 'binary';
 
   /**
    * @private @const {!grpc.web.GrpcWebClientBase} The client
@@ -97,30 +97,11 @@ const methodDescriptor_SurveyResponseService_ResponseGetAll = new grpc.web.Metho
 
 
 /**
- * @const
- * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.web.survey.v1.ResponseGetAllRequest,
- *   !proto.web.survey.v1.ResponseGetAllResponse>}
- */
-const methodInfo_SurveyResponseService_ResponseGetAll = new grpc.web.AbstractClientBase.MethodInfo(
-  proto.web.survey.v1.ResponseGetAllResponse,
-  /**
-   * @param {!proto.web.survey.v1.ResponseGetAllRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.web.survey.v1.ResponseGetAllResponse.deserializeBinary
-);
-
-
-/**
  * @param {!proto.web.survey.v1.ResponseGetAllRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.Error, ?proto.web.survey.v1.ResponseGetAllResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.web.survey.v1.ResponseGetAllResponse)}
  *     callback The callback function(error, response)
  * @return {!grpc.web.ClientReadableStream<!proto.web.survey.v1.ResponseGetAllResponse>|undefined}
  *     The XHR Node Readable Stream
@@ -139,7 +120,7 @@ proto.web.survey.v1.SurveyResponseServiceClient.prototype.responseGetAll =
 /**
  * @param {!proto.web.survey.v1.ResponseGetAllRequest} request The
  *     request proto
- * @param {?Object<string, string>} metadata User defined
+ * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.web.survey.v1.ResponseGetAllResponse>}
  *     Promise that resolves to the response
@@ -177,30 +158,11 @@ const methodDescriptor_SurveyResponseService_ResponseGetOne = new grpc.web.Metho
 
 
 /**
- * @const
- * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.web.survey.v1.ResponseGetOneRequest,
- *   !proto.web.survey.v1.ResponseGetOneResponse>}
- */
-const methodInfo_SurveyResponseService_ResponseGetOne = new grpc.web.AbstractClientBase.MethodInfo(
-  proto.web.survey.v1.ResponseGetOneResponse,
-  /**
-   * @param {!proto.web.survey.v1.ResponseGetOneRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.web.survey.v1.ResponseGetOneResponse.deserializeBinary
-);
-
-
-/**
  * @param {!proto.web.survey.v1.ResponseGetOneRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.Error, ?proto.web.survey.v1.ResponseGetOneResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.web.survey.v1.ResponseGetOneResponse)}
  *     callback The callback function(error, response)
  * @return {!grpc.web.ClientReadableStream<!proto.web.survey.v1.ResponseGetOneResponse>|undefined}
  *     The XHR Node Readable Stream
@@ -219,7 +181,7 @@ proto.web.survey.v1.SurveyResponseServiceClient.prototype.responseGetOne =
 /**
  * @param {!proto.web.survey.v1.ResponseGetOneRequest} request The
  *     request proto
- * @param {?Object<string, string>} metadata User defined
+ * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.web.survey.v1.ResponseGetOneResponse>}
  *     Promise that resolves to the response
@@ -257,30 +219,11 @@ const methodDescriptor_SurveyResponseService_ResponseAnswerGetList = new grpc.we
 
 
 /**
- * @const
- * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.web.survey.v1.ResponseAnswerGetListRequest,
- *   !proto.web.survey.v1.ResponseAnswerGetListResponse>}
- */
-const methodInfo_SurveyResponseService_ResponseAnswerGetList = new grpc.web.AbstractClientBase.MethodInfo(
-  proto.web.survey.v1.ResponseAnswerGetListResponse,
-  /**
-   * @param {!proto.web.survey.v1.ResponseAnswerGetListRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.web.survey.v1.ResponseAnswerGetListResponse.deserializeBinary
-);
-
-
-/**
  * @param {!proto.web.survey.v1.ResponseAnswerGetListRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.Error, ?proto.web.survey.v1.ResponseAnswerGetListResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.web.survey.v1.ResponseAnswerGetListResponse)}
  *     callback The callback function(error, response)
  * @return {!grpc.web.ClientReadableStream<!proto.web.survey.v1.ResponseAnswerGetListResponse>|undefined}
  *     The XHR Node Readable Stream
@@ -299,7 +242,7 @@ proto.web.survey.v1.SurveyResponseServiceClient.prototype.responseAnswerGetList 
 /**
  * @param {!proto.web.survey.v1.ResponseAnswerGetListRequest} request The
  *     request proto
- * @param {?Object<string, string>} metadata User defined
+ * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.web.survey.v1.ResponseAnswerGetListResponse>}
  *     Promise that resolves to the response

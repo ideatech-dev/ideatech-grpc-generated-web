@@ -25,7 +25,7 @@ proto.web.client.v1 = require('./client_service_pb.js');
 /**
  * @param {string} hostname
  * @param {?Object} credentials
- * @param {?Object} options
+ * @param {?grpc.web.ClientOptions} options
  * @constructor
  * @struct
  * @final
@@ -33,7 +33,7 @@ proto.web.client.v1 = require('./client_service_pb.js');
 proto.web.client.v1.SurveyClientServiceClient =
     function(hostname, credentials, options) {
   if (!options) options = {};
-  options['format'] = 'binary';
+  options.format = 'binary';
 
   /**
    * @private @const {!grpc.web.GrpcWebClientBase} The client
@@ -51,7 +51,7 @@ proto.web.client.v1.SurveyClientServiceClient =
 /**
  * @param {string} hostname
  * @param {?Object} credentials
- * @param {?Object} options
+ * @param {?grpc.web.ClientOptions} options
  * @constructor
  * @struct
  * @final
@@ -59,7 +59,7 @@ proto.web.client.v1.SurveyClientServiceClient =
 proto.web.client.v1.SurveyClientServicePromiseClient =
     function(hostname, credentials, options) {
   if (!options) options = {};
-  options['format'] = 'binary';
+  options.format = 'binary';
 
   /**
    * @private @const {!grpc.web.GrpcWebClientBase} The client
@@ -97,30 +97,11 @@ const methodDescriptor_SurveyClientService_StartSurvey = new grpc.web.MethodDesc
 
 
 /**
- * @const
- * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.web.client.v1.StartSurveyRequest,
- *   !proto.web.client.v1.StartSurveyResponse>}
- */
-const methodInfo_SurveyClientService_StartSurvey = new grpc.web.AbstractClientBase.MethodInfo(
-  proto.web.client.v1.StartSurveyResponse,
-  /**
-   * @param {!proto.web.client.v1.StartSurveyRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.web.client.v1.StartSurveyResponse.deserializeBinary
-);
-
-
-/**
  * @param {!proto.web.client.v1.StartSurveyRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.Error, ?proto.web.client.v1.StartSurveyResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.web.client.v1.StartSurveyResponse)}
  *     callback The callback function(error, response)
  * @return {!grpc.web.ClientReadableStream<!proto.web.client.v1.StartSurveyResponse>|undefined}
  *     The XHR Node Readable Stream
@@ -139,7 +120,7 @@ proto.web.client.v1.SurveyClientServiceClient.prototype.startSurvey =
 /**
  * @param {!proto.web.client.v1.StartSurveyRequest} request The
  *     request proto
- * @param {?Object<string, string>} metadata User defined
+ * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.web.client.v1.StartSurveyResponse>}
  *     Promise that resolves to the response
@@ -177,30 +158,11 @@ const methodDescriptor_SurveyClientService_GetQuestion = new grpc.web.MethodDesc
 
 
 /**
- * @const
- * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.web.client.v1.GetQuestionRequest,
- *   !proto.web.client.v1.GetQuestionResponse>}
- */
-const methodInfo_SurveyClientService_GetQuestion = new grpc.web.AbstractClientBase.MethodInfo(
-  proto.web.client.v1.GetQuestionResponse,
-  /**
-   * @param {!proto.web.client.v1.GetQuestionRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.web.client.v1.GetQuestionResponse.deserializeBinary
-);
-
-
-/**
  * @param {!proto.web.client.v1.GetQuestionRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.Error, ?proto.web.client.v1.GetQuestionResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.web.client.v1.GetQuestionResponse)}
  *     callback The callback function(error, response)
  * @return {!grpc.web.ClientReadableStream<!proto.web.client.v1.GetQuestionResponse>|undefined}
  *     The XHR Node Readable Stream
@@ -219,7 +181,7 @@ proto.web.client.v1.SurveyClientServiceClient.prototype.getQuestion =
 /**
  * @param {!proto.web.client.v1.GetQuestionRequest} request The
  *     request proto
- * @param {?Object<string, string>} metadata User defined
+ * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.web.client.v1.GetQuestionResponse>}
  *     Promise that resolves to the response
@@ -257,30 +219,11 @@ const methodDescriptor_SurveyClientService_SubmitAnswer = new grpc.web.MethodDes
 
 
 /**
- * @const
- * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.web.client.v1.SubmitAnswerRequest,
- *   !proto.web.client.v1.SubmitAnswerResponse>}
- */
-const methodInfo_SurveyClientService_SubmitAnswer = new grpc.web.AbstractClientBase.MethodInfo(
-  proto.web.client.v1.SubmitAnswerResponse,
-  /**
-   * @param {!proto.web.client.v1.SubmitAnswerRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.web.client.v1.SubmitAnswerResponse.deserializeBinary
-);
-
-
-/**
  * @param {!proto.web.client.v1.SubmitAnswerRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.Error, ?proto.web.client.v1.SubmitAnswerResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.web.client.v1.SubmitAnswerResponse)}
  *     callback The callback function(error, response)
  * @return {!grpc.web.ClientReadableStream<!proto.web.client.v1.SubmitAnswerResponse>|undefined}
  *     The XHR Node Readable Stream
@@ -299,7 +242,7 @@ proto.web.client.v1.SurveyClientServiceClient.prototype.submitAnswer =
 /**
  * @param {!proto.web.client.v1.SubmitAnswerRequest} request The
  *     request proto
- * @param {?Object<string, string>} metadata User defined
+ * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.web.client.v1.SubmitAnswerResponse>}
  *     Promise that resolves to the response

@@ -11,28 +11,28 @@ export class SurveyPageServiceClient {
   pageGetOne(
     request: web_survey_v1_survey_page_service_pb.PageGetOneRequest,
     metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: web_survey_v1_survey_page_service_pb.PageGetOneResponse) => void
   ): grpcWeb.ClientReadableStream<web_survey_v1_survey_page_service_pb.PageGetOneResponse>;
 
   pageGetAll(
     request: web_survey_v1_survey_page_service_pb.PageGetAllRequest,
     metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: web_survey_v1_survey_page_service_pb.PageGetAllResponse) => void
   ): grpcWeb.ClientReadableStream<web_survey_v1_survey_page_service_pb.PageGetAllResponse>;
 
   pageCreate(
     request: web_survey_v1_survey_page_service_pb.PageCreateRequest,
     metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: web_survey_v1_survey_page_service_pb.PageCreateResponse) => void
   ): grpcWeb.ClientReadableStream<web_survey_v1_survey_page_service_pb.PageCreateResponse>;
 
   pageDelete(
     request: web_survey_v1_survey_page_service_pb.PageDeleteRequest,
     metadata: grpcWeb.Metadata | undefined,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: web_survey_v1_survey_page_service_pb.PageDeleteResponse) => void
   ): grpcWeb.ClientReadableStream<web_survey_v1_survey_page_service_pb.PageDeleteResponse>;
 
