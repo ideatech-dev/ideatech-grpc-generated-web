@@ -61,8 +61,6 @@ export class PageGetAllRequest extends jspb.Message {
     setSurveyId(value: number): PageGetAllRequest;
     getWithQuestion(): boolean;
     setWithQuestion(value: boolean): PageGetAllRequest;
-    getWithQuestionOption(): boolean;
-    setWithQuestionOption(value: boolean): PageGetAllRequest;
     getWithQuestionChoice(): boolean;
     setWithQuestionChoice(value: boolean): PageGetAllRequest;
 
@@ -80,7 +78,6 @@ export namespace PageGetAllRequest {
     export type AsObject = {
         surveyId: number,
         withQuestion: boolean,
-        withQuestionOption: boolean,
         withQuestionChoice: boolean,
     }
 }

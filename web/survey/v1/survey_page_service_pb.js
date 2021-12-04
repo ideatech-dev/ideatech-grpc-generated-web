@@ -568,8 +568,7 @@ proto.web.survey.v1.PageGetAllRequest.toObject = function(includeInstance, msg) 
   var f, obj = {
     surveyId: jspb.Message.getFieldWithDefault(msg, 1, 0),
     withQuestion: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    withQuestionOption: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    withQuestionChoice: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
+    withQuestionChoice: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
   };
 
   if (includeInstance) {
@@ -616,10 +615,6 @@ proto.web.survey.v1.PageGetAllRequest.deserializeBinaryFromReader = function(msg
       break;
     case 3:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setWithQuestionOption(value);
-      break;
-    case 4:
-      var value = /** @type {boolean} */ (reader.readBool());
       msg.setWithQuestionChoice(value);
       break;
     default:
@@ -665,17 +660,10 @@ proto.web.survey.v1.PageGetAllRequest.serializeBinaryToWriter = function(message
       f
     );
   }
-  f = message.getWithQuestionOption();
-  if (f) {
-    writer.writeBool(
-      3,
-      f
-    );
-  }
   f = message.getWithQuestionChoice();
   if (f) {
     writer.writeBool(
-      4,
+      3,
       f
     );
   }
@@ -719,10 +707,10 @@ proto.web.survey.v1.PageGetAllRequest.prototype.setWithQuestion = function(value
 
 
 /**
- * optional bool with_question_option = 3;
+ * optional bool with_question_choice = 3;
  * @return {boolean}
  */
-proto.web.survey.v1.PageGetAllRequest.prototype.getWithQuestionOption = function() {
+proto.web.survey.v1.PageGetAllRequest.prototype.getWithQuestionChoice = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
 };
 
@@ -731,26 +719,8 @@ proto.web.survey.v1.PageGetAllRequest.prototype.getWithQuestionOption = function
  * @param {boolean} value
  * @return {!proto.web.survey.v1.PageGetAllRequest} returns this
  */
-proto.web.survey.v1.PageGetAllRequest.prototype.setWithQuestionOption = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 3, value);
-};
-
-
-/**
- * optional bool with_question_choice = 4;
- * @return {boolean}
- */
-proto.web.survey.v1.PageGetAllRequest.prototype.getWithQuestionChoice = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.web.survey.v1.PageGetAllRequest} returns this
- */
 proto.web.survey.v1.PageGetAllRequest.prototype.setWithQuestionChoice = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 4, value);
+  return jspb.Message.setProto3BooleanField(this, 3, value);
 };
 
 
