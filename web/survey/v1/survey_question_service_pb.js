@@ -446,7 +446,8 @@ proto.web.survey.v1.QuestionGetOneRequest.prototype.toObject = function(opt_incl
 proto.web.survey.v1.QuestionGetOneRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     questionId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    withChoice: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
+    withChoice: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+    withOption: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
   };
 
   if (includeInstance) {
@@ -491,6 +492,10 @@ proto.web.survey.v1.QuestionGetOneRequest.deserializeBinaryFromReader = function
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setWithChoice(value);
       break;
+    case 3:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setWithOption(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -534,6 +539,13 @@ proto.web.survey.v1.QuestionGetOneRequest.serializeBinaryToWriter = function(mes
       f
     );
   }
+  f = message.getWithOption();
+  if (f) {
+    writer.writeBool(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -570,6 +582,24 @@ proto.web.survey.v1.QuestionGetOneRequest.prototype.getWithChoice = function() {
  */
 proto.web.survey.v1.QuestionGetOneRequest.prototype.setWithChoice = function(value) {
   return jspb.Message.setProto3BooleanField(this, 2, value);
+};
+
+
+/**
+ * optional bool with_option = 3;
+ * @return {boolean}
+ */
+proto.web.survey.v1.QuestionGetOneRequest.prototype.getWithOption = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.web.survey.v1.QuestionGetOneRequest} returns this
+ */
+proto.web.survey.v1.QuestionGetOneRequest.prototype.setWithOption = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 3, value);
 };
 
 
@@ -757,7 +787,8 @@ proto.web.survey.v1.QuestionGetAllRequest.prototype.toObject = function(opt_incl
 proto.web.survey.v1.QuestionGetAllRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     pageId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    withChoice: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
+    withChoice: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+    withOption: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
   };
 
   if (includeInstance) {
@@ -802,6 +833,10 @@ proto.web.survey.v1.QuestionGetAllRequest.deserializeBinaryFromReader = function
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setWithChoice(value);
       break;
+    case 3:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setWithOption(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -845,6 +880,13 @@ proto.web.survey.v1.QuestionGetAllRequest.serializeBinaryToWriter = function(mes
       f
     );
   }
+  f = message.getWithOption();
+  if (f) {
+    writer.writeBool(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -881,6 +923,24 @@ proto.web.survey.v1.QuestionGetAllRequest.prototype.getWithChoice = function() {
  */
 proto.web.survey.v1.QuestionGetAllRequest.prototype.setWithChoice = function(value) {
   return jspb.Message.setProto3BooleanField(this, 2, value);
+};
+
+
+/**
+ * optional bool with_option = 3;
+ * @return {boolean}
+ */
+proto.web.survey.v1.QuestionGetAllRequest.prototype.getWithOption = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.web.survey.v1.QuestionGetAllRequest} returns this
+ */
+proto.web.survey.v1.QuestionGetAllRequest.prototype.setWithOption = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 3, value);
 };
 
 

@@ -12,6 +12,8 @@ export class QuestionGetOneRequest extends jspb.Message {
     setQuestionId(value: number): QuestionGetOneRequest;
     getWithChoice(): boolean;
     setWithChoice(value: boolean): QuestionGetOneRequest;
+    getWithOption(): boolean;
+    setWithOption(value: boolean): QuestionGetOneRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): QuestionGetOneRequest.AsObject;
@@ -27,6 +29,7 @@ export namespace QuestionGetOneRequest {
     export type AsObject = {
         questionId: number,
         withChoice: boolean,
+        withOption: boolean,
     }
 }
 
@@ -58,6 +61,8 @@ export class QuestionGetAllRequest extends jspb.Message {
     setPageId(value: number): QuestionGetAllRequest;
     getWithChoice(): boolean;
     setWithChoice(value: boolean): QuestionGetAllRequest;
+    getWithOption(): boolean;
+    setWithOption(value: boolean): QuestionGetAllRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): QuestionGetAllRequest.AsObject;
@@ -73,6 +78,7 @@ export namespace QuestionGetAllRequest {
     export type AsObject = {
         pageId: number,
         withChoice: boolean,
+        withOption: boolean,
     }
 }
 
