@@ -90,6 +90,11 @@ export class SurveyQuestion extends jspb.Message {
     setOrders(value: number): SurveyQuestion;
     getType(): SurveyQuestionType;
     setType(value: SurveyQuestionType): SurveyQuestion;
+
+    hasOption(): boolean;
+    clearOption(): void;
+    getOption(): SurveyQuestionOption | undefined;
+    setOption(value?: SurveyQuestionOption): SurveyQuestion;
     clearChoicesList(): void;
     getChoicesList(): Array<SurveyChoice>;
     setChoicesList(value: Array<SurveyChoice>): SurveyQuestion;
@@ -112,7 +117,46 @@ export namespace SurveyQuestion {
         question: string,
         orders: number,
         type: SurveyQuestionType,
+        option?: SurveyQuestionOption.AsObject,
         choicesList: Array<SurveyChoice.AsObject>,
+    }
+}
+
+export class SurveyQuestionOption extends jspb.Message { 
+    getIsRequired(): boolean;
+    setIsRequired(value: boolean): SurveyQuestionOption;
+    getIsRandomChoice(): boolean;
+    setIsRandomChoice(value: boolean): SurveyQuestionOption;
+    getIsTextfieldOnlyNumber(): boolean;
+    setIsTextfieldOnlyNumber(value: boolean): SurveyQuestionOption;
+    getIsTextfieldMultiline(): boolean;
+    setIsTextfieldMultiline(value: boolean): SurveyQuestionOption;
+    getRedirectUrl(): string;
+    setRedirectUrl(value: string): SurveyQuestionOption;
+    getRedirectTimeOffset(): number;
+    setRedirectTimeOffset(value: number): SurveyQuestionOption;
+    getWebhookUrl(): string;
+    setWebhookUrl(value: string): SurveyQuestionOption;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): SurveyQuestionOption.AsObject;
+    static toObject(includeInstance: boolean, msg: SurveyQuestionOption): SurveyQuestionOption.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: SurveyQuestionOption, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): SurveyQuestionOption;
+    static deserializeBinaryFromReader(message: SurveyQuestionOption, reader: jspb.BinaryReader): SurveyQuestionOption;
+}
+
+export namespace SurveyQuestionOption {
+    export type AsObject = {
+        isRequired: boolean,
+        isRandomChoice: boolean,
+        isTextfieldOnlyNumber: boolean,
+        isTextfieldMultiline: boolean,
+        redirectUrl: string,
+        redirectTimeOffset: number,
+        webhookUrl: string,
     }
 }
 

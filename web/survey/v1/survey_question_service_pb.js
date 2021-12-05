@@ -1419,7 +1419,8 @@ proto.web.survey.v1.QuestionUpdateRequest.toObject = function(includeInstance, m
   var f, obj = {
     questionId: jspb.Message.getFieldWithDefault(msg, 1, 0),
     newQuestion: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    newType: jspb.Message.getFieldWithDefault(msg, 3, 0)
+    newType: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    newOption: (f = msg.getNewOption()) && web_survey_v1_types_pb.SurveyQuestionOption.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1467,6 +1468,11 @@ proto.web.survey.v1.QuestionUpdateRequest.deserializeBinaryFromReader = function
     case 3:
       var value = /** @type {!proto.web.survey.v1.SurveyQuestionType} */ (reader.readEnum());
       msg.setNewType(value);
+      break;
+    case 4:
+      var value = new web_survey_v1_types_pb.SurveyQuestionOption;
+      reader.readMessage(value,web_survey_v1_types_pb.SurveyQuestionOption.deserializeBinaryFromReader);
+      msg.setNewOption(value);
       break;
     default:
       reader.skipField();
@@ -1516,6 +1522,14 @@ proto.web.survey.v1.QuestionUpdateRequest.serializeBinaryToWriter = function(mes
     writer.writeEnum(
       3,
       f
+    );
+  }
+  f = message.getNewOption();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      web_survey_v1_types_pb.SurveyQuestionOption.serializeBinaryToWriter
     );
   }
 };
@@ -1572,6 +1586,43 @@ proto.web.survey.v1.QuestionUpdateRequest.prototype.getNewType = function() {
  */
 proto.web.survey.v1.QuestionUpdateRequest.prototype.setNewType = function(value) {
   return jspb.Message.setProto3EnumField(this, 3, value);
+};
+
+
+/**
+ * optional SurveyQuestionOption new_option = 4;
+ * @return {?proto.web.survey.v1.SurveyQuestionOption}
+ */
+proto.web.survey.v1.QuestionUpdateRequest.prototype.getNewOption = function() {
+  return /** @type{?proto.web.survey.v1.SurveyQuestionOption} */ (
+    jspb.Message.getWrapperField(this, web_survey_v1_types_pb.SurveyQuestionOption, 4));
+};
+
+
+/**
+ * @param {?proto.web.survey.v1.SurveyQuestionOption|undefined} value
+ * @return {!proto.web.survey.v1.QuestionUpdateRequest} returns this
+*/
+proto.web.survey.v1.QuestionUpdateRequest.prototype.setNewOption = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.web.survey.v1.QuestionUpdateRequest} returns this
+ */
+proto.web.survey.v1.QuestionUpdateRequest.prototype.clearNewOption = function() {
+  return this.setNewOption(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.web.survey.v1.QuestionUpdateRequest.prototype.hasNewOption = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 

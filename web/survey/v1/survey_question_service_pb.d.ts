@@ -155,6 +155,11 @@ export class QuestionUpdateRequest extends jspb.Message {
     getNewType(): web_survey_v1_types_pb.SurveyQuestionType;
     setNewType(value: web_survey_v1_types_pb.SurveyQuestionType): QuestionUpdateRequest;
 
+    hasNewOption(): boolean;
+    clearNewOption(): void;
+    getNewOption(): web_survey_v1_types_pb.SurveyQuestionOption | undefined;
+    setNewOption(value?: web_survey_v1_types_pb.SurveyQuestionOption): QuestionUpdateRequest;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): QuestionUpdateRequest.AsObject;
     static toObject(includeInstance: boolean, msg: QuestionUpdateRequest): QuestionUpdateRequest.AsObject;
@@ -170,6 +175,7 @@ export namespace QuestionUpdateRequest {
         questionId: number,
         newQuestion: string,
         newType: web_survey_v1_types_pb.SurveyQuestionType,
+        newOption?: web_survey_v1_types_pb.SurveyQuestionOption.AsObject,
     }
 }
 
