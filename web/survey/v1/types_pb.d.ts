@@ -276,6 +276,126 @@ export namespace SurveyResponseAnswer {
     }
 }
 
+export class SurveyLogicPageSource extends jspb.Message { 
+    getId(): number;
+    setId(value: number): SurveyLogicPageSource;
+    getSurveyPageId(): number;
+    setSurveyPageId(value: number): SurveyLogicPageSource;
+    getComparison(): SurveyLogicPageSourceComparisonType;
+    setComparison(value: SurveyLogicPageSourceComparisonType): SurveyLogicPageSource;
+    getValue(): string;
+    setValue(value: string): SurveyLogicPageSource;
+    getFromSurveyQuestionId(): number;
+    setFromSurveyQuestionId(value: number): SurveyLogicPageSource;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): SurveyLogicPageSource.AsObject;
+    static toObject(includeInstance: boolean, msg: SurveyLogicPageSource): SurveyLogicPageSource.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: SurveyLogicPageSource, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): SurveyLogicPageSource;
+    static deserializeBinaryFromReader(message: SurveyLogicPageSource, reader: jspb.BinaryReader): SurveyLogicPageSource;
+}
+
+export namespace SurveyLogicPageSource {
+    export type AsObject = {
+        id: number,
+        surveyPageId: number,
+        comparison: SurveyLogicPageSourceComparisonType,
+        value: string,
+        fromSurveyQuestionId: number,
+    }
+}
+
+export class SurveyLogicPageGate extends jspb.Message { 
+    getId(): number;
+    setId(value: number): SurveyLogicPageGate;
+    getSurveyPageId(): number;
+    setSurveyPageId(value: number): SurveyLogicPageGate;
+    getComparison(): SurveyLogicPageGateComparisonType;
+    setComparison(value: SurveyLogicPageGateComparisonType): SurveyLogicPageGate;
+    getFrom1Selector(): SurveyLogicPageGateFromType;
+    setFrom1Selector(value: SurveyLogicPageGateFromType): SurveyLogicPageGate;
+    getFrom1LogicPageSourceId(): number;
+    setFrom1LogicPageSourceId(value: number): SurveyLogicPageGate;
+    getFrom1LogicPageGateId(): number;
+    setFrom1LogicPageGateId(value: number): SurveyLogicPageGate;
+    getFrom2Selector(): SurveyLogicPageGateFromType;
+    setFrom2Selector(value: SurveyLogicPageGateFromType): SurveyLogicPageGate;
+    getFrom2LogicPageSourceId(): number;
+    setFrom2LogicPageSourceId(value: number): SurveyLogicPageGate;
+    getFrom2LogicPageGateId(): number;
+    setFrom2LogicPageGateId(value: number): SurveyLogicPageGate;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): SurveyLogicPageGate.AsObject;
+    static toObject(includeInstance: boolean, msg: SurveyLogicPageGate): SurveyLogicPageGate.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: SurveyLogicPageGate, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): SurveyLogicPageGate;
+    static deserializeBinaryFromReader(message: SurveyLogicPageGate, reader: jspb.BinaryReader): SurveyLogicPageGate;
+}
+
+export namespace SurveyLogicPageGate {
+    export type AsObject = {
+        id: number,
+        surveyPageId: number,
+        comparison: SurveyLogicPageGateComparisonType,
+        from1Selector: SurveyLogicPageGateFromType,
+        from1LogicPageSourceId: number,
+        from1LogicPageGateId: number,
+        from2Selector: SurveyLogicPageGateFromType,
+        from2LogicPageSourceId: number,
+        from2LogicPageGateId: number,
+    }
+}
+
+export class SurveyLogicPageAction extends jspb.Message { 
+    getId(): number;
+    setId(value: number): SurveyLogicPageAction;
+    getSurveyPageId(): number;
+    setSurveyPageId(value: number): SurveyLogicPageAction;
+    getPriority(): number;
+    setPriority(value: number): SurveyLogicPageAction;
+    getFromSelector(): SurveyLogicPageActionFromType;
+    setFromSelector(value: SurveyLogicPageActionFromType): SurveyLogicPageAction;
+    getFromLogicPageSourceId(): number;
+    setFromLogicPageSourceId(value: number): SurveyLogicPageAction;
+    getFromLogicPageGateId(): number;
+    setFromLogicPageGateId(value: number): SurveyLogicPageAction;
+    getToSelector(): SurveyLogicPageActionToType;
+    setToSelector(value: SurveyLogicPageActionToType): SurveyLogicPageAction;
+    getToDisqualified(): boolean;
+    setToDisqualified(value: boolean): SurveyLogicPageAction;
+    getToSurveyPageId(): number;
+    setToSurveyPageId(value: number): SurveyLogicPageAction;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): SurveyLogicPageAction.AsObject;
+    static toObject(includeInstance: boolean, msg: SurveyLogicPageAction): SurveyLogicPageAction.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: SurveyLogicPageAction, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): SurveyLogicPageAction;
+    static deserializeBinaryFromReader(message: SurveyLogicPageAction, reader: jspb.BinaryReader): SurveyLogicPageAction;
+}
+
+export namespace SurveyLogicPageAction {
+    export type AsObject = {
+        id: number,
+        surveyPageId: number,
+        priority: number,
+        fromSelector: SurveyLogicPageActionFromType,
+        fromLogicPageSourceId: number,
+        fromLogicPageGateId: number,
+        toSelector: SurveyLogicPageActionToType,
+        toDisqualified: boolean,
+        toSurveyPageId: number,
+    }
+}
+
 export enum SurveyType {
     SURVEY_TYPE_ALL_UNSPECIFIED = 0,
     SURVEY_TYPE_FORM = 1,
@@ -295,4 +415,38 @@ export enum SurveyQuestionType {
     QUESTION_MODE_UPLOAD = 9,
     QUESTION_MODE_PARAGRAPH = 10,
     QUESTION_MODE_REDIRECT = 11,
+}
+
+export enum SurveyLogicPageSourceComparisonType {
+    LOGIC_PAGE_SOURCE_COMPARISON_ALL_UNSPECIFIED = 0,
+    LOGIC_PAGE_SOURCE_COMPARISON_EQUAL = 1,
+    LOGIC_PAGE_SOURCE_COMPARISON_CONTAIN = 2,
+}
+
+export enum SurveyLogicPageGateComparisonType {
+    LOGIC_PAGE_GATE_COMPARISON_ALL_UNSPECIFIED = 0,
+    LOGIC_PAGE_GATE_COMPARISON_AND = 1,
+    LOGIC_PAGE_GATE_COMPARISON_OR = 2,
+    LOGIC_PAGE_GATE_COMPARISON_XOR = 3,
+    LOGIC_PAGE_GATE_COMPARISON_NAND = 4,
+    LOGIC_PAGE_GATE_COMPARISON_NOR = 5,
+    LOGIC_PAGE_GATE_COMPARISON_XNOR = 6,
+}
+
+export enum SurveyLogicPageGateFromType {
+    LOGIC_PAGE_GATE_FROM_ALL_UNSPECIFIED = 0,
+    LOGIC_PAGE_GATE_FROM_SOURCE = 1,
+    LOGIC_PAGE_GATE_FROM_GATE = 2,
+}
+
+export enum SurveyLogicPageActionFromType {
+    LOGIC_PAGE_ACTION_FROM_ALL_UNSPECIFIED = 0,
+    LOGIC_PAGE_ACTION_FROM_SOURCE = 1,
+    LOGIC_PAGE_ACTION_FROM_GATE = 2,
+}
+
+export enum SurveyLogicPageActionToType {
+    LOGIC_PAGE_ACTION_TO_ALL_UNSPECIFIED = 0,
+    LOGIC_PAGE_ACTION_TO_DISQUALIFIED = 1,
+    LOGIC_PAGE_ACTION_TO_SURVEY_PAGE_ID = 2,
 }
