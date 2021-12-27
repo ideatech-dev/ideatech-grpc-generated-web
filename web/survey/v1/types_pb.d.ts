@@ -279,6 +279,8 @@ export namespace SurveyResponseAnswer {
 export class SurveyLogicPageSource extends jspb.Message { 
     getId(): number;
     setId(value: number): SurveyLogicPageSource;
+    getName(): string;
+    setName(value: string): SurveyLogicPageSource;
     getSurveyPageId(): number;
     setSurveyPageId(value: number): SurveyLogicPageSource;
     getComparison(): SurveyLogicPageSourceComparisonType;
@@ -301,6 +303,7 @@ export class SurveyLogicPageSource extends jspb.Message {
 export namespace SurveyLogicPageSource {
     export type AsObject = {
         id: number,
+        name: string,
         surveyPageId: number,
         comparison: SurveyLogicPageSourceComparisonType,
         value: string,
@@ -311,6 +314,8 @@ export namespace SurveyLogicPageSource {
 export class SurveyLogicPageGate extends jspb.Message { 
     getId(): number;
     setId(value: number): SurveyLogicPageGate;
+    getName(): string;
+    setName(value: string): SurveyLogicPageGate;
     getSurveyPageId(): number;
     setSurveyPageId(value: number): SurveyLogicPageGate;
     getComparison(): SurveyLogicPageGateComparisonType;
@@ -341,6 +346,7 @@ export class SurveyLogicPageGate extends jspb.Message {
 export namespace SurveyLogicPageGate {
     export type AsObject = {
         id: number,
+        name: string,
         surveyPageId: number,
         comparison: SurveyLogicPageGateComparisonType,
         from1Selector: SurveyLogicPageGateFromType,
@@ -355,6 +361,8 @@ export namespace SurveyLogicPageGate {
 export class SurveyLogicPageAction extends jspb.Message { 
     getId(): number;
     setId(value: number): SurveyLogicPageAction;
+    getName(): string;
+    setName(value: string): SurveyLogicPageAction;
     getSurveyPageId(): number;
     setSurveyPageId(value: number): SurveyLogicPageAction;
     getPriority(): number;
@@ -385,6 +393,7 @@ export class SurveyLogicPageAction extends jspb.Message {
 export namespace SurveyLogicPageAction {
     export type AsObject = {
         id: number,
+        name: string,
         surveyPageId: number,
         priority: number,
         fromSelector: SurveyLogicPageActionFromType,
