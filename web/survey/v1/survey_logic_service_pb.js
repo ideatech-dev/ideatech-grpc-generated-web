@@ -868,6 +868,7 @@ proto.web.survey.v1.LogicPageSourceCreateRequest.prototype.toObject = function(o
 proto.web.survey.v1.LogicPageSourceCreateRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     pageId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    name: jspb.Message.getFieldWithDefault(msg, 5, ""),
     comparison: jspb.Message.getFieldWithDefault(msg, 2, 0),
     value: jspb.Message.getFieldWithDefault(msg, 3, ""),
     fromQuestionId: jspb.Message.getFieldWithDefault(msg, 4, 0)
@@ -910,6 +911,10 @@ proto.web.survey.v1.LogicPageSourceCreateRequest.deserializeBinaryFromReader = f
     case 1:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setPageId(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
       break;
     case 2:
       var value = /** @type {!proto.web.survey.v1.SurveyLogicPageSourceComparisonType} */ (reader.readEnum());
@@ -959,6 +964,13 @@ proto.web.survey.v1.LogicPageSourceCreateRequest.serializeBinaryToWriter = funct
       f
     );
   }
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
   f = message.getComparison();
   if (f !== 0.0) {
     writer.writeEnum(
@@ -998,6 +1010,24 @@ proto.web.survey.v1.LogicPageSourceCreateRequest.prototype.getPageId = function(
  */
 proto.web.survey.v1.LogicPageSourceCreateRequest.prototype.setPageId = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional string name = 5;
+ * @return {string}
+ */
+proto.web.survey.v1.LogicPageSourceCreateRequest.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.web.survey.v1.LogicPageSourceCreateRequest} returns this
+ */
+proto.web.survey.v1.LogicPageSourceCreateRequest.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
@@ -1239,6 +1269,7 @@ proto.web.survey.v1.LogicPageSourceUpdateRequest.prototype.toObject = function(o
 proto.web.survey.v1.LogicPageSourceUpdateRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     logicPageSourceId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    name: jspb.Message.getFieldWithDefault(msg, 5, ""),
     comparison: jspb.Message.getFieldWithDefault(msg, 2, 0),
     value: jspb.Message.getFieldWithDefault(msg, 3, ""),
     fromQuestionId: jspb.Message.getFieldWithDefault(msg, 4, 0)
@@ -1281,6 +1312,10 @@ proto.web.survey.v1.LogicPageSourceUpdateRequest.deserializeBinaryFromReader = f
     case 1:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setLogicPageSourceId(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
       break;
     case 2:
       var value = /** @type {!proto.web.survey.v1.SurveyLogicPageSourceComparisonType} */ (reader.readEnum());
@@ -1330,6 +1365,13 @@ proto.web.survey.v1.LogicPageSourceUpdateRequest.serializeBinaryToWriter = funct
       f
     );
   }
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
   f = message.getComparison();
   if (f !== 0.0) {
     writer.writeEnum(
@@ -1369,6 +1411,24 @@ proto.web.survey.v1.LogicPageSourceUpdateRequest.prototype.getLogicPageSourceId 
  */
 proto.web.survey.v1.LogicPageSourceUpdateRequest.prototype.setLogicPageSourceId = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional string name = 5;
+ * @return {string}
+ */
+proto.web.survey.v1.LogicPageSourceUpdateRequest.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.web.survey.v1.LogicPageSourceUpdateRequest} returns this
+ */
+proto.web.survey.v1.LogicPageSourceUpdateRequest.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
@@ -2131,6 +2191,7 @@ proto.web.survey.v1.LogicPageGateCreateRequest.prototype.toObject = function(opt
 proto.web.survey.v1.LogicPageGateCreateRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     pageId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    name: jspb.Message.getFieldWithDefault(msg, 9, ""),
     comparison: jspb.Message.getFieldWithDefault(msg, 2, 0),
     from1Selector: jspb.Message.getFieldWithDefault(msg, 3, 0),
     from1LogicPageSourceId: jspb.Message.getFieldWithDefault(msg, 4, 0),
@@ -2177,6 +2238,10 @@ proto.web.survey.v1.LogicPageGateCreateRequest.deserializeBinaryFromReader = fun
     case 1:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setPageId(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
       break;
     case 2:
       var value = /** @type {!proto.web.survey.v1.SurveyLogicPageGateComparisonType} */ (reader.readEnum());
@@ -2239,6 +2304,13 @@ proto.web.survey.v1.LogicPageGateCreateRequest.serializeBinaryToWriter = functio
   if (f !== 0) {
     writer.writeInt32(
       1,
+      f
+    );
+  }
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
       f
     );
   }
@@ -2309,6 +2381,24 @@ proto.web.survey.v1.LogicPageGateCreateRequest.prototype.getPageId = function() 
  */
 proto.web.survey.v1.LogicPageGateCreateRequest.prototype.setPageId = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional string name = 9;
+ * @return {string}
+ */
+proto.web.survey.v1.LogicPageGateCreateRequest.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.web.survey.v1.LogicPageGateCreateRequest} returns this
+ */
+proto.web.survey.v1.LogicPageGateCreateRequest.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
 };
 
 
@@ -2622,6 +2712,7 @@ proto.web.survey.v1.LogicPageGateUpdateRequest.prototype.toObject = function(opt
 proto.web.survey.v1.LogicPageGateUpdateRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     logicPageGateId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    name: jspb.Message.getFieldWithDefault(msg, 9, ""),
     comparison: jspb.Message.getFieldWithDefault(msg, 2, 0),
     from1Selector: jspb.Message.getFieldWithDefault(msg, 3, 0),
     from1LogicPageSourceId: jspb.Message.getFieldWithDefault(msg, 4, 0),
@@ -2668,6 +2759,10 @@ proto.web.survey.v1.LogicPageGateUpdateRequest.deserializeBinaryFromReader = fun
     case 1:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setLogicPageGateId(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
       break;
     case 2:
       var value = /** @type {!proto.web.survey.v1.SurveyLogicPageGateComparisonType} */ (reader.readEnum());
@@ -2730,6 +2825,13 @@ proto.web.survey.v1.LogicPageGateUpdateRequest.serializeBinaryToWriter = functio
   if (f !== 0) {
     writer.writeInt32(
       1,
+      f
+    );
+  }
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
       f
     );
   }
@@ -2800,6 +2902,24 @@ proto.web.survey.v1.LogicPageGateUpdateRequest.prototype.getLogicPageGateId = fu
  */
 proto.web.survey.v1.LogicPageGateUpdateRequest.prototype.setLogicPageGateId = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional string name = 9;
+ * @return {string}
+ */
+proto.web.survey.v1.LogicPageGateUpdateRequest.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.web.survey.v1.LogicPageGateUpdateRequest} returns this
+ */
+proto.web.survey.v1.LogicPageGateUpdateRequest.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
 };
 
 
@@ -3634,6 +3754,7 @@ proto.web.survey.v1.LogicPageActionCreateRequest.prototype.toObject = function(o
 proto.web.survey.v1.LogicPageActionCreateRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     pageId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    name: jspb.Message.getFieldWithDefault(msg, 9, ""),
     priority: jspb.Message.getFieldWithDefault(msg, 2, 0),
     fromSelector: jspb.Message.getFieldWithDefault(msg, 3, 0),
     fromLogicPageSourceId: jspb.Message.getFieldWithDefault(msg, 4, 0),
@@ -3680,6 +3801,10 @@ proto.web.survey.v1.LogicPageActionCreateRequest.deserializeBinaryFromReader = f
     case 1:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setPageId(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readInt32());
@@ -3742,6 +3867,13 @@ proto.web.survey.v1.LogicPageActionCreateRequest.serializeBinaryToWriter = funct
   if (f !== 0) {
     writer.writeInt32(
       1,
+      f
+    );
+  }
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
       f
     );
   }
@@ -3812,6 +3944,24 @@ proto.web.survey.v1.LogicPageActionCreateRequest.prototype.getPageId = function(
  */
 proto.web.survey.v1.LogicPageActionCreateRequest.prototype.setPageId = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional string name = 9;
+ * @return {string}
+ */
+proto.web.survey.v1.LogicPageActionCreateRequest.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.web.survey.v1.LogicPageActionCreateRequest} returns this
+ */
+proto.web.survey.v1.LogicPageActionCreateRequest.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
 };
 
 
@@ -4125,6 +4275,7 @@ proto.web.survey.v1.LogicPageActionUpdateRequest.prototype.toObject = function(o
 proto.web.survey.v1.LogicPageActionUpdateRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     logicPageActionId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    name: jspb.Message.getFieldWithDefault(msg, 9, ""),
     priority: jspb.Message.getFieldWithDefault(msg, 2, 0),
     fromSelector: jspb.Message.getFieldWithDefault(msg, 3, 0),
     fromLogicPageSourceId: jspb.Message.getFieldWithDefault(msg, 4, 0),
@@ -4171,6 +4322,10 @@ proto.web.survey.v1.LogicPageActionUpdateRequest.deserializeBinaryFromReader = f
     case 1:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setLogicPageActionId(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readInt32());
@@ -4233,6 +4388,13 @@ proto.web.survey.v1.LogicPageActionUpdateRequest.serializeBinaryToWriter = funct
   if (f !== 0) {
     writer.writeInt32(
       1,
+      f
+    );
+  }
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
       f
     );
   }
@@ -4303,6 +4465,24 @@ proto.web.survey.v1.LogicPageActionUpdateRequest.prototype.getLogicPageActionId 
  */
 proto.web.survey.v1.LogicPageActionUpdateRequest.prototype.setLogicPageActionId = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional string name = 9;
+ * @return {string}
+ */
+proto.web.survey.v1.LogicPageActionUpdateRequest.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.web.survey.v1.LogicPageActionUpdateRequest} returns this
+ */
+proto.web.survey.v1.LogicPageActionUpdateRequest.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
 };
 
 

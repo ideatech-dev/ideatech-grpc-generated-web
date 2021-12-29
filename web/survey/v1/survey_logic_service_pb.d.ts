@@ -52,6 +52,8 @@ export namespace LogicPageSourceGetListResponse {
 export class LogicPageSourceCreateRequest extends jspb.Message { 
     getPageId(): number;
     setPageId(value: number): LogicPageSourceCreateRequest;
+    getName(): string;
+    setName(value: string): LogicPageSourceCreateRequest;
     getComparison(): web_survey_v1_types_pb.SurveyLogicPageSourceComparisonType;
     setComparison(value: web_survey_v1_types_pb.SurveyLogicPageSourceComparisonType): LogicPageSourceCreateRequest;
     getValue(): string;
@@ -72,6 +74,7 @@ export class LogicPageSourceCreateRequest extends jspb.Message {
 export namespace LogicPageSourceCreateRequest {
     export type AsObject = {
         pageId: number,
+        name: string,
         comparison: web_survey_v1_types_pb.SurveyLogicPageSourceComparisonType,
         value: string,
         fromQuestionId: number,
@@ -104,6 +107,8 @@ export namespace LogicPageSourceCreateResponse {
 export class LogicPageSourceUpdateRequest extends jspb.Message { 
     getLogicPageSourceId(): number;
     setLogicPageSourceId(value: number): LogicPageSourceUpdateRequest;
+    getName(): string;
+    setName(value: string): LogicPageSourceUpdateRequest;
     getComparison(): web_survey_v1_types_pb.SurveyLogicPageSourceComparisonType;
     setComparison(value: web_survey_v1_types_pb.SurveyLogicPageSourceComparisonType): LogicPageSourceUpdateRequest;
     getValue(): string;
@@ -124,6 +129,7 @@ export class LogicPageSourceUpdateRequest extends jspb.Message {
 export namespace LogicPageSourceUpdateRequest {
     export type AsObject = {
         logicPageSourceId: number,
+        name: string,
         comparison: web_survey_v1_types_pb.SurveyLogicPageSourceComparisonType,
         value: string,
         fromQuestionId: number,
@@ -235,6 +241,8 @@ export namespace LogicPageGateGetListResponse {
 export class LogicPageGateCreateRequest extends jspb.Message { 
     getPageId(): number;
     setPageId(value: number): LogicPageGateCreateRequest;
+    getName(): string;
+    setName(value: string): LogicPageGateCreateRequest;
     getComparison(): web_survey_v1_types_pb.SurveyLogicPageGateComparisonType;
     setComparison(value: web_survey_v1_types_pb.SurveyLogicPageGateComparisonType): LogicPageGateCreateRequest;
     getFrom1Selector(): web_survey_v1_types_pb.SurveyLogicPageGateFromType;
@@ -263,6 +271,7 @@ export class LogicPageGateCreateRequest extends jspb.Message {
 export namespace LogicPageGateCreateRequest {
     export type AsObject = {
         pageId: number,
+        name: string,
         comparison: web_survey_v1_types_pb.SurveyLogicPageGateComparisonType,
         from1Selector: web_survey_v1_types_pb.SurveyLogicPageGateFromType,
         from1LogicPageSourceId: number,
@@ -299,6 +308,8 @@ export namespace LogicPageGateCreateResponse {
 export class LogicPageGateUpdateRequest extends jspb.Message { 
     getLogicPageGateId(): number;
     setLogicPageGateId(value: number): LogicPageGateUpdateRequest;
+    getName(): string;
+    setName(value: string): LogicPageGateUpdateRequest;
     getComparison(): web_survey_v1_types_pb.SurveyLogicPageGateComparisonType;
     setComparison(value: web_survey_v1_types_pb.SurveyLogicPageGateComparisonType): LogicPageGateUpdateRequest;
     getFrom1Selector(): web_survey_v1_types_pb.SurveyLogicPageGateFromType;
@@ -327,6 +338,7 @@ export class LogicPageGateUpdateRequest extends jspb.Message {
 export namespace LogicPageGateUpdateRequest {
     export type AsObject = {
         logicPageGateId: number,
+        name: string,
         comparison: web_survey_v1_types_pb.SurveyLogicPageGateComparisonType,
         from1Selector: web_survey_v1_types_pb.SurveyLogicPageGateFromType,
         from1LogicPageSourceId: number,
@@ -442,6 +454,8 @@ export namespace LogicPageActionGetListResponse {
 export class LogicPageActionCreateRequest extends jspb.Message { 
     getPageId(): number;
     setPageId(value: number): LogicPageActionCreateRequest;
+    getName(): string;
+    setName(value: string): LogicPageActionCreateRequest;
     getPriority(): number;
     setPriority(value: number): LogicPageActionCreateRequest;
     getFromSelector(): web_survey_v1_types_pb.SurveyLogicPageActionFromType;
@@ -470,6 +484,7 @@ export class LogicPageActionCreateRequest extends jspb.Message {
 export namespace LogicPageActionCreateRequest {
     export type AsObject = {
         pageId: number,
+        name: string,
         priority: number,
         fromSelector: web_survey_v1_types_pb.SurveyLogicPageActionFromType,
         fromLogicPageSourceId: number,
@@ -506,6 +521,8 @@ export namespace LogicPageActionCreateResponse {
 export class LogicPageActionUpdateRequest extends jspb.Message { 
     getLogicPageActionId(): number;
     setLogicPageActionId(value: number): LogicPageActionUpdateRequest;
+    getName(): string;
+    setName(value: string): LogicPageActionUpdateRequest;
     getPriority(): number;
     setPriority(value: number): LogicPageActionUpdateRequest;
     getFromSelector(): web_survey_v1_types_pb.SurveyLogicPageActionFromType;
@@ -534,6 +551,7 @@ export class LogicPageActionUpdateRequest extends jspb.Message {
 export namespace LogicPageActionUpdateRequest {
     export type AsObject = {
         logicPageActionId: number,
+        name: string,
         priority: number,
         fromSelector: web_survey_v1_types_pb.SurveyLogicPageActionFromType,
         fromLogicPageSourceId: number,
