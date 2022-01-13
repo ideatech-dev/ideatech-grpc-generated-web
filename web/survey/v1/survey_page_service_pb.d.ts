@@ -87,6 +87,10 @@ export class PageGetAllResponse extends jspb.Message {
     getPagesList(): Array<web_survey_v1_types_pb.SurveyPage>;
     setPagesList(value: Array<web_survey_v1_types_pb.SurveyPage>): PageGetAllResponse;
     addPages(value?: web_survey_v1_types_pb.SurveyPage, index?: number): web_survey_v1_types_pb.SurveyPage;
+    getCount(): number;
+    setCount(value: number): PageGetAllResponse;
+    getMaxPage(): number;
+    setMaxPage(value: number): PageGetAllResponse;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): PageGetAllResponse.AsObject;
@@ -101,6 +105,8 @@ export class PageGetAllResponse extends jspb.Message {
 export namespace PageGetAllResponse {
     export type AsObject = {
         pagesList: Array<web_survey_v1_types_pb.SurveyPage.AsObject>,
+        count: number,
+        maxPage: number,
     }
 }
 

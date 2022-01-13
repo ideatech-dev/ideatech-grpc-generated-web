@@ -718,7 +718,9 @@ proto.web.survey.v1.SurveyGetAllResponse.prototype.toObject = function(opt_inclu
 proto.web.survey.v1.SurveyGetAllResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     surveysList: jspb.Message.toObjectList(msg.getSurveysList(),
-    web_survey_v1_types_pb.Survey.toObject, includeInstance)
+    web_survey_v1_types_pb.Survey.toObject, includeInstance),
+    count: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    maxPage: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -760,6 +762,14 @@ proto.web.survey.v1.SurveyGetAllResponse.deserializeBinaryFromReader = function(
       reader.readMessage(value,web_survey_v1_types_pb.Survey.deserializeBinaryFromReader);
       msg.addSurveys(value);
       break;
+    case 2:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setCount(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setMaxPage(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -795,6 +805,20 @@ proto.web.survey.v1.SurveyGetAllResponse.serializeBinaryToWriter = function(mess
       1,
       f,
       web_survey_v1_types_pb.Survey.serializeBinaryToWriter
+    );
+  }
+  f = message.getCount();
+  if (f !== 0) {
+    writer.writeInt32(
+      2,
+      f
+    );
+  }
+  f = message.getMaxPage();
+  if (f !== 0) {
+    writer.writeInt32(
+      3,
+      f
     );
   }
 };
@@ -835,6 +859,42 @@ proto.web.survey.v1.SurveyGetAllResponse.prototype.addSurveys = function(opt_val
  */
 proto.web.survey.v1.SurveyGetAllResponse.prototype.clearSurveysList = function() {
   return this.setSurveysList([]);
+};
+
+
+/**
+ * optional int32 count = 2;
+ * @return {number}
+ */
+proto.web.survey.v1.SurveyGetAllResponse.prototype.getCount = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.web.survey.v1.SurveyGetAllResponse} returns this
+ */
+proto.web.survey.v1.SurveyGetAllResponse.prototype.setCount = function(value) {
+  return jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * optional int32 max_page = 3;
+ * @return {number}
+ */
+proto.web.survey.v1.SurveyGetAllResponse.prototype.getMaxPage = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.web.survey.v1.SurveyGetAllResponse} returns this
+ */
+proto.web.survey.v1.SurveyGetAllResponse.prototype.setMaxPage = function(value) {
+  return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
