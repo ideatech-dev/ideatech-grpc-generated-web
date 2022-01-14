@@ -568,7 +568,9 @@ proto.web.survey.v1.PageGetAllRequest.toObject = function(includeInstance, msg) 
   var f, obj = {
     surveyId: jspb.Message.getFieldWithDefault(msg, 1, 0),
     withQuestion: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    withQuestionChoice: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
+    withQuestionChoice: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+    page: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    contentPerPage: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
   if (includeInstance) {
@@ -617,6 +619,14 @@ proto.web.survey.v1.PageGetAllRequest.deserializeBinaryFromReader = function(msg
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setWithQuestionChoice(value);
       break;
+    case 4:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPage(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setContentPerPage(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -664,6 +674,20 @@ proto.web.survey.v1.PageGetAllRequest.serializeBinaryToWriter = function(message
   if (f) {
     writer.writeBool(
       3,
+      f
+    );
+  }
+  f = message.getPage();
+  if (f !== 0) {
+    writer.writeInt32(
+      4,
+      f
+    );
+  }
+  f = message.getContentPerPage();
+  if (f !== 0) {
+    writer.writeInt32(
+      5,
       f
     );
   }
@@ -721,6 +745,42 @@ proto.web.survey.v1.PageGetAllRequest.prototype.getWithQuestionChoice = function
  */
 proto.web.survey.v1.PageGetAllRequest.prototype.setWithQuestionChoice = function(value) {
   return jspb.Message.setProto3BooleanField(this, 3, value);
+};
+
+
+/**
+ * optional int32 page = 4;
+ * @return {number}
+ */
+proto.web.survey.v1.PageGetAllRequest.prototype.getPage = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.web.survey.v1.PageGetAllRequest} returns this
+ */
+proto.web.survey.v1.PageGetAllRequest.prototype.setPage = function(value) {
+  return jspb.Message.setProto3IntField(this, 4, value);
+};
+
+
+/**
+ * optional int32 content_per_page = 5;
+ * @return {number}
+ */
+proto.web.survey.v1.PageGetAllRequest.prototype.getContentPerPage = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.web.survey.v1.PageGetAllRequest} returns this
+ */
+proto.web.survey.v1.PageGetAllRequest.prototype.setContentPerPage = function(value) {
+  return jspb.Message.setProto3IntField(this, 5, value);
 };
 
 

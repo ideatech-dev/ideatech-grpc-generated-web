@@ -63,6 +63,10 @@ export class PageGetAllRequest extends jspb.Message {
     setWithQuestion(value: boolean): PageGetAllRequest;
     getWithQuestionChoice(): boolean;
     setWithQuestionChoice(value: boolean): PageGetAllRequest;
+    getPage(): number;
+    setPage(value: number): PageGetAllRequest;
+    getContentPerPage(): number;
+    setContentPerPage(value: number): PageGetAllRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): PageGetAllRequest.AsObject;
@@ -79,6 +83,8 @@ export namespace PageGetAllRequest {
         surveyId: number,
         withQuestion: boolean,
         withQuestionChoice: boolean,
+        page: number,
+        contentPerPage: number,
     }
 }
 
