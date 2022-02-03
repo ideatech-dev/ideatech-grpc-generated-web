@@ -56,13 +56,75 @@ export namespace LoginResponse {
     }
 }
 
+export class LoginGoogleRequest extends jspb.Message { 
+    getIdToken(): string;
+    setIdToken(value: string): LoginGoogleRequest;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): LoginGoogleRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: LoginGoogleRequest): LoginGoogleRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: LoginGoogleRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): LoginGoogleRequest;
+    static deserializeBinaryFromReader(message: LoginGoogleRequest, reader: jspb.BinaryReader): LoginGoogleRequest;
+}
+
+export namespace LoginGoogleRequest {
+    export type AsObject = {
+        idToken: string,
+    }
+}
+
+export class LoginGoogleResponse extends jspb.Message { 
+    getIsRegistered(): boolean;
+    setIsRegistered(value: boolean): LoginGoogleResponse;
+
+    hasUser(): boolean;
+    clearUser(): void;
+    getUser(): web_account_v1_types_pb.User | undefined;
+    setUser(value?: web_account_v1_types_pb.User): LoginGoogleResponse;
+    getAccessToken(): string;
+    setAccessToken(value: string): LoginGoogleResponse;
+    getName(): string;
+    setName(value: string): LoginGoogleResponse;
+    getEmail(): string;
+    setEmail(value: string): LoginGoogleResponse;
+    getTokenGoogle(): string;
+    setTokenGoogle(value: string): LoginGoogleResponse;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): LoginGoogleResponse.AsObject;
+    static toObject(includeInstance: boolean, msg: LoginGoogleResponse): LoginGoogleResponse.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: LoginGoogleResponse, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): LoginGoogleResponse;
+    static deserializeBinaryFromReader(message: LoginGoogleResponse, reader: jspb.BinaryReader): LoginGoogleResponse;
+}
+
+export namespace LoginGoogleResponse {
+    export type AsObject = {
+        isRegistered: boolean,
+        user?: web_account_v1_types_pb.User.AsObject,
+        accessToken: string,
+        name: string,
+        email: string,
+        tokenGoogle: string,
+    }
+}
+
 export class RegisterRequest extends jspb.Message { 
+    getRegisteredFrom(): RegisterRequest.RegisteredFrom;
+    setRegisteredFrom(value: RegisterRequest.RegisteredFrom): RegisterRequest;
     getName(): string;
     setName(value: string): RegisterRequest;
     getEmail(): string;
     setEmail(value: string): RegisterRequest;
     getPassword(): string;
     setPassword(value: string): RegisterRequest;
+    getTokenGoogle(): string;
+    setTokenGoogle(value: string): RegisterRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): RegisterRequest.AsObject;
@@ -76,10 +138,18 @@ export class RegisterRequest extends jspb.Message {
 
 export namespace RegisterRequest {
     export type AsObject = {
+        registeredFrom: RegisterRequest.RegisteredFrom,
         name: string,
         email: string,
         password: string,
+        tokenGoogle: string,
     }
+
+    export enum RegisteredFrom {
+    SCRATCH_UNSPECIFIED = 0,
+    GOOGLE = 1,
+    }
+
 }
 
 export class RegisterResponse extends jspb.Message { 

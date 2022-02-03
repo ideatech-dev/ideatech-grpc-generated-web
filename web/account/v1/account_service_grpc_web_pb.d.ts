@@ -15,6 +15,13 @@ export class AccountServiceClient {
                response: web_account_v1_account_service_pb.LoginResponse) => void
   ): grpcWeb.ClientReadableStream<web_account_v1_account_service_pb.LoginResponse>;
 
+  loginGoogle(
+    request: web_account_v1_account_service_pb.LoginGoogleRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: web_account_v1_account_service_pb.LoginGoogleResponse) => void
+  ): grpcWeb.ClientReadableStream<web_account_v1_account_service_pb.LoginGoogleResponse>;
+
   register(
     request: web_account_v1_account_service_pb.RegisterRequest,
     metadata: grpcWeb.Metadata | undefined,
@@ -40,6 +47,11 @@ export class AccountServicePromiseClient {
     request: web_account_v1_account_service_pb.LoginRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<web_account_v1_account_service_pb.LoginResponse>;
+
+  loginGoogle(
+    request: web_account_v1_account_service_pb.LoginGoogleRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<web_account_v1_account_service_pb.LoginGoogleResponse>;
 
   register(
     request: web_account_v1_account_service_pb.RegisterRequest,

@@ -138,6 +138,67 @@ proto.web.account.v1.AccountServicePromiseClient.prototype.login =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.web.account.v1.LoginGoogleRequest,
+ *   !proto.web.account.v1.LoginGoogleResponse>}
+ */
+const methodDescriptor_AccountService_LoginGoogle = new grpc.web.MethodDescriptor(
+  '/web.account.v1.AccountService/LoginGoogle',
+  grpc.web.MethodType.UNARY,
+  proto.web.account.v1.LoginGoogleRequest,
+  proto.web.account.v1.LoginGoogleResponse,
+  /**
+   * @param {!proto.web.account.v1.LoginGoogleRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.web.account.v1.LoginGoogleResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.web.account.v1.LoginGoogleRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.web.account.v1.LoginGoogleResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.web.account.v1.LoginGoogleResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.web.account.v1.AccountServiceClient.prototype.loginGoogle =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/web.account.v1.AccountService/LoginGoogle',
+      request,
+      metadata || {},
+      methodDescriptor_AccountService_LoginGoogle,
+      callback);
+};
+
+
+/**
+ * @param {!proto.web.account.v1.LoginGoogleRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.web.account.v1.LoginGoogleResponse>}
+ *     Promise that resolves to the response
+ */
+proto.web.account.v1.AccountServicePromiseClient.prototype.loginGoogle =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/web.account.v1.AccountService/LoginGoogle',
+      request,
+      metadata || {},
+      methodDescriptor_AccountService_LoginGoogle);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.web.account.v1.RegisterRequest,
  *   !proto.web.account.v1.RegisterResponse>}
  */
