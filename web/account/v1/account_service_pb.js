@@ -701,8 +701,7 @@ proto.web.account.v1.LoginGoogleResponse.toObject = function(includeInstance, ms
     user: (f = msg.getUser()) && web_account_v1_types_pb.User.toObject(includeInstance, f),
     accessToken: jspb.Message.getFieldWithDefault(msg, 6, ""),
     name: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    email: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    tokenGoogle: jspb.Message.getFieldWithDefault(msg, 5, "")
+    tokenGoogle: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -757,10 +756,6 @@ proto.web.account.v1.LoginGoogleResponse.deserializeBinaryFromReader = function(
       msg.setName(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setEmail(value);
-      break;
-    case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setTokenGoogle(value);
       break;
@@ -822,17 +817,10 @@ proto.web.account.v1.LoginGoogleResponse.serializeBinaryToWriter = function(mess
       f
     );
   }
-  f = message.getEmail();
-  if (f.length > 0) {
-    writer.writeString(
-      4,
-      f
-    );
-  }
   f = message.getTokenGoogle();
   if (f.length > 0) {
     writer.writeString(
-      5,
+      4,
       f
     );
   }
@@ -931,10 +919,10 @@ proto.web.account.v1.LoginGoogleResponse.prototype.setName = function(value) {
 
 
 /**
- * optional string email = 4;
+ * optional string token_google = 4;
  * @return {string}
  */
-proto.web.account.v1.LoginGoogleResponse.prototype.getEmail = function() {
+proto.web.account.v1.LoginGoogleResponse.prototype.getTokenGoogle = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -943,26 +931,8 @@ proto.web.account.v1.LoginGoogleResponse.prototype.getEmail = function() {
  * @param {string} value
  * @return {!proto.web.account.v1.LoginGoogleResponse} returns this
  */
-proto.web.account.v1.LoginGoogleResponse.prototype.setEmail = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
-};
-
-
-/**
- * optional string token_google = 5;
- * @return {string}
- */
-proto.web.account.v1.LoginGoogleResponse.prototype.getTokenGoogle = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.web.account.v1.LoginGoogleResponse} returns this
- */
 proto.web.account.v1.LoginGoogleResponse.prototype.setTokenGoogle = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
