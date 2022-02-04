@@ -14,6 +14,8 @@ export class User extends jspb.Message {
     setName(value: string): User;
     getEmail(): string;
     setEmail(value: string): User;
+    getPicture(): string;
+    setPicture(value: string): User;
 
     hasDatetimeCreated(): boolean;
     clearDatetimeCreated(): void;
@@ -40,6 +42,7 @@ export namespace User {
         id: number,
         name: string,
         email: string,
+        picture: string,
         datetimeCreated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         datetimeUpdated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     }

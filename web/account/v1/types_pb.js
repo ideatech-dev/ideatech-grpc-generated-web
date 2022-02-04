@@ -74,6 +74,7 @@ proto.web.account.v1.User.toObject = function(includeInstance, msg) {
     id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
     email: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    picture: jspb.Message.getFieldWithDefault(msg, 6, ""),
     datetimeCreated: (f = msg.getDatetimeCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     datetimeUpdated: (f = msg.getDatetimeUpdated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
@@ -123,6 +124,10 @@ proto.web.account.v1.User.deserializeBinaryFromReader = function(msg, reader) {
     case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setEmail(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPicture(value);
       break;
     case 4:
       var value = new google_protobuf_timestamp_pb.Timestamp;
@@ -181,6 +186,13 @@ proto.web.account.v1.User.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       3,
+      f
+    );
+  }
+  f = message.getPicture();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
       f
     );
   }
@@ -254,6 +266,24 @@ proto.web.account.v1.User.prototype.getEmail = function() {
  */
 proto.web.account.v1.User.prototype.setEmail = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string picture = 6;
+ * @return {string}
+ */
+proto.web.account.v1.User.prototype.getPicture = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.web.account.v1.User} returns this
+ */
+proto.web.account.v1.User.prototype.setPicture = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
