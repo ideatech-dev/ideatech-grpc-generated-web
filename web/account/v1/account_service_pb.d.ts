@@ -88,6 +88,8 @@ export class LoginGoogleResponse extends jspb.Message {
     setAccessToken(value: string): LoginGoogleResponse;
     getName(): string;
     setName(value: string): LoginGoogleResponse;
+    getEmail(): string;
+    setEmail(value: string): LoginGoogleResponse;
     getTokenGoogle(): string;
     setTokenGoogle(value: string): LoginGoogleResponse;
 
@@ -107,6 +109,7 @@ export namespace LoginGoogleResponse {
         user?: web_account_v1_types_pb.User.AsObject,
         accessToken: string,
         name: string,
+        email: string,
         tokenGoogle: string,
     }
 }
