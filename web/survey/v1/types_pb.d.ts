@@ -405,6 +405,47 @@ export namespace SurveyLogicPageAction {
     }
 }
 
+export class Webhook extends jspb.Message { 
+    getId(): number;
+    setId(value: number): Webhook;
+
+    hasDatetimeCreated(): boolean;
+    clearDatetimeCreated(): void;
+    getDatetimeCreated(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setDatetimeCreated(value?: google_protobuf_timestamp_pb.Timestamp): Webhook;
+
+    hasDatetimeUpdated(): boolean;
+    clearDatetimeUpdated(): void;
+    getDatetimeUpdated(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setDatetimeUpdated(value?: google_protobuf_timestamp_pb.Timestamp): Webhook;
+    getSurveyPageId(): number;
+    setSurveyPageId(value: number): Webhook;
+    getLink(): string;
+    setLink(value: string): Webhook;
+    getMethod(): MethodType;
+    setMethod(value: MethodType): Webhook;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Webhook.AsObject;
+    static toObject(includeInstance: boolean, msg: Webhook): Webhook.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: Webhook, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Webhook;
+    static deserializeBinaryFromReader(message: Webhook, reader: jspb.BinaryReader): Webhook;
+}
+
+export namespace Webhook {
+    export type AsObject = {
+        id: number,
+        datetimeCreated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+        datetimeUpdated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+        surveyPageId: number,
+        link: string,
+        method: MethodType,
+    }
+}
+
 export enum SurveyType {
     SURVEY_TYPE_ALL_UNSPECIFIED = 0,
     SURVEY_TYPE_FORM = 1,
@@ -458,4 +499,11 @@ export enum SurveyLogicPageActionToType {
     LOGIC_PAGE_ACTION_TO_ALL_UNSPECIFIED = 0,
     LOGIC_PAGE_ACTION_TO_DISQUALIFIED = 1,
     LOGIC_PAGE_ACTION_TO_SURVEY_PAGE_ID = 2,
+}
+
+export enum MethodType {
+    ALL_UNSPECIFIED = 0,
+    GET = 1,
+    POST = 2,
+    PUT = 3,
 }
