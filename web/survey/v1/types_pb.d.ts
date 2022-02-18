@@ -446,6 +446,32 @@ export namespace Webhook {
     }
 }
 
+export class SurveyPageRedirect extends jspb.Message { 
+    getId(): number;
+    setId(value: number): SurveyPageRedirect;
+    getSurveyPageId(): number;
+    setSurveyPageId(value: number): SurveyPageRedirect;
+    getLink(): string;
+    setLink(value: string): SurveyPageRedirect;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): SurveyPageRedirect.AsObject;
+    static toObject(includeInstance: boolean, msg: SurveyPageRedirect): SurveyPageRedirect.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: SurveyPageRedirect, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): SurveyPageRedirect;
+    static deserializeBinaryFromReader(message: SurveyPageRedirect, reader: jspb.BinaryReader): SurveyPageRedirect;
+}
+
+export namespace SurveyPageRedirect {
+    export type AsObject = {
+        id: number,
+        surveyPageId: number,
+        link: string,
+    }
+}
+
 export enum SurveyType {
     SURVEY_TYPE_ALL_UNSPECIFIED = 0,
     SURVEY_TYPE_FORM = 1,
