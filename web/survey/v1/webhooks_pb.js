@@ -225,7 +225,8 @@ proto.web.survey.v1.WebhookGetOneRequest.prototype.toObject = function(opt_inclu
  */
 proto.web.survey.v1.WebhookGetOneRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    webhookId: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    webhookId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    surveyPageId: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -266,6 +267,10 @@ proto.web.survey.v1.WebhookGetOneRequest.deserializeBinaryFromReader = function(
       var value = /** @type {number} */ (reader.readInt32());
       msg.setWebhookId(value);
       break;
+    case 2:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setSurveyPageId(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -302,6 +307,13 @@ proto.web.survey.v1.WebhookGetOneRequest.serializeBinaryToWriter = function(mess
       f
     );
   }
+  f = message.getSurveyPageId();
+  if (f !== 0) {
+    writer.writeInt32(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -320,6 +332,24 @@ proto.web.survey.v1.WebhookGetOneRequest.prototype.getWebhookId = function() {
  */
 proto.web.survey.v1.WebhookGetOneRequest.prototype.setWebhookId = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional int32 survey_page_id = 2;
+ * @return {number}
+ */
+proto.web.survey.v1.WebhookGetOneRequest.prototype.getSurveyPageId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.web.survey.v1.WebhookGetOneRequest} returns this
+ */
+proto.web.survey.v1.WebhookGetOneRequest.prototype.setSurveyPageId = function(value) {
+  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 

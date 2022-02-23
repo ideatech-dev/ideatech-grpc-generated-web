@@ -10,6 +10,8 @@ import * as web_survey_v1_types_pb from "../../../web/survey/v1/types_pb";
 export class WebhookGetOneRequest extends jspb.Message { 
     getWebhookId(): number;
     setWebhookId(value: number): WebhookGetOneRequest;
+    getSurveyPageId(): number;
+    setSurveyPageId(value: number): WebhookGetOneRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): WebhookGetOneRequest.AsObject;
@@ -24,6 +26,7 @@ export class WebhookGetOneRequest extends jspb.Message {
 export namespace WebhookGetOneRequest {
     export type AsObject = {
         webhookId: number,
+        surveyPageId: number,
     }
 }
 

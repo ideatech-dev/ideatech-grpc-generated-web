@@ -10,6 +10,8 @@ import * as web_survey_v1_types_pb from "../../../web/survey/v1/types_pb";
 export class SurveyRedirectGetOneRequest extends jspb.Message { 
     getSurveyPageRedirectId(): number;
     setSurveyPageRedirectId(value: number): SurveyRedirectGetOneRequest;
+    getSurveyPageId(): number;
+    setSurveyPageId(value: number): SurveyRedirectGetOneRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SurveyRedirectGetOneRequest.AsObject;
@@ -24,6 +26,7 @@ export class SurveyRedirectGetOneRequest extends jspb.Message {
 export namespace SurveyRedirectGetOneRequest {
     export type AsObject = {
         surveyPageRedirectId: number,
+        surveyPageId: number,
     }
 }
 

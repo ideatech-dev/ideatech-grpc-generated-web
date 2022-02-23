@@ -225,7 +225,8 @@ proto.web.survey.v1.SurveyRedirectGetOneRequest.prototype.toObject = function(op
  */
 proto.web.survey.v1.SurveyRedirectGetOneRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    surveyPageRedirectId: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    surveyPageRedirectId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    surveyPageId: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -266,6 +267,10 @@ proto.web.survey.v1.SurveyRedirectGetOneRequest.deserializeBinaryFromReader = fu
       var value = /** @type {number} */ (reader.readInt32());
       msg.setSurveyPageRedirectId(value);
       break;
+    case 2:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setSurveyPageId(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -302,6 +307,13 @@ proto.web.survey.v1.SurveyRedirectGetOneRequest.serializeBinaryToWriter = functi
       f
     );
   }
+  f = message.getSurveyPageId();
+  if (f !== 0) {
+    writer.writeInt32(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -320,6 +332,24 @@ proto.web.survey.v1.SurveyRedirectGetOneRequest.prototype.getSurveyPageRedirectI
  */
 proto.web.survey.v1.SurveyRedirectGetOneRequest.prototype.setSurveyPageRedirectId = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional int32 survey_page_id = 2;
+ * @return {number}
+ */
+proto.web.survey.v1.SurveyRedirectGetOneRequest.prototype.getSurveyPageId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.web.survey.v1.SurveyRedirectGetOneRequest} returns this
+ */
+proto.web.survey.v1.SurveyRedirectGetOneRequest.prototype.setSurveyPageId = function(value) {
+  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
