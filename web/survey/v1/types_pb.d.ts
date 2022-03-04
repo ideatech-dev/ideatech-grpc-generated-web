@@ -246,6 +246,8 @@ export class SurveyResponseAnswer extends jspb.Message {
     setResponseId(value: number): SurveyResponseAnswer;
     getQuestionId(): number;
     setQuestionId(value: number): SurveyResponseAnswer;
+    getQuestion(): string;
+    setQuestion(value: string): SurveyResponseAnswer;
     clearValuesList(): void;
     getValuesList(): Array<string>;
     setValuesList(value: Array<string>): SurveyResponseAnswer;
@@ -271,6 +273,7 @@ export namespace SurveyResponseAnswer {
         id: number,
         responseId: number,
         questionId: number,
+        question: string,
         valuesList: Array<string>,
         datetimeCreated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     }

@@ -2206,6 +2206,7 @@ proto.web.survey.v1.SurveyResponseAnswer.toObject = function(includeInstance, ms
     id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     responseId: jspb.Message.getFieldWithDefault(msg, 2, 0),
     questionId: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    question: jspb.Message.getFieldWithDefault(msg, 6, ""),
     valuesList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
     datetimeCreated: (f = msg.getDatetimeCreated()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
@@ -2255,6 +2256,10 @@ proto.web.survey.v1.SurveyResponseAnswer.deserializeBinaryFromReader = function(
     case 3:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setQuestionId(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setQuestion(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
@@ -2312,6 +2317,13 @@ proto.web.survey.v1.SurveyResponseAnswer.serializeBinaryToWriter = function(mess
   if (f !== 0) {
     writer.writeInt32(
       3,
+      f
+    );
+  }
+  f = message.getQuestion();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
       f
     );
   }
@@ -2384,6 +2396,24 @@ proto.web.survey.v1.SurveyResponseAnswer.prototype.getQuestionId = function() {
  */
 proto.web.survey.v1.SurveyResponseAnswer.prototype.setQuestionId = function(value) {
   return jspb.Message.setProto3IntField(this, 3, value);
+};
+
+
+/**
+ * optional string question = 6;
+ * @return {string}
+ */
+proto.web.survey.v1.SurveyResponseAnswer.prototype.getQuestion = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.web.survey.v1.SurveyResponseAnswer} returns this
+ */
+proto.web.survey.v1.SurveyResponseAnswer.prototype.setQuestion = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
