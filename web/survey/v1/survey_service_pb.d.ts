@@ -59,6 +59,8 @@ export class SurveyGetAllRequest extends jspb.Message {
     setPage(value: number): SurveyGetAllRequest;
     getContentPerPage(): number;
     setContentPerPage(value: number): SurveyGetAllRequest;
+    getSearchByName(): string;
+    setSearchByName(value: string): SurveyGetAllRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SurveyGetAllRequest.AsObject;
@@ -76,6 +78,7 @@ export namespace SurveyGetAllRequest {
         filterType: web_survey_v1_types_pb.SurveyType,
         page: number,
         contentPerPage: number,
+        searchByName: string,
     }
 }
 

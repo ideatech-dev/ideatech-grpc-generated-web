@@ -385,7 +385,7 @@ proto.web.survey.v1.SurveyRedirectGetOneResponse.prototype.toObject = function(o
  */
 proto.web.survey.v1.SurveyRedirectGetOneResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    surveyredirect: (f = msg.getSurveyredirect()) && web_survey_v1_types_pb.SurveyPageRedirect.toObject(includeInstance, f)
+    surveyRedirect: (f = msg.getSurveyRedirect()) && web_survey_v1_types_pb.SurveyPageRedirect.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -425,7 +425,7 @@ proto.web.survey.v1.SurveyRedirectGetOneResponse.deserializeBinaryFromReader = f
     case 1:
       var value = new web_survey_v1_types_pb.SurveyPageRedirect;
       reader.readMessage(value,web_survey_v1_types_pb.SurveyPageRedirect.deserializeBinaryFromReader);
-      msg.setSurveyredirect(value);
+      msg.setSurveyRedirect(value);
       break;
     default:
       reader.skipField();
@@ -456,7 +456,7 @@ proto.web.survey.v1.SurveyRedirectGetOneResponse.prototype.serializeBinary = fun
  */
 proto.web.survey.v1.SurveyRedirectGetOneResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getSurveyredirect();
+  f = message.getSurveyRedirect();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -468,10 +468,10 @@ proto.web.survey.v1.SurveyRedirectGetOneResponse.serializeBinaryToWriter = funct
 
 
 /**
- * optional SurveyPageRedirect surveyRedirect = 1;
+ * optional SurveyPageRedirect survey_redirect = 1;
  * @return {?proto.web.survey.v1.SurveyPageRedirect}
  */
-proto.web.survey.v1.SurveyRedirectGetOneResponse.prototype.getSurveyredirect = function() {
+proto.web.survey.v1.SurveyRedirectGetOneResponse.prototype.getSurveyRedirect = function() {
   return /** @type{?proto.web.survey.v1.SurveyPageRedirect} */ (
     jspb.Message.getWrapperField(this, web_survey_v1_types_pb.SurveyPageRedirect, 1));
 };
@@ -481,7 +481,7 @@ proto.web.survey.v1.SurveyRedirectGetOneResponse.prototype.getSurveyredirect = f
  * @param {?proto.web.survey.v1.SurveyPageRedirect|undefined} value
  * @return {!proto.web.survey.v1.SurveyRedirectGetOneResponse} returns this
 */
-proto.web.survey.v1.SurveyRedirectGetOneResponse.prototype.setSurveyredirect = function(value) {
+proto.web.survey.v1.SurveyRedirectGetOneResponse.prototype.setSurveyRedirect = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -490,8 +490,8 @@ proto.web.survey.v1.SurveyRedirectGetOneResponse.prototype.setSurveyredirect = f
  * Clears the message field making it undefined.
  * @return {!proto.web.survey.v1.SurveyRedirectGetOneResponse} returns this
  */
-proto.web.survey.v1.SurveyRedirectGetOneResponse.prototype.clearSurveyredirect = function() {
-  return this.setSurveyredirect(undefined);
+proto.web.survey.v1.SurveyRedirectGetOneResponse.prototype.clearSurveyRedirect = function() {
+  return this.setSurveyRedirect(undefined);
 };
 
 
@@ -499,7 +499,7 @@ proto.web.survey.v1.SurveyRedirectGetOneResponse.prototype.clearSurveyredirect =
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.web.survey.v1.SurveyRedirectGetOneResponse.prototype.hasSurveyredirect = function() {
+proto.web.survey.v1.SurveyRedirectGetOneResponse.prototype.hasSurveyRedirect = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -696,7 +696,7 @@ proto.web.survey.v1.SurveyRedirectCreateResponse.prototype.toObject = function(o
  */
 proto.web.survey.v1.SurveyRedirectCreateResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    surveyredirect: (f = msg.getSurveyredirect()) && web_survey_v1_types_pb.SurveyPageRedirect.toObject(includeInstance, f)
+    surveyRedirect: (f = msg.getSurveyRedirect()) && web_survey_v1_types_pb.SurveyPageRedirect.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -736,7 +736,7 @@ proto.web.survey.v1.SurveyRedirectCreateResponse.deserializeBinaryFromReader = f
     case 1:
       var value = new web_survey_v1_types_pb.SurveyPageRedirect;
       reader.readMessage(value,web_survey_v1_types_pb.SurveyPageRedirect.deserializeBinaryFromReader);
-      msg.setSurveyredirect(value);
+      msg.setSurveyRedirect(value);
       break;
     default:
       reader.skipField();
@@ -767,7 +767,7 @@ proto.web.survey.v1.SurveyRedirectCreateResponse.prototype.serializeBinary = fun
  */
 proto.web.survey.v1.SurveyRedirectCreateResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getSurveyredirect();
+  f = message.getSurveyRedirect();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -779,10 +779,10 @@ proto.web.survey.v1.SurveyRedirectCreateResponse.serializeBinaryToWriter = funct
 
 
 /**
- * optional SurveyPageRedirect surveyRedirect = 1;
+ * optional SurveyPageRedirect survey_redirect = 1;
  * @return {?proto.web.survey.v1.SurveyPageRedirect}
  */
-proto.web.survey.v1.SurveyRedirectCreateResponse.prototype.getSurveyredirect = function() {
+proto.web.survey.v1.SurveyRedirectCreateResponse.prototype.getSurveyRedirect = function() {
   return /** @type{?proto.web.survey.v1.SurveyPageRedirect} */ (
     jspb.Message.getWrapperField(this, web_survey_v1_types_pb.SurveyPageRedirect, 1));
 };
@@ -792,7 +792,7 @@ proto.web.survey.v1.SurveyRedirectCreateResponse.prototype.getSurveyredirect = f
  * @param {?proto.web.survey.v1.SurveyPageRedirect|undefined} value
  * @return {!proto.web.survey.v1.SurveyRedirectCreateResponse} returns this
 */
-proto.web.survey.v1.SurveyRedirectCreateResponse.prototype.setSurveyredirect = function(value) {
+proto.web.survey.v1.SurveyRedirectCreateResponse.prototype.setSurveyRedirect = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -801,8 +801,8 @@ proto.web.survey.v1.SurveyRedirectCreateResponse.prototype.setSurveyredirect = f
  * Clears the message field making it undefined.
  * @return {!proto.web.survey.v1.SurveyRedirectCreateResponse} returns this
  */
-proto.web.survey.v1.SurveyRedirectCreateResponse.prototype.clearSurveyredirect = function() {
-  return this.setSurveyredirect(undefined);
+proto.web.survey.v1.SurveyRedirectCreateResponse.prototype.clearSurveyRedirect = function() {
+  return this.setSurveyRedirect(undefined);
 };
 
 
@@ -810,7 +810,7 @@ proto.web.survey.v1.SurveyRedirectCreateResponse.prototype.clearSurveyredirect =
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.web.survey.v1.SurveyRedirectCreateResponse.prototype.hasSurveyredirect = function() {
+proto.web.survey.v1.SurveyRedirectCreateResponse.prototype.hasSurveyRedirect = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1007,7 +1007,7 @@ proto.web.survey.v1.SurveyRedirectUpdateResponse.prototype.toObject = function(o
  */
 proto.web.survey.v1.SurveyRedirectUpdateResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    surveyredirect: (f = msg.getSurveyredirect()) && web_survey_v1_types_pb.SurveyPageRedirect.toObject(includeInstance, f)
+    surveyRedirect: (f = msg.getSurveyRedirect()) && web_survey_v1_types_pb.SurveyPageRedirect.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1047,7 +1047,7 @@ proto.web.survey.v1.SurveyRedirectUpdateResponse.deserializeBinaryFromReader = f
     case 1:
       var value = new web_survey_v1_types_pb.SurveyPageRedirect;
       reader.readMessage(value,web_survey_v1_types_pb.SurveyPageRedirect.deserializeBinaryFromReader);
-      msg.setSurveyredirect(value);
+      msg.setSurveyRedirect(value);
       break;
     default:
       reader.skipField();
@@ -1078,7 +1078,7 @@ proto.web.survey.v1.SurveyRedirectUpdateResponse.prototype.serializeBinary = fun
  */
 proto.web.survey.v1.SurveyRedirectUpdateResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getSurveyredirect();
+  f = message.getSurveyRedirect();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1090,10 +1090,10 @@ proto.web.survey.v1.SurveyRedirectUpdateResponse.serializeBinaryToWriter = funct
 
 
 /**
- * optional SurveyPageRedirect surveyRedirect = 1;
+ * optional SurveyPageRedirect survey_redirect = 1;
  * @return {?proto.web.survey.v1.SurveyPageRedirect}
  */
-proto.web.survey.v1.SurveyRedirectUpdateResponse.prototype.getSurveyredirect = function() {
+proto.web.survey.v1.SurveyRedirectUpdateResponse.prototype.getSurveyRedirect = function() {
   return /** @type{?proto.web.survey.v1.SurveyPageRedirect} */ (
     jspb.Message.getWrapperField(this, web_survey_v1_types_pb.SurveyPageRedirect, 1));
 };
@@ -1103,7 +1103,7 @@ proto.web.survey.v1.SurveyRedirectUpdateResponse.prototype.getSurveyredirect = f
  * @param {?proto.web.survey.v1.SurveyPageRedirect|undefined} value
  * @return {!proto.web.survey.v1.SurveyRedirectUpdateResponse} returns this
 */
-proto.web.survey.v1.SurveyRedirectUpdateResponse.prototype.setSurveyredirect = function(value) {
+proto.web.survey.v1.SurveyRedirectUpdateResponse.prototype.setSurveyRedirect = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1112,8 +1112,8 @@ proto.web.survey.v1.SurveyRedirectUpdateResponse.prototype.setSurveyredirect = f
  * Clears the message field making it undefined.
  * @return {!proto.web.survey.v1.SurveyRedirectUpdateResponse} returns this
  */
-proto.web.survey.v1.SurveyRedirectUpdateResponse.prototype.clearSurveyredirect = function() {
-  return this.setSurveyredirect(undefined);
+proto.web.survey.v1.SurveyRedirectUpdateResponse.prototype.clearSurveyRedirect = function() {
+  return this.setSurveyRedirect(undefined);
 };
 
 
@@ -1121,7 +1121,7 @@ proto.web.survey.v1.SurveyRedirectUpdateResponse.prototype.clearSurveyredirect =
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.web.survey.v1.SurveyRedirectUpdateResponse.prototype.hasSurveyredirect = function() {
+proto.web.survey.v1.SurveyRedirectUpdateResponse.prototype.hasSurveyRedirect = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

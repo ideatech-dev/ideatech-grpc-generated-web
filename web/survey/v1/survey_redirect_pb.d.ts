@@ -32,10 +32,10 @@ export namespace SurveyRedirectGetOneRequest {
 
 export class SurveyRedirectGetOneResponse extends jspb.Message { 
 
-    hasSurveyredirect(): boolean;
-    clearSurveyredirect(): void;
-    getSurveyredirect(): web_survey_v1_types_pb.SurveyPageRedirect | undefined;
-    setSurveyredirect(value?: web_survey_v1_types_pb.SurveyPageRedirect): SurveyRedirectGetOneResponse;
+    hasSurveyRedirect(): boolean;
+    clearSurveyRedirect(): void;
+    getSurveyRedirect(): web_survey_v1_types_pb.SurveyPageRedirect | undefined;
+    setSurveyRedirect(value?: web_survey_v1_types_pb.SurveyPageRedirect): SurveyRedirectGetOneResponse;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SurveyRedirectGetOneResponse.AsObject;
@@ -49,7 +49,7 @@ export class SurveyRedirectGetOneResponse extends jspb.Message {
 
 export namespace SurveyRedirectGetOneResponse {
     export type AsObject = {
-        surveyredirect?: web_survey_v1_types_pb.SurveyPageRedirect.AsObject,
+        surveyRedirect?: web_survey_v1_types_pb.SurveyPageRedirect.AsObject,
     }
 }
 
@@ -78,10 +78,10 @@ export namespace SurveyRedirectCreateRequest {
 
 export class SurveyRedirectCreateResponse extends jspb.Message { 
 
-    hasSurveyredirect(): boolean;
-    clearSurveyredirect(): void;
-    getSurveyredirect(): web_survey_v1_types_pb.SurveyPageRedirect | undefined;
-    setSurveyredirect(value?: web_survey_v1_types_pb.SurveyPageRedirect): SurveyRedirectCreateResponse;
+    hasSurveyRedirect(): boolean;
+    clearSurveyRedirect(): void;
+    getSurveyRedirect(): web_survey_v1_types_pb.SurveyPageRedirect | undefined;
+    setSurveyRedirect(value?: web_survey_v1_types_pb.SurveyPageRedirect): SurveyRedirectCreateResponse;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SurveyRedirectCreateResponse.AsObject;
@@ -95,7 +95,7 @@ export class SurveyRedirectCreateResponse extends jspb.Message {
 
 export namespace SurveyRedirectCreateResponse {
     export type AsObject = {
-        surveyredirect?: web_survey_v1_types_pb.SurveyPageRedirect.AsObject,
+        surveyRedirect?: web_survey_v1_types_pb.SurveyPageRedirect.AsObject,
     }
 }
 
@@ -124,10 +124,10 @@ export namespace SurveyRedirectUpdateRequest {
 
 export class SurveyRedirectUpdateResponse extends jspb.Message { 
 
-    hasSurveyredirect(): boolean;
-    clearSurveyredirect(): void;
-    getSurveyredirect(): web_survey_v1_types_pb.SurveyPageRedirect | undefined;
-    setSurveyredirect(value?: web_survey_v1_types_pb.SurveyPageRedirect): SurveyRedirectUpdateResponse;
+    hasSurveyRedirect(): boolean;
+    clearSurveyRedirect(): void;
+    getSurveyRedirect(): web_survey_v1_types_pb.SurveyPageRedirect | undefined;
+    setSurveyRedirect(value?: web_survey_v1_types_pb.SurveyPageRedirect): SurveyRedirectUpdateResponse;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): SurveyRedirectUpdateResponse.AsObject;
@@ -141,7 +141,7 @@ export class SurveyRedirectUpdateResponse extends jspb.Message {
 
 export namespace SurveyRedirectUpdateResponse {
     export type AsObject = {
-        surveyredirect?: web_survey_v1_types_pb.SurveyPageRedirect.AsObject,
+        surveyRedirect?: web_survey_v1_types_pb.SurveyPageRedirect.AsObject,
     }
 }
 

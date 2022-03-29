@@ -553,7 +553,8 @@ proto.web.survey.v1.SurveyGetAllRequest.toObject = function(includeInstance, msg
     organizationId: jspb.Message.getFieldWithDefault(msg, 1, 0),
     filterType: jspb.Message.getFieldWithDefault(msg, 2, 0),
     page: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    contentPerPage: jspb.Message.getFieldWithDefault(msg, 4, 0)
+    contentPerPage: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    searchByName: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -605,6 +606,10 @@ proto.web.survey.v1.SurveyGetAllRequest.deserializeBinaryFromReader = function(m
     case 4:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setContentPerPage(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSearchByName(value);
       break;
     default:
       reader.skipField();
@@ -660,6 +665,13 @@ proto.web.survey.v1.SurveyGetAllRequest.serializeBinaryToWriter = function(messa
   if (f !== 0) {
     writer.writeInt32(
       4,
+      f
+    );
+  }
+  f = message.getSearchByName();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
       f
     );
   }
@@ -735,6 +747,24 @@ proto.web.survey.v1.SurveyGetAllRequest.prototype.getContentPerPage = function()
  */
 proto.web.survey.v1.SurveyGetAllRequest.prototype.setContentPerPage = function(value) {
   return jspb.Message.setProto3IntField(this, 4, value);
+};
+
+
+/**
+ * optional string search_by_name = 5;
+ * @return {string}
+ */
+proto.web.survey.v1.SurveyGetAllRequest.prototype.getSearchByName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.web.survey.v1.SurveyGetAllRequest} returns this
+ */
+proto.web.survey.v1.SurveyGetAllRequest.prototype.setSearchByName = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
